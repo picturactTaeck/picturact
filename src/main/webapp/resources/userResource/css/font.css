@@ -1,0 +1,16 @@
+@CHARSET "UTF-8";
+@font-face{
+	font-family:'NanumBarunGothicBold';
+	src:url('/resources/font/NanumBarunGothicBold.ttf');
+}
+
+@font-face{
+	font-family:'NanumBarunGothic';
+	src:url('/resources/font/NanumBarunGothic.ttf');
+}
+
+body{
+	font-family:'NanumBarunGothic'; 
+
+	
+}

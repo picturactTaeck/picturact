@@ -1,0 +1,30 @@
+
+.personal_page_profile_row{
+	max-width: 730px;
+	margin : 10px auto;
+	margin-bottom: 20px;
+	
+}
+
+
+.personal_profile_follow{
+	margin-left: 15px;
+	width : 65px;
+	font-size: small;
+}
+
+.personal_profile_img{
+	padding: 0px;
+	max-width: 130px;
+	min-width:100px;
+}
+
+.personal_profile_info{
+	margin-top: 10px;
+}
+
+.personal_profile_userid{
+	font-size: large;
+	font-weight: bold;
+}
+

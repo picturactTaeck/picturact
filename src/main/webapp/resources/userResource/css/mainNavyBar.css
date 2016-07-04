@@ -1,0 +1,35 @@
+.main_navy_style{
+  background-color: rgb(60,60,60);
+  border-color: background-color: rgb(70,70,70);
+  text
+}
+
+.main_navy_style_text_color > li>a {
+  color:  rgb(150,150,150);
+
+}
+.main_navy_style_text_color > li>a:hover,
+.main_navy_style_text_color > li>a:focus {
+  color:  rgb(220,220,220);
+  background-color: transparent
+
+}
+.picturact_logo{
+	color : #ffcc00;
+}
+
+.picturact_logo:hover,
+.picturact_logo:focus{
+	color : #ffa800;
+}
+
+
+.navbar_textleftflow > li{
+    float: left;
+    margin:5px 10px;
+}
+.navbar_textrightflow > li{
+    float: right;
+    margin:5px 10px;
+}
+
