@@ -19,10 +19,8 @@
 	
 	<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
 <!-- 	original bootstrap's ones -->
-	<script src="resources/bootstrap/js/bootstrap.js"></script>
 	<script src="resources/bootstrap/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="resources/bootstrap/css/bootstrap.css" />
 	<link rel="stylesheet" href="resources/bootstrap/css/bootstrap-theme.min.css" />
 <!-- 	user style css -->
 	<link rel="stylesheet" href="resources/userResource/css/mainNavyBar.css?<?=filemtime('style.css')?>" />
@@ -30,6 +28,7 @@
 	<link rel="stylesheet" href="resources/userResource/css/mainPageArticle.css?<?=filemtime('mainPageArticle.css')?>" />
 	<link rel="stylesheet" href="resources/userResource/css/personalPageArticle.css?<?=filemtime('personalPageArticle.css')?>" />
 	<link rel="stylesheet" href="resources/userResource/css/personalPageProfile.css?<?=filemtime('personalPageProfile.css')?>" />
+	<link rel="stylesheet" href="resources/userResource/css/friend_nav.css" />
 	
 <!-- 	font css -->
 	<link rel="stylesheet" href="resources/userResource/css/font.css?<?=filemtime('font.css')?>" />
@@ -57,11 +56,6 @@
 <!-- main page navy bar  -->
 <%@ include file="mainNavyBar/mainNavyBar.jsp" %>
 
-
-    <!--Friend Navigation -->
-    <div id="sidebar-wrapper">
-<%--     	 <%@ include file='friend/friend_nav.jsp' %> --%>
-    </div>
     
 
     	
@@ -85,8 +79,6 @@
 
    
    
-	<!-- Bootstrap Core JavaScript -->
-<!-- 	<script src="resources/js/bootstrap.min.js"></script> -->
-<!-- 	<script src="resources/js/friend_nav.js"></script> -->
+<script src="resources/userResource/js/friend_nav.js"></script>
 </body>
 </html>

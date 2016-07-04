@@ -14,8 +14,8 @@
 <!-- 			<div class="collapse navbar-collapse"> -->
 			<div  >
 <!-- 				<ul class="nav navbar-nav main_navy_style_text_color"> -->
-				<ul class=" main_navy_style_text_color navbar_textleftflow ">
-					<li><a href="/notice.admin?pageNum=1">Notice</a></li>
+				<ul class="main_navy_style_text_color navbar_textleftflow ">
+					<li><a href="/notice">Notice</a></li>
 					<li><a href="/personalInfoEdit.do">Profile</a></li>
 <!-- 					<li><a id="menu-toggle" href="#">Friend</a></li> -->
 <!-- 					<li><a href="/logout.main">Logout</a></li> -->
@@ -24,7 +24,6 @@
 				<ul class="main_navy_style_text_color navbar_textrightflow ">
 		        	<li><a href="startPage.jsp"><i class="glyphicon glyphicon-off" aria-hidden="true"></i></a></li>
 		        	<li><a id="menu-toggle" href="#"><i class="glyphicon glyphicon-user" aria-hidden="true"></i></a></li>
-					
 		      	</ul>
 			</div>
 			<!-- /.navbar-collapse -->
@@ -32,3 +31,8 @@
 		<!-- /.container -->
 </nav>
 
+
+  <!--Friend Navigation -->
+  <div id="sidebar-wrapper" aria-hidden="true">
+  	 <%@ include file='/WEB-INF/views/friend/friend_nav.jsp' %>
+  </div>

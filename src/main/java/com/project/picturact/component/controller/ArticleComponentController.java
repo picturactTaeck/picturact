@@ -47,6 +47,14 @@ public class ArticleComponentController {
 		return mav;
 	}
 	
-	
+	@RequestMapping(value="/notice")
+	public ModelAndView noticePage(HttpSession session){
+		String id = (String) session.getAttribute("id");
+
+		mav.addObject("whatPost", "3");
+		
+		mav.setViewName("mainPage");
+		return mav;
+	}
 
 }
