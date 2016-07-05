@@ -35,6 +35,12 @@
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
 	</bean>	
 	
+	<bean id="ArticleDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="com.project.picturact.article.dao.ArticleDao" />
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
+	</bean>	
+	
 
 
 <!-- jdbc DataSource -->
@@ -46,6 +52,7 @@
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="configLocation" value="classpath:/mybatisConfig/mybatisConfig.xml" />
+
 	</bean>
 		
 		

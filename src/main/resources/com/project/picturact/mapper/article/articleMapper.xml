@@ -13,13 +13,13 @@
 
 
 
-	<insert id="insertArticle" parameterType="bbsDto">
+	<insert id="insertArticle" parameterType="articleInfo">
 		INSERT INTO PICTURACT_ARTICLE VALUES(
 			#{articleNum},#{userId},#{content},SYSDATE,#{howManyFiles})
 
 	</insert>
 
-	<insert id="insertFileArticle" parameterType="fileDto">
+	<insert id="insertFileArticle" parameterType="imageInfo">
 
 		INSERT INTO PICTURACT_FILELIST
 			VALUES(PIC_FILE_SEQ.NEXTVAL,#{storedFname},#{fileLength},#{articleNum})

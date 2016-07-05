@@ -17,11 +17,13 @@ public class ArticleController {
 	@Autowired
 	ArticleService articleService;
 	
-	@RequestMapping("/post.article")
+	@RequestMapping(value="/post.article")
 	@ResponseBody
-	@Transactional
+//	@Transactional
 	public String postArticle(String content, MultipartHttpServletRequest postImgs, HttpSession session){
+		
 		String userId = (String) session.getAttribute("userId");
+		userId="master";
 		
 		try{
 			articleService.postArticle(userId, content, postImgs);

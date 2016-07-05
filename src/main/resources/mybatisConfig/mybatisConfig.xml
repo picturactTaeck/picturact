@@ -26,5 +26,6 @@
 	<mappers>
 		<mapper resource="com/project/picturact/mapper/component/componentMapper.xml"/>
 		<mapper resource="com/project/picturact/mapper/admin/noticeMapper.xml"/>
+		<mapper resource="com/project/picturact/mapper/article/articleMapper.xml"/>
 	</mappers>
 </configuration>

@@ -8,13 +8,11 @@ $.ajaxSetup({
 });
 $(document).ready(function(){
 // 	var deleteFileList = [];
-	var formData = new FormData();
+
 	var imgs = new Array();
 	$("#addPostImg").on("change", function(){
 
 
-
-//		insertFiles(this.files);
 		showThumbnails(this.files);
 		addImgInfo(this.files);
 		$(this).val("");
@@ -23,39 +21,13 @@ $(document).ready(function(){
 		
 	});
 
-//	$("#sendArticle").on("click",function(){
-//
-//
-//		$("form").submit();
-//	});
-//	
-	
-//	$("#post").on("click",function(){
-//	
-//		 $("#post").ajaxSubmit({
-//
-//			 	dataType:"text",
-//				success: function (data){
-//// 					alert(data);
-//					$("#addPostImg").val("");
-//					$("#viewThumbnails").empty();
-//					$("#postContent").val("");
-//				},
-//				error: function(a,b,c){
-//					alert('실패 a : '+ a + " b : " + b + " c : " + c);
-//				}
-//				
-//		 });
-//		
-//	});
-//	
 	$(document).on("click",".thumbnailClick",function(){
 
 		var index = $(".thumbnailClick").index($(this));
 		alert(index);
 //		$(this).attr("style","display:none");
 		$(this).remove();
-		imgs.slice(index,1);
+		imgs.splice(index,1);
 		alert(imgs)
 
 		
@@ -64,8 +36,6 @@ $(document).ready(function(){
 	
 	function addImgInfo(files){
 		$.each(files, function(){
-//			alert(this);
-//			formData.append("postImgs", this);
 			imgs.push(this);
 		});
 		alert(imgs);
@@ -73,6 +43,46 @@ $(document).ready(function(){
 		
 	
 	}
+	
+	
+	$("#postArticle").on('click',function(){
+		var formData = new FormData();
+		formData.append("postImgs", imgs);
+
+		formData.append("content",$("#postContent").val());
+		
+
+
+
+
+		$.ajax({
+			url:"/post.article",
+			contentType: false,
+			processData: false,
+		 	data:formData,
+		 	dataType:"text",
+			success: function (data){
+
+				$("#addImage").val("");
+				$("#postContent").val("");
+
+			},
+			error: function(a,b,c){
+				alert('실패 a : '+ a + " b : " + b + " c : " + c);
+			}
+			
+	 });
+		
+
+		
+	});
+	
+	
+	
+	
+	
+	
+	
 		
 	
 
@@ -83,10 +93,14 @@ $(document).ready(function(){
 
 
 
+
+
+
+
+
+
 function showThumbnails(files){
 	
-		
-
 		for(var i=0;i<files.length;i++){
 			var file = files[i];
 			
@@ -105,13 +119,6 @@ function showThumbnails(files){
 			};
 		}
 
-//		 var html= "<img class='col-xs-2 thumbnail thumnailClick'  fileNum='"+data.fileNum+"'";
-//		 html +=  "src='/img/"+ data.storedFname +"'/>";
-// 		 alert(e.target.result);
-
-		
-//		 $("form").append("<input type='hidden' name='fileNameList' value='"+data+"'>");
-		
 
 }
 
@@ -119,8 +126,7 @@ function showThumbnails(files){
 function checkImageType(fileName){	
 //		/i는 대소문자 구분 하지 말라는 뜻임
 	var pattern = /.jpg|.gif|.png/i;
-//	alert("pattern : "+pattern);
-//	alert("match : "+fileName.match(pattern));
+
 	
 	return fileName.match(pattern);		
 }

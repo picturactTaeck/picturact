@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.annotation.Resource;
 import javax.inject.Inject;
 
+import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
@@ -12,6 +13,7 @@ import com.project.picturact.article.dao.ArticleDao;
 import com.project.picturact.component.dto.ArticleInfo;
 import com.project.picturact.component.dto.ImageInfo;
 
+@Service
 public class ArticleServiceImpl implements ArticleService {
 	
 	@Inject
