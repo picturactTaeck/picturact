@@ -14,7 +14,7 @@
 		</li>
 
 		<!--friend name click 할때 친구의 personal page & chat  -->
-		<c:forEach var="follower" items="${followerList}">
+		<c:forEach var="follower" items="${followList}">
 			<li><a href="#" data-toggle="collapse"
 				data-target="#show${follower}">${follower}</a>
 				<div id="show${follower}" class="panel-collapse collapse">
