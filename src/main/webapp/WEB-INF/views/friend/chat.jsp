@@ -57,9 +57,6 @@ $(document).ready(function(){
 		
 		<div class="popup-messages">
 
-
-
-
 			<div class="direct-chat-messages">
 
 
@@ -81,8 +78,7 @@ $(document).ready(function(){
 		</div>
 	  </div>
 	  
-<!-- js files & script -->
-<script src="resources/js/bootstrap.min.js"></script>    
+<!-- js files & script -->    
 <script src="resources/js/chat.js"></script>
 </body>
 </html>
