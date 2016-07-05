@@ -3,60 +3,30 @@
 '-//mybatis.org//DTD Sql Mapper 3.0//EN' 
 'http://Mybatis.org/dtd/mybatis-3-mapper.dtd'>
 
-<mapper namespace="com.project.picturact.component.dao.ComponentDao">
+<mapper namespace="com.project.picturact.article.dao.ArticleDao">
 
-	<select id="getMainPageArticle" resultType="articleInfo"
-		parameterType="String">
-
-		SELECT ARTICLENUM, USERID,
-		REGEXP_REPLACE(content, <![CDATA['<[^>]*>|\&([^;])*;']]>,'')
-		content, WRITEDATE, HOWMANYFILES
-		FROM PICTURACT_ARTICLE
-		WHERE USERID IN (SELECT FOLLOWID FROM PICTURACT_PERSONRELATION WHERE
-		USERID=#{userId}) OR USERID=#{userId}
-		ORDER BY ARTICLENUM DESC
-	</select>
-
-	<select id="getArticleFile" parameterType="int" resultType="imageInfo">
-		SELECT * FROM PICTURACT_FILELIST WHERE ARTICLENUM=#{articleNum}
-		ORDER BY FILENUM DESC
-
-	</select>
-
-
-	<select id="getPersonalPageArticle" resultType="articleInfo"
-		parameterType="String">
-
-		SELECT ARTICLENUM, USERID,
-		REGEXP_REPLACE(content, <![CDATA['<[^>]*>|\&([^;])*;']]>,'')
-		content, WRITEDATE, HOWMANYFILES
-		FROM PICTURACT_ARTICLE
-		WHERE USERID=#{userId}
-		ORDER BY ARTICLENUM DESC
-	</select>
-
-	<select id="getFollowList" parameterType="String" resultType="String">
-		SELECT FOLLOWID FROM PICTURACT_PERSONRELATION WHERE USERID=#{userId}
+	<select id="getNextArticleNum" resultType="int">
+		SELECT PIC_ARTICLE_SEQ.NEXTVAL FROM  DUAL
 	</select>
 
 
 
-	<!-- <insert id="insertArticle" parameterType="bbsDto"> -->
-	<!-- INSERT INTO PICTURACT_ARTICLE VALUES -->
-	<!-- ( -->
-
-	<!-- #{articleNum},#{userId},#{content},SYSDATE,#{howManyFiles}) -->
-
-	<!-- </insert> -->
-
-	<!-- <insert id="insertFileArticle" parameterType="fileDto"> -->
-
-	<!-- INSERT INTO PICTURACT_FILELIST -->
-	<!-- VALUES(FILE_SEQ.NEXTVAL,#{originFname},#{storedFname},#{fileLength},#{articleNum}) -->
 
 
+	<insert id="insertArticle" parameterType="bbsDto">
+		INSERT INTO PICTURACT_ARTICLE VALUES(
+			#{articleNum},#{userId},#{content},SYSDATE,#{howManyFiles})
 
-	<!-- </insert> -->
+	</insert>
+
+	<insert id="insertFileArticle" parameterType="fileDto">
+
+		INSERT INTO PICTURACT_FILELIST
+			VALUES(PIC_FILE_SEQ.NEXTVAL,#{storedFname},#{fileLength},#{articleNum})
+
+
+
+	</insert>
 
 	<!-- <select id="getNextArticleNum" resultType="int"> -->
 	<!-- SELECT bbs_seq.nextval -->

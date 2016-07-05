@@ -75,5 +75,21 @@
 		<url-pattern>*.notice</url-pattern>
 		<!-- e-mail, q&a만들때는 url패턴을 여기에 따로 만드세요 -->
 	</servlet-mapping>
+	
+	
+	<!-- article Controller -->
+	<servlet>
+		<servlet-name>articleServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>CLASSPATH:/servlet/article-context.xml</param-value>
+		</init-param>
+	</servlet>
+		
+	<servlet-mapping>
+		<servlet-name>articleServlet</servlet-name>
+		<url-pattern>*.article</url-pattern>
+	</servlet-mapping>
 
 </web-app>

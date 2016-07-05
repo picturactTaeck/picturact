@@ -25,7 +25,7 @@
 	
 <!-- 	user style css -->
 	<link rel="stylesheet" href="resources/userResource/css/mainNavyBar.css?<?=filemtime('style.css')?>" />
-	<link rel="stylesheet" href="resources/userResource/css/postArticle.css?<?=filemtime('postArticle.css')?>" />
+	<link rel="stylesheet" href="resources/userResource/css/postArticle.css" />
 	<link rel="stylesheet" href="resources/userResource/css/mainPageArticle.css?<?=filemtime('mainPageArticle.css')?>" />
 	<link rel="stylesheet" href="resources/userResource/css/personalPageArticle.css?<?=filemtime('personalPageArticle.css')?>" />
 	<link rel="stylesheet" href="resources/userResource/css/personalPageProfile.css?<?=filemtime('personalPageProfile.css')?>" />
@@ -34,7 +34,7 @@
 	
 	<!-- 	user style js -->
 	<script src="resources/userResource/js/friend_nav.js?<?=filemtime('friend_nav.js')?>"></script>
-	
+	<script src="resources/userResource/js/postArticle.js?<?=filemtime('postArticle.js')?>"></script>
 	
 <!-- 	font css -->
 	<link rel="stylesheet" href="resources/userResource/css/font.css?<?=filemtime('font.css')?>" />

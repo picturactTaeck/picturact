@@ -1,11 +1,23 @@
 package com.project.picturact.member.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+
+import com.project.picturact.member.service.MemberJoinService;
+import com.project.picturact.member.service.MemberLoginService;
 
 @Controller
 public class MemberController {
-	//login, join ±â´É »ç¿ëÇÏ´Â controller
-	//ÇÊ¿äÇÑ service, dto, dao µîÀº login, join ³ª´©¾î¼­ »ç¿ë
-	//url ÆÐÅÏ *.login, *.join Çü½Ä
+	//login, join ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ controller
+	//ï¿½Ê¿ï¿½ï¿½ï¿½ service, dto, dao ï¿½ï¿½ï¿½ï¿½ login, join ï¿½ï¿½ï¿½ï¿½ï¿½î¼­ ï¿½ï¿½ï¿½
+	//url ï¿½ï¿½ï¿½ï¿½ *.login, *.join ï¿½ï¿½ï¿½ï¿½
+	
+	@Autowired
+	MemberJoinService joinService;
+	@Autowired
+	MemberLoginService loginService;
+	
+	
+	
 
 }

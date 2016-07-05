@@ -18,7 +18,7 @@
 
 			</div>
 			<div class="row post_button">
-				<input type="button" id="fileUpload" class="btn btn-default btn-sm border-top-radius" value="upload">
+				<input type="button" id="post" class="btn btn-default btn-sm border-top-radius" value="upload">
 				<input type="button" id="reset" class="btn btn-default btn-sm border-top-radius" value="reset">
 			</div>
 

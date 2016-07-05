@@ -7,7 +7,7 @@
 	<div class="container main_article ">
 		<!--profile(pictur&user's id) -->
 		<div class="row article_profile ">
-			<img src="http://placehold.it/40x40" alt="profile"><a href="/${article.userId}">${article.userId}</a>
+			<img src="http://placehold.it/40x40" alt="profile"><a href="/${article.userId}">${article.userId}</a> howmany : ${article.howManyFiles}
 		</div>
 
 		<div class="">

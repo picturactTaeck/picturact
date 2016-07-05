@@ -23,6 +23,18 @@
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
 	</bean>	
+	
+	<bean id="MemeberLoginDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="com.project.picturact.member.dao.MemberLoginDao" />
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
+	</bean>	
+	<bean id="MemeberJoinDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="com.project.picturact.member.dao.MemberJoinDao" />
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
+	</bean>	
+	
 
 
 <!-- jdbc DataSource -->
