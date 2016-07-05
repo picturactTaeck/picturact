@@ -12,12 +12,12 @@ import com.project.picturact.component.dto.ArticleInfo;
 @Service
 public class ComponentServiceImpl implements ComponentService {
 	@Inject
-	ComponentDao mainDao;
+	ComponentDao componentDao;
 
 	@Override
 	public ArrayList<ArticleInfo> getMainArticle(String userId) {
 		// TODO Auto-generated method stub
-		return this.mappingFiles(mainDao.getMainPageArticle(userId));
+		return this.mappingFiles(componentDao.getMainPageArticle(userId));
 	}
 	
 	
@@ -27,7 +27,8 @@ public class ComponentServiceImpl implements ComponentService {
 	@Override
 	public ArrayList<ArticleInfo> getPersonalArticle(String userId) {
 		// TODO Auto-generated method stub
-		return null;
+		System.out.println("service : "+userId);
+		return this.mappingFiles(componentDao.getPersonalPageArticle(userId));
 	}
 
 
@@ -38,11 +39,22 @@ public class ComponentServiceImpl implements ComponentService {
 		// TODO Auto-generated method stub
 		
 		for(ArticleInfo i : article){
-			i.setFileList(mainDao.getArticleFile(i.getArticleNum()));
+			i.setFileList(componentDao.getArticleFile(i.getArticleNum()));
 		}
 		
 		return article;
 	}
+
+
+
+
+
+	@Override
+	public ArrayList<String> getFollowList(String userId) {
+		// TODO Auto-generated method stub
+		return componentDao.getFollowList(userId);
+	}
+
 
 	
 	

@@ -2,10 +2,12 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+  <div id="sidebar-wrapper" aria-hidden="true">
 
 	<ul class="sidebar-nav">
 		<a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle">
-			<i class="glyphicon glyphicon-remove"></i></a>
+			<i class="glyphicon glyphicon-remove"></i>
+		</a>
 		
 		<!--나의 personal page -->
 		<li class="sidebar-brand"><a href="/${useId}" class="closeMenu">${userName}</a>
@@ -26,7 +28,7 @@
 		<!-- testing -->
 		<li><a href="#" id="chatFollower">Talk with 피플</a></li>
 	</ul>
-	
+</div>
 <!-- <div id="chat"> -->
 <%-- 	<%@ include file="chat.jsp" %> --%>
 <!-- </div> -->

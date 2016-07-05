@@ -10,4 +10,6 @@ public interface ComponentService {
 
 	public ArrayList<ArticleInfo> getPersonalArticle(String userId);
 
+	public ArrayList<String> getFollowList(String userId);
+
 }

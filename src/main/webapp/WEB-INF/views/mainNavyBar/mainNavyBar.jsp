@@ -23,7 +23,7 @@
 				
 				<ul class="main_navy_style_text_color navbar_textrightflow ">
 		        	<li><a href="startPage.jsp"><i class="glyphicon glyphicon-off" aria-hidden="true"></i></a></li>
-		        	<li><a id="menu-toggle" href="#"><i class="glyphicon glyphicon-user" aria-hidden="true"></i></a></li>
+		        	<li><a id="friend_nav" ><i class="glyphicon glyphicon-user" aria-hidden="true"></i></a></li>
 		      	</ul>
 			</div>
 			<!-- /.navbar-collapse -->
@@ -31,8 +31,3 @@
 		<!-- /.container -->
 </nav>
 
-
-  <!--Friend Navigation -->
-  <div id="sidebar-wrapper" aria-hidden="true">
-  	 <%@ include file='/WEB-INF/views/friend/friend_nav.jsp' %>
-  </div>

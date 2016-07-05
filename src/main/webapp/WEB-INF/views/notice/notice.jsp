@@ -96,6 +96,6 @@
 	
 	<!-- Notice Write Modal (write 버튼은 관리자만 보이도록 설정) -->
 	<div id="noticeWriteForm" class="modal">
-		<%@ include file="/WEB-INF/views/notice/notice_write.jsp" %>
+		<%@ include file="notice_write.jsp" %>
 	</div>
 	

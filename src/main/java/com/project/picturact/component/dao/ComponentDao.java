@@ -9,5 +9,7 @@ public interface ComponentDao {
 
 	public ArrayList<ArticleInfo> getMainPageArticle(String userId);
 	public ArrayList<ImageInfo> getArticleFile(int articleNum);
+	public ArrayList<ArticleInfo> getPersonalPageArticle(String userId);
+	public ArrayList<String> getFollowList(String userId);
 
 }
