@@ -1,11 +1,12 @@
 // Closes the sidebar menu
-$("#menu-close").click(function(e) {
+$("#menu-close").on('click',function(e) {
 	e.preventDefault();
 	$("#sidebar-wrapper").toggleClass("active");
 });
 
 // Opens the sidebar menu
-$("#friend_nav").click(function(e) {
+$("#friend_nav").on('click',function(e) {
+	alert("friend navy");
 	e.preventDefault();
 	$("#sidebar-wrapper").toggleClass("active");
 });

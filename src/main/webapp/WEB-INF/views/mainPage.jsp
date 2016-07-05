@@ -60,7 +60,7 @@
 
 <body >
 	<!-- main page navy bar  -->
-	<%@ include file="mainNavyBar/mainNavyBar.jsp" %>
+	<%@ include file="mainNavBar/mainNavBar.jsp" %>
 
   	<!--Friend Navigation -->
 	<%@ include file="friend/friend_nav.jsp" %>
