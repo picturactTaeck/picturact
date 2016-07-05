@@ -14,7 +14,7 @@
 <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
 
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">        
-<link rel="stylesheet" href="resources/assets/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css">
 <script type="text/javascript">
 function div_show(s,ss){
 	if(s=="Join"){
@@ -73,7 +73,6 @@ function div_show(s,ss){
             </div>
 
  	    <!-- Javascript -->
-        <script src="resources/assets/bootstrap/js/bootstrap.min.js"></script>
-<!--         <script src="resources/assets/js/scripts.js"></script> -->
+        <script src="resources/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
