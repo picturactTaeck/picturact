@@ -20,10 +20,11 @@
 	<typeAliases>
 		<typeAlias alias="articleInfo" type="com.project.picturact.component.dto.ArticleInfo"/>
 		<typeAlias alias="imageInfo" type="com.project.picturact.component.dto.ImageInfo"/>
+		<typeAlias alias="noticeDto" type="com.project.picturact.admin.dto.NoticeDto"/>
 	</typeAliases>
 
 	<mappers>
 		<mapper resource="com/project/picturact/mapper/component/componentMapper.xml"/>
-		
+		<mapper resource="com/project/picturact/mapper/admin/noticeMapper.xml"/>
 	</mappers>
 </configuration>

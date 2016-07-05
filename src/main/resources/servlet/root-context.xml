@@ -18,6 +18,11 @@
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
 	</bean>	
 	
+	<bean id="NoticeDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="com.project.picturact.admin.dao.NoticeDao" />
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
+	</bean>	
 
 
 <!-- jdbc DataSource -->
