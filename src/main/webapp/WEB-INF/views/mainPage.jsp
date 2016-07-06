@@ -31,12 +31,17 @@
 	<link rel="stylesheet" href="resources/userResource/css/personalPageArticle.css?<?=filemtime('personalPageArticle.css')?>" />
 	<link rel="stylesheet" href="resources/userResource/css/personalPageProfile.css?<?=filemtime('personalPageProfile.css')?>" />
 	<link rel="stylesheet" href="resources/userResource/css/friend_nav.css?<?=filemtime('friend_nav.css')?>" />
-	
+	<link rel="stylesheet" href="resources/userResource/css/chat.css?<?=filemtime('chat.css')?>" />
 	
 	<!-- 	user style js -->
+	
 	<script src="resources/userResource/js/friend_nav.js?<?=filetime('friend_nav.js')?>"></script>
 	<script src="resources/userResource/js/postArticle.js?<?=filetime('postArticle.js')?>"></script>
 	<script src="resources/userResource/js/follow.js"></script>
+	<script src="resources/userResource/js/chat.js?<?=filetime('chat.js')?>"></script>
+	
+	<!-- Node js testing server check!!!!! -->
+	<script src="http://localhost:8801/socket.io/socket.io.js"></script>
 	
 <!-- 	font css -->
 	<link rel="stylesheet" href="resources/userResource/css/font.css?<?=filemtime('font.css')?>" />

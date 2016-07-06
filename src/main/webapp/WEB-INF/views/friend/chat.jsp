@@ -1,38 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" href="resources/css/bootstrap.min.css" />
-<link rel="stylesheet" href="resources/css/chat.css" />
-
-<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-<script src="http://localhost:8801/socket.io/socket.io.js"></script>
-<script>
-$(document).ready(function(){
-	alert("open");
-	var socket = io.connect('http://localhost:8801');
-	var employNum = 'test_id2';  //client2은 test_id2 이라는 아이디로 등록합니다.
-	 socket.emit('conn', employNum);  //conn이라는 key로 아이디를 전송합니다.
-	 
-	 socket.on('message', function(data){    //메세지를 받으면 console에 찍습니다.
-		console.log(data);
-	 	var recieveMsg = data;
-	 	
-	 });
-});
-</script>
-</head>
-<body>
-
-
-<div class="popup-box chat-popup" id="qnimate">
+<div class="popup-box chat-popup" id="chatBox">
 		<div class="popup-head">
-			<div class="popup-head-left pull-left">
-				<img src="jpg" alt="iamgurdeeposahan"> Name
+			<div class="popup-head-left pull-left"> Name
 			</div>
 			<div class="popup-head-right pull-right">
 				<div class="btn-group">
@@ -78,7 +49,3 @@ $(document).ready(function(){
 		</div>
 	  </div>
 	  
-<!-- js files & script -->    
-<script src="resources/js/chat.js"></script>
-</body>
-</html>
