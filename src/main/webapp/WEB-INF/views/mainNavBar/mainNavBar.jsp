@@ -15,7 +15,7 @@
 			<div  >
 <!-- 				<ul class="nav navbar-nav main_navy_style_text_color"> -->
 				<ul class="main_navy_style_text_color navbar_textleftflow ">
-					<li><a href="/notice">Notice</a></li>
+					<li><a href="/main.notice?pageNum=1">Notice</a></li>
 					<li><a href="/personalInfoEdit.do">Profile</a></li>
 <!-- 					<li><a id="menu-toggle" href="#">Friend</a></li> -->
 <!-- 					<li><a href="/logout.main">Logout</a></li> -->

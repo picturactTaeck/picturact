@@ -1,14 +1,13 @@
 package com.project.picturact.admin.dto;
 
-import java.sql.Timestamp;
-
 public class NoticeDto {
 	private int noticeNum;
 	private String userId;
 	private String title;
 	private String content;
-	private Timestamp writeDate;
+	private String writeDate;
 	private int howManyFiles;
+	
 	
 	public int getNoticeNum() {
 		return noticeNum;
@@ -34,10 +33,10 @@ public class NoticeDto {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public Timestamp getWriteDate() {
+	public String getWriteDate() {
 		return writeDate;
 	}
-	public void setWriteDate(Timestamp writeDate) {
+	public void setWriteDate(String writeDate) {
 		this.writeDate = writeDate;
 	}
 	public int getHowManyFiles() {
@@ -51,6 +50,6 @@ public class NoticeDto {
 		return "NoticeDto [noticeNum=" + noticeNum + ", userId=" + userId + ", title=" + title + ", content=" + content
 				+ ", writeDate=" + writeDate + ", howManyFiles=" + howManyFiles + "]";
 	}
-	
+
 
 }

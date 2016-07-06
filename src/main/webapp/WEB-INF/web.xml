@@ -73,7 +73,7 @@
 	<servlet-mapping>
 		<servlet-name>adminServlet</servlet-name>
 		<url-pattern>*.notice</url-pattern>
-		<!-- e-mail, q&a만들때는 url패턴을 여기에 따로 만드세요 -->
+		<!-- when you make e-mail, q&a function, you must make url first. -->
 	</servlet-mapping>
 	
 	

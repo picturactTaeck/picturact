@@ -11,12 +11,14 @@
 		</div>
 		<div class="modal-body">
 
-			<center>
-				<form id="writeNotice" method="post" class="form-horizontal">
+			<div class="text-center">
+				<form id="writeNotice" action="write.notice" method="post" class="form-horizontal">
 					<fieldset>
+						<!-- test -->
+						<input type="hidden" name="sessionId" value="${sessionId}">
 						<div class="form-group">
 							<label class="col-lg-2 control-label">Writer</label>
-							<div class="col-lg-10">admin Id</div>
+							<div class="col-lg-10" >${sessionId}</div>
 						</div>
 
 						<div class="form-group">
@@ -43,7 +45,7 @@
 						</div>
 					</fieldset>
 				</form>
-			</center>
+			</div>
 		</div>
 	</div>
 </div>
