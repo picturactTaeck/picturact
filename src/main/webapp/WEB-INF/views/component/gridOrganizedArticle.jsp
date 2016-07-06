@@ -2,12 +2,6 @@
 
 
 
-
-
-
-
-
-
 <section>
 <div class="container ">
 	
@@ -20,9 +14,16 @@
 		<div class="col-xs-4  personal_article_img personal_article_padding "  name="articles">
 			<c:if test="${ article.howManyFiles==1}">
 				<c:forEach var="files" items="${article.fileList}">
+				
+					<div class="img_position">
+						<div class="centered"> 
+							<img class="img-responsive article_img" src="/img/${files.storedFname}" alt="">
+<!-- 					<img src="http://placehold.it/400x400" alt="profile"> -->
+						</div>
+					</div>
 
 <%-- 				<img class="img-responsive" src="/img/${files.storedFname}" alt=""> --%>
-					<img class="img-responsive" src="http://placehold.it/250x250" alt="" >
+<!-- 					<img class="img-responsive" src="http://placehold.it/250x250" alt="" > -->
 
 				</c:forEach>
 
@@ -52,20 +53,22 @@
 						<c:forEach var="files" items="${article.fileList}"
 							varStatus="fileNumStatus">
 							<c:if test="${fileNumStatus.first}">
-								<div class="item active">
-					<%-- 				<img class="img-responsive" src="/img/${files.storedFname}" alt=""> --%>
-										<img class="img-responsive" src="http://placehold.it/250x250" alt="" >
-									
-									<div class="carousel-caption"></div>
+								<div class="item active img_position">
+									<div class="centered"> 
+										<img class="img-responsive article_img" src="/img/${files.storedFname}" alt="">
+<!-- 									<img src="http://placehold.it/400x400" alt="profile"> -->
+									</div>
 								</div>
 							</c:if>
 							<c:if test="${!fileNumStatus.first}">
-								<div class="item">
-					<%-- 				<img class="img-responsive" src="/img/${files.storedFname}" alt=""> --%>
-										<img class="img-responsive" src="http://placehold.it/250x250" alt="" >
-									<div class="carousel-caption"></div>
+									<div class="item img_position">
+									<div class="centered"> 
+										<img class="img-responsive article_img" src="/img/${files.storedFname}" alt="">
+<!-- 									<img src="http://placehold.it/400x400" alt="profile"> -->
+										<div class="carousel-caption"></div>		
+									</div>
 								</div>
-
+								
 							</c:if>
 
 						</c:forEach>

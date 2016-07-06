@@ -10,19 +10,23 @@
 			<img src="http://placehold.it/40x40" alt="profile"><a href="/${article.userId}">${article.userId}</a> howmany : ${article.howManyFiles}
 		</div>
 
-		<div class="">
+
 <!-- 				<img class="img-responsive" src="http://placehold.it/400x400" alt=""> -->
 <%-- 					<img class="img-responsive" src="/img/${files.storedFname}" alt=""> --%>
 			<c:if test="${ article.howManyFiles==1}">
 				<c:forEach var="files" items="${article.fileList}">
-					<img class="img-responsive" src="/img/${files.storedFname}" alt="">
+					<div class="img_position">
+						<div class="centered"> 
+							<img class="img-responsive article_img" src="/img/${files.storedFname}" alt="">
 <!-- 					<img src="http://placehold.it/400x400" alt="profile"> -->
+						</div>
+					</div>
 				</c:forEach>
 
 			</c:if>
 
 			<c:if test="${ article.howManyFiles>1}">
-				<div id="main${article.articleNum}" class="carousel slide" data-ride="carousel">
+				<div id="main${article.articleNum}" class="carousel slide " data-ride="carousel">
 					<!-- Indicators -->
 					<ol class="carousel-indicators">
 
@@ -39,25 +43,31 @@
 					</ol>
 
 					<!-- Wrapper for slides -->
-					<div class="carousel-inner" role="listbox">
+					<div class="carousel-inner " role="listbox">
 						<c:forEach var="files" items="${article.fileList}"
 							varStatus="fileNumStatus">
 							<c:if test="${fileNumStatus.first}">
-								<div class="item active">
-
-									<img class="img-responsive" src="/img/${files.storedFname}" alt="">
-<!-- 										<img src="http://placehold.it/400x400" alt="profile" > -->
-									<div class="carousel-caption"></div>
+							
+								<div class="item active img_position">
+									<div class="centered"> 
+										<img class="img-responsive article_img" src="/img/${files.storedFname}" alt="">
+<!-- 									<img src="http://placehold.it/400x400" alt="profile"> -->
+										<div class="carousel-caption"></div>
+									</div>
 								</div>
+							
+															
 							</c:if>
 							<c:if test="${!fileNumStatus.first}">
-								<div class="item">
 
-										<img class="img-responsive" src="/img/${files.storedFname}" alt="">
-<!-- 										<img src="http://placehold.it/400x400" alt="profile" > -->
-
-									<div class="carousel-caption"></div>
+								<div class="item img_position">
+									<div class="centered"> 
+										<img class="img-responsive article_img" src="/img/${files.storedFname}" alt="">
+<!-- 									<img src="http://placehold.it/400x400" alt="profile"> -->
+										<div class="carousel-caption"></div>		
+									</div>
 								</div>
+								
 
 							</c:if>
 
@@ -105,7 +115,7 @@
 		
 
 
-		</div>
+
 		<div class="article_content">test</div>
 			
 		<div class="main_article_reply"> reply</div>

@@ -75,9 +75,9 @@ $(document).ready(function(){
 			reader.onload = function(e){	
 				var html = "";
 					html+='<div class="col-xs-2 thumbnail thumbnailClick">';
-					html+='<div class="thumbnail2 ">';
+					html+='<div class="img_position ">';
 					html+='<div class="centered">';
-					html+='<img src="'+e.target.result+'"/>';
+					html+='<img class="thumnail_img" src="'+e.target.result+'"/>';
 					html+='</div><div></div>';
 				
 				 $("#viewThumbnails").append(html);
@@ -87,8 +87,7 @@ $(document).ready(function(){
 
 }
 	
-	
-	
+
 	
 	
 		

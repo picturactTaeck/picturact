@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.project.picturact.component.dao.ComponentDao;
 import com.project.picturact.component.dto.ArticleInfo;
+import com.project.picturact.component.dto.ImageInfo;
 
 @Service
 public class ComponentServiceImpl implements ComponentService {
@@ -17,6 +18,8 @@ public class ComponentServiceImpl implements ComponentService {
 	@Override
 	public ArrayList<ArticleInfo> getMainArticle(String userId) {
 		// TODO Auto-generated method stub
+		
+		
 		return this.mappingFiles(componentDao.getMainPageArticle(userId));
 	}
 	
@@ -44,6 +47,30 @@ public class ComponentServiceImpl implements ComponentService {
 		
 		return article;
 	}
+//	
+//	public ArrayList<ArticleInfo> mappingOriginFiles(ArrayList<ArticleInfo> article) {
+//		// TODO Auto-generated method stub
+//		
+//		for(ArticleInfo i : article){
+////			for(ImageInfo j : componentDao.getArticleFile(i.getArticleNum())){
+////				j.setOriginFname(j.getStoredFname().substring(0, j.getStoredFname().indexOf('_')-1)+""+
+////						j.getStoredFname().substring(j.getStoredFname().indexOf('_')+1, j.getStoredFname().length()));
+////				System.out.println("original : "+j.getOriginFname());
+////			}
+//			i.setFileList(componentDao.getArticleFile(i.getArticleNum()));
+//			
+//			for(ImageInfo j :i.getFileList()){
+//				j.setOriginFname(j.getStoredFname().substring(0, j.getStoredFname().indexOf('_')-1)+""+
+//						j.getStoredFname().substring(j.getStoredFname().indexOf('_')+1, j.getStoredFname().length()));
+//				System.out.println("original : "+j.getOriginFname());
+//				System.out.println("stored : " +j.getStoredFname());
+//				
+//			}
+//		}
+//		
+//		return article;
+//	}
+//
 
 
 

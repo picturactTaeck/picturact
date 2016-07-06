@@ -24,11 +24,12 @@
 	<link rel="stylesheet" href="resources/bootstrap/css/bootstrap-theme.min.css" />
 	
 <!-- 	user style css -->
-	<link rel="stylesheet" href="resources/userResource/css/mainNavyBar.css?<?=filetime('style.css')?>" />
-	<link rel="stylesheet" href="resources/userResource/css/postArticle.css?<?=filetime('postArticle.css')?>" />
-	<link rel="stylesheet" href="resources/userResource/css/mainPageArticle.css?<?=filetime('mainPageArticle.css')?>" />
-	<link rel="stylesheet" href="resources/userResource/css/personalPageArticle.css?<?=filetime('personalPageArticle.css')?>" />
-	<link rel="stylesheet" href="resources/userResource/css/personalPageProfile.css?<?=filetime('personalPageProfile.css')?>" />
+	<link rel="stylesheet" href="resources/userResource/css/mainNavyBar.css?<?=filemtime('style.css')?>" />
+	<link rel="stylesheet" href="resources/userResource/css/postArticle.css" />
+	<link rel="stylesheet" href="resources/userResource/css/mainPageArticle.css" />
+	<link rel="stylesheet" href="resources/userResource/css/imageView.css" />
+	<link rel="stylesheet" href="resources/userResource/css/personalPageArticle.css?<?=filemtime('personalPageArticle.css')?>" />
+	<link rel="stylesheet" href="resources/userResource/css/personalPageProfile.css?<?=filemtime('personalPageProfile.css')?>" />
 	<link rel="stylesheet" href="resources/userResource/css/friend_nav.css?<?=filemtime('friend_nav.css')?>" />
 	
 	
