@@ -41,6 +41,13 @@
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
 	</bean>	
 	
+	
+	<bean id="FollowDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="com.project.picturact.follow.dao.FollowDao" />
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
+	</bean>	
+	
 
 
 <!-- jdbc DataSource -->

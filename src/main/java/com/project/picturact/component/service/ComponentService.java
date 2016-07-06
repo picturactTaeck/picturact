@@ -12,4 +12,6 @@ public interface ComponentService {
 
 	public ArrayList<String> getFollowList(String userId);
 
+	public int getFollowState(String pageId, String userId);
+
 }

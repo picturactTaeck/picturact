@@ -36,27 +36,12 @@
 	<!-- 	user style js -->
 	<script src="resources/userResource/js/friend_nav.js?<?=filetime('friend_nav.js')?>"></script>
 	<script src="resources/userResource/js/postArticle.js?<?=filetime('postArticle.js')?>"></script>
+	<script src="resources/userResource/js/follow.js"></script>
 	
 <!-- 	font css -->
 	<link rel="stylesheet" href="resources/userResource/css/font.css?<?=filemtime('font.css')?>" />
 	
-	
-	<script>
-	$(document).ready(function(){
-		
-		$("#followButton").on("click", function(){
-			alert("hey");
-			changeFollowState('${whosPage}', $("#followButton").val());
-			
-		});
-		
-	
-		
-		
-	});
-	
-	
-	</script>
+
 </head>
 
 <body >

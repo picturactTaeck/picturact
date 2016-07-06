@@ -13,28 +13,21 @@
 		<div class="col-xs-8 ">
 			
 			<div class="personal_profile_info" style="">
-				<span class="personal_profile_userid"><font>PICTURACT</font></span>
-				<c:if test="${follower==0}">
-					<span class="col-xs-5"
-						style="min-width: 100px; padding-left: 0px; margin-top: 20px">
-						<input type="button" id="followButton" class="btn btn-warning btn-sm "
-						value="+follow"></span>
-				</c:if>
-				<c:if test="${follower==1}">
-					<span class=""
-						><input
-						type="button" id="followButton"
-						class="btn btn-default btn-sm active" value="-unfollow"></span>
-				</c:if>
-				
+				<span class="personal_profile_userid"><font>${whosPage}</font></span>
 				<span class="">
-					<input type="button" id="followButton" class="btn btn-default border-top-radius btn-xs personal_profile_follow" value="follow">
-					<input type="button" id="followButton" class="btn btn-default border-top-radius btn-xs active personal_profile_follow" value="-unfollow">
+					<c:if test="${follow==0}">
+						<input type="button" id="followButton" followState="${follow}" class="btn btn-default border-top-radius btn-xs personal_profile_follow" value="follow">
+					</c:if>
+					<c:if test="${follow==1}">
+					<input type="button" id="followButton" followState="${follow}" class="btn btn-default border-top-radius btn-xs active personal_profile_follow" value="-unfollow">
+					</c:if>
+				
+			
 				</span>
 
 			</div>
 			<div class="">
-				<h5>${whosPage} PICTURACT
+
 					<a>www.picturact.com</a>
 				</h5>
 			</div>

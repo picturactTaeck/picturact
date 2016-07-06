@@ -1,6 +1,7 @@
 package com.project.picturact.component.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import javax.inject.Inject;
 
@@ -72,6 +73,8 @@ public class ComponentServiceImpl implements ComponentService {
 //	}
 //
 
+	
+	
 
 
 
@@ -80,6 +83,20 @@ public class ComponentServiceImpl implements ComponentService {
 	public ArrayList<String> getFollowList(String userId) {
 		// TODO Auto-generated method stub
 		return componentDao.getFollowList(userId);
+	}
+
+
+
+
+
+	@Override
+	public int getFollowState(String pageId, String userId) {
+		// TODO Auto-generated method stub
+		
+		HashMap<String, String> followInfo = new HashMap<String, String>();
+		
+		
+		return componentDao.getFollowState(followInfo);
 	}
 
 

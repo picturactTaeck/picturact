@@ -42,14 +42,16 @@ public class ArticleComponentController {
 	}
 	
 	
-	@RequestMapping(value="/{userId}")
-	public ModelAndView personPage(@PathVariable String userId,HttpSession session){
+	@RequestMapping(value="/{pageId}")
+	public ModelAndView personPage(@PathVariable String pageId,HttpSession session){
 //		String id = (String) session.getAttribute("id");
 		System.out.println("personalPage");
+		String userId = "master";
 		System.out.println("userId : "+userId);
 		mav.addObject("whatPost", WhatPost.PERSONAL_PAGE);
-		mav.addObject("articleList", componentService.getPersonalArticle(userId));
-		
+		mav.addObject("articleList", componentService.getPersonalArticle(pageId));
+		mav.addObject("follow",componentService.getFollowState(pageId,userId));
+		mav.addObject("whosPage",pageId);
 		mav.setViewName("mainPage");
 		return mav;
 	}

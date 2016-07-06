@@ -39,6 +39,12 @@
 		SELECT FOLLOWID FROM PICTURACT_PERSONRELATION WHERE USERID=#{userId}
 	</select>
 
+	<select id="getFollowState" resultType="int" parameterType="hashmap">
+		SELECT COUNT(*) FROM PICTURACT_PERSONRELATION
+		WHERE USERID IN (#{pageId}) AND FOLLOWID IN (#{userId})
+	</select>
+	
+
 
 
 	<!-- <insert id="insertArticle" parameterType="bbsDto"> -->
@@ -63,11 +69,7 @@
 	<!-- FROM dual -->
 	<!-- </select> -->
 
-	<!-- <select id="checkRelation" resultType="int" parameterType="hashmap"> -->
-	<!-- SELECT COUNT(*) FROM PICTURACT_PERSONRELATION -->
-	<!-- WHERE USERID IN (#{id}) AND FOLLOWID IN (#{userId}) -->
-	<!-- </select> -->
-
+	
 	<!-- <select id="deleteRelation"> -->
 	<!-- DELETE FROM PICTURACT_PERSONRELATION -->
 	<!-- WHERE USERID IN (#{id}) AND FOLLOWID IN (#{userId}) -->
