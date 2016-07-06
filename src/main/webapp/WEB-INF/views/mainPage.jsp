@@ -24,17 +24,17 @@
 	<link rel="stylesheet" href="resources/bootstrap/css/bootstrap-theme.min.css" />
 	
 <!-- 	user style css -->
-	<link rel="stylesheet" href="resources/userResource/css/mainNavyBar.css?<?=filemtime('style.css')?>" />
-	<link rel="stylesheet" href="resources/userResource/css/postArticle.css" />
-	<link rel="stylesheet" href="resources/userResource/css/mainPageArticle.css?<?=filemtime('mainPageArticle.css')?>" />
-	<link rel="stylesheet" href="resources/userResource/css/personalPageArticle.css?<?=filemtime('personalPageArticle.css')?>" />
-	<link rel="stylesheet" href="resources/userResource/css/personalPageProfile.css?<?=filemtime('personalPageProfile.css')?>" />
+	<link rel="stylesheet" href="resources/userResource/css/mainNavyBar.css?<?=filetime('style.css')?>" />
+	<link rel="stylesheet" href="resources/userResource/css/postArticle.css?<?=filetime('postArticle.css')?>" />
+	<link rel="stylesheet" href="resources/userResource/css/mainPageArticle.css?<?=filetime('mainPageArticle.css')?>" />
+	<link rel="stylesheet" href="resources/userResource/css/personalPageArticle.css?<?=filetime('personalPageArticle.css')?>" />
+	<link rel="stylesheet" href="resources/userResource/css/personalPageProfile.css?<?=filetime('personalPageProfile.css')?>" />
 	<link rel="stylesheet" href="resources/userResource/css/friend_nav.css?<?=filemtime('friend_nav.css')?>" />
 	
 	
 	<!-- 	user style js -->
-	<script src="resources/userResource/js/friend_nav.js?<?=filemtime('friend_nav.js')?>"></script>
-	<script src="resources/userResource/js/postArticle.js?<?=filemtime('postArticle.js')?>"></script>
+	<script src="resources/userResource/js/friend_nav.js?<?=filetime('friend_nav.js')?>"></script>
+	<script src="resources/userResource/js/postArticle.js?<?=filetime('postArticle.js')?>"></script>
 	
 <!-- 	font css -->
 	<link rel="stylesheet" href="resources/userResource/css/font.css?<?=filemtime('font.css')?>" />

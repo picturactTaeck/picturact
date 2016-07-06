@@ -1,6 +1,7 @@
 package com.project.picturact.article.service;
 
 import java.io.IOException;
+import java.util.Iterator;
 
 import javax.annotation.Resource;
 import javax.inject.Inject;
@@ -25,14 +26,16 @@ public class ArticleServiceImpl implements ArticleService {
 	@Override
 	public void postArticle(String userId, String content, MultipartHttpServletRequest postImgs) throws IOException, Exception {
 		// TODO Auto-generated method stub
-		
-//		ArrayList<String> storedFnames = new  ArrayList<String>();
+
 		int nextArticleNum = articleDao.getNextArticleNum();
 		ImageInfo imgInfo;
 		ArticleInfo article = new ArticleInfo();
-		
-	
-				
+		article.setUserId(userId);
+		article.setArticleNum(nextArticleNum);
+		article.setContent(content);
+		article.setHowManyFiles(postImgs.getFiles("postImgs").size());
+		articleDao.insertArticle(article);
+
 		
 		for(MultipartFile file:postImgs.getFiles("postImgs")){
 			imgInfo = new ImageInfo();
@@ -42,11 +45,7 @@ public class ArticleServiceImpl implements ArticleService {
 			imgInfo.setFileLength(file.getSize());
 			articleDao.insertImgInfo(imgInfo);
 		}
-		article.setUserId(userId);
-		article.setArticleNum(nextArticleNum);
-		article.setContent(content);
-		article.setHowManyFiles(postImgs.getFiles("postImgs").size());
-		articleDao.insertArticle(article);
+		
 		
 		
 	}

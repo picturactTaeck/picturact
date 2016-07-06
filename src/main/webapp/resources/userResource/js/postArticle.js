@@ -7,54 +7,41 @@ $.ajaxSetup({
 	}
 });
 $(document).ready(function(){
-// 	var deleteFileList = [];
-
+	//This parameter is used to save the images's info
+	//when the delete event occur the type of input can't be done that event
+	//(because input type file is read only)
+	//so I use this array for delete file before sending to server
 	var imgs = new Array();
+	//when the input image 
 	$("#addPostImg").on("change", function(){
-
-
 		showThumbnails(this.files);
-		addImgInfo(this.files);
+	
+	
 		$(this).val("");
-
-		
-		
+	
 	});
-
+	//deleting file immediately
 	$(document).on("click",".thumbnailClick",function(){
-
+		
 		var index = $(".thumbnailClick").index($(this));
 		alert(index);
-//		$(this).attr("style","display:none");
 		$(this).remove();
+		//splice function is remove element of array
 		imgs.splice(index,1);
-		alert(imgs)
-
 		
 	});
 	
-	
-	function addImgInfo(files){
-		$.each(files, function(){
-			imgs.push(this);
-		});
-		alert(imgs);
-		
-		
-	
-	}
 	
 	
 	$("#postArticle").on('click',function(){
 		var formData = new FormData();
-		formData.append("postImgs", imgs);
-
-		formData.append("content",$("#postContent").val());
+		for(var i=0; i<imgs.length; i++){
+			formData.append("postImgs", imgs[i]);
+		}
+		formData.append("content",$("#postContent").text());
 		
 
-
-
-
+		//It can be send data asynchronously to server
 		$.ajax({
 			url:"/post.article",
 			contentType: false,
@@ -62,9 +49,12 @@ $(document).ready(function(){
 		 	data:formData,
 		 	dataType:"text",
 			success: function (data){
-
+				
 				$("#addImage").val("");
-				$("#postContent").val("");
+				$("#postContent").text("");
+				$("#viewThumbnails").html("");
+				imgs = new Array();
+				alert(data);
 
 			},
 			error: function(a,b,c){
@@ -73,11 +63,29 @@ $(document).ready(function(){
 			
 	 });
 		
-
-		
 	});
 	
-	
+	function showThumbnails(files){
+		
+		for(var i=0;i<files.length;i++){
+			var file = files[i];
+			imgs.push(file);
+			var reader = new FileReader()
+			reader.readAsDataURL(file);
+			reader.onload = function(e){	
+				var html = "";
+					html+='<div class="col-xs-2 thumbnail thumbnailClick">';
+					html+='<div class="thumbnail2 ">';
+					html+='<div class="centered">';
+					html+='<img src="'+e.target.result+'"/>';
+					html+='</div><div></div>';
+				
+				 $("#viewThumbnails").append(html);
+			};
+		}
+
+
+}
 	
 	
 	
@@ -99,28 +107,7 @@ $(document).ready(function(){
 
 
 
-function showThumbnails(files){
-	
-		for(var i=0;i<files.length;i++){
-			var file = files[i];
-			
-			var reader = new FileReader()
-			reader.readAsDataURL(file);
-			reader.onload = function(e){	
-				var html = "";
-					html+='<div class="col-xs-2 thumbnail thumbnailClick">';
-//					html+="<small data-src='"+data+"' class='fileNameList'></small>";
-					html+='<div class="thumbnail2 ">';
-					html+='<div class="centered">';
-					html+='<img src="'+e.target.result+'"/>';
-					html+='</div><div></div>';
-				
-				 $("#viewThumbnails").append(html);
-			};
-		}
 
-
-}
 
 
 function checkImageType(fileName){	

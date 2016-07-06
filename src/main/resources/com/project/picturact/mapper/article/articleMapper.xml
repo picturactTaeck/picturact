@@ -19,7 +19,7 @@
 
 	</insert>
 
-	<insert id="insertFileArticle" parameterType="imageInfo">
+	<insert id="insertImgInfo" parameterType="imageInfo">
 
 		INSERT INTO PICTURACT_FILELIST
 			VALUES(PIC_FILE_SEQ.NEXTVAL,#{storedFname},#{fileLength},#{articleNum})

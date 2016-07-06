@@ -1,11 +1,14 @@
 package com.project.picturact.article.controller;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
@@ -19,12 +22,13 @@ public class ArticleController {
 	
 	@RequestMapping(value="/post.article")
 	@ResponseBody
-//	@Transactional
-	public String postArticle(String content, MultipartHttpServletRequest postImgs, HttpSession session){
-		
+	public String postArticle( String content , MultipartHttpServletRequest postImgs, HttpSession session){
+
+		System.out.println("addPost");
 		String userId = (String) session.getAttribute("userId");
 		userId="master";
 		
+
 		try{
 			articleService.postArticle(userId, content, postImgs);
 		}catch(Exception e){
@@ -32,7 +36,7 @@ public class ArticleController {
 		}
 		
 		
-		return "";
+		return "send";
 		
 	}
 	

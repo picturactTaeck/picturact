@@ -15,8 +15,8 @@
 <%-- 					<img class="img-responsive" src="/img/${files.storedFname}" alt=""> --%>
 			<c:if test="${ article.howManyFiles==1}">
 				<c:forEach var="files" items="${article.fileList}">
-<%-- 					<img class="img-responsive" src="/img/${files.storedFname}" alt=""> --%>
-					<img src="http://placehold.it/400x400" alt="profile">
+					<img class="img-responsive" src="/img/${files.storedFname}" alt="">
+<!-- 					<img src="http://placehold.it/400x400" alt="profile"> -->
 				</c:forEach>
 
 			</c:if>
@@ -45,16 +45,16 @@
 							<c:if test="${fileNumStatus.first}">
 								<div class="item active">
 
-<%-- 									<img class="img-responsive" src="/img/${files.storedFname}" alt=""> --%>
-										<img src="http://placehold.it/400x400" alt="profile" >
+									<img class="img-responsive" src="/img/${files.storedFname}" alt="">
+<!-- 										<img src="http://placehold.it/400x400" alt="profile" > -->
 									<div class="carousel-caption"></div>
 								</div>
 							</c:if>
 							<c:if test="${!fileNumStatus.first}">
 								<div class="item">
 
-<%-- 										<img class="img-responsive" src="/img/${files.storedFname}" alt=""> --%>
-										<img src="http://placehold.it/400x400" alt="profile" >
+										<img class="img-responsive" src="/img/${files.storedFname}" alt="">
+<!-- 										<img src="http://placehold.it/400x400" alt="profile" > -->
 
 									<div class="carousel-caption"></div>
 								</div>
