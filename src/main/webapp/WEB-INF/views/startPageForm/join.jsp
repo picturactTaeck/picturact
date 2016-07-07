@@ -20,27 +20,47 @@
                             		<p>Fill in the form below to get instant access:</p>
                         		</div>
                         		<div class="form-top-right">
-                        			<span aria-hidden="true"></span>
                         		</div>
                             </div>
                             <div class="form-bottom">
-			                    <form action="" method="post">
+			                    <form action="/join.join" method="post">
 			                    	<div class="form-group">
 			                    		<!-- ID -->
-			                        	<input type="text" name="form-first-name" placeholder="Input your ID..." class="form-first-name form-control" id="userId">
+			                        	<input type="text" placeholder="Input your ID..." class="form-control" name="userId" id="userId">
 			                        </div>
 			                        <div class="form-group">
 			                        	<!-- PASSWORD -->
-			                        	<input type="password" name="form-last-name" placeholder="Input your Password..." class="form-password form-control" id="userPw">
+			                        	<input type="password" placeholder="Input your Password..." class="form-control" name="password" id="password">
 			                        </div>
+			                        
+			                        <div class="form-group">
+			                        	<!-- User nickName -->
+			                        	<input type="text" placeholder="Input your Nickname..." class="form-control" name="nickName" id="nickName">
+			                        </div>
+			                        
+			                        <div class="form-group">
+			                        	<!-- USERNAME -->
+			                        	<input type="text" placeholder="Input your Name..." class="form-control" name="userName" id="userName">
+			                        </div>			                        
+			                        
 			                        <div class="form-group">
 			                        	<!-- E-MAIL -->
-			                        	<input type="text" name="form-email" placeholder="E-mail..." class="form-email form-control" id="userEmail">
+			                        	<input type="text" placeholder="E-mail..." class="form-control" name="eMail" id="eMail">
 			                        </div>
-			                        <div class="form-group">
-			                        	<!-- 메모 -->
-			                        	<textarea name="form-about-yourself" placeholder="About yourself..." class="form-about-yourself form-control" id="userMemo"></textarea>
-			                        </div>
+<!-- 			                        <div class="form-group"> -->
+<!-- 			                        	메모 -->
+<!-- 			                        	<textarea placeholder="About yourself...(선택)" class="form-control" name="userMemo" id="userMemo"></textarea> -->
+<!-- 			                        </div> -->
+          							
+<!--           							<div class="form-group"> -->
+<!-- 			                        	관리자 확인 -->
+<!-- 			                        	관리자여부 : -->
+<!-- 			                        	<select name="admin"> -->
+<!-- 			                        		<option>Yes</option> -->
+<!-- 			                        		<option selected="selected">No</option> -->
+<!-- 			                        	</select> -->
+<!-- 			                        </div> -->
+			                        
 			                        <span style="float:right">
 <!-- 				                        <input type="button" class="btn btn-default" value="Join" /> -->
 				                        <button type="submit" style="" class="btn btn-default" >Join</button>
