@@ -24,11 +24,9 @@ public class ArticleComponentController {
 	public ModelAndView mainPage(HttpSession session){
 		String userId = (String) session.getAttribute("userId");
 		mav = new ModelAndView();
-		userId = "popo";
+
 		System.out.println("mainPage");
-		
-		//HSJ testing
-		mav.addObject("userId", "popo");
+
 		
 //		get main page article service(userId -> log in id)
 		mav.addObject("articleList", componentService.getMainArticle(userId));

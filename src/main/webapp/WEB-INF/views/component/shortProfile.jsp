@@ -29,7 +29,7 @@
 			<div class="">
 
 					<a>www.picturact.com</a>
-				</h5>
+
 			</div>
 			
 

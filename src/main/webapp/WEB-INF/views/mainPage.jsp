@@ -41,7 +41,7 @@
 	<script src="resources/userResource/js/chat.js?<?=filetime('chat.js')?>"></script>
 	
 	<!-- Node js testing server check!!!!! -->
-	<script src="http://localhost:8801/socket.io/socket.io.js"></script>
+	<script src="http://localhost:3033/socket.io/socket.io.js"></script>
 	
 <!-- 	font css -->
 	<link rel="stylesheet" href="resources/userResource/css/font.css?<?=filemtime('font.css')?>" />

@@ -20,9 +20,7 @@ public class ArticleController {
 	@ResponseBody
 	public String postArticle( String content , MultipartHttpServletRequest postImgs, HttpSession session){
 
-		System.out.println("addPost");
 		String userId = (String) session.getAttribute("userId");
-		userId="master";
 		
 
 		try{

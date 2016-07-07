@@ -1,7 +1,7 @@
 	$(document).ready(function(){
 		
 		$("#followButton").on("click", function(){
-			alert("hey");
+;
 			changeFollowState('${whosPage}', $("#followButton").val());
 			
 		});
