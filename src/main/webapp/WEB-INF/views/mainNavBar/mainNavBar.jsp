@@ -22,7 +22,7 @@
 				</ul>
 				
 				<ul class="main_navy_style_text_color navbar_textrightflow ">
-		        	<li><a href="startPage.jsp"><i class="glyphicon glyphicon-off" aria-hidden="true"></i></a></li>
+		        	<li><a href="/logout.login"><i class="glyphicon glyphicon-off" aria-hidden="true"></i></a></li>
 		        	<li><a id="friend_nav" href="/"><i class="glyphicon glyphicon-user" aria-hidden="true"></i></a></li>
 		      	</ul>
 			</div>

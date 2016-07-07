@@ -16,9 +16,9 @@ import com.project.picturact.member.service.MemberLoginService;
 
 @Controller
 public class MemberController {
-	//login, join 占쏙옙占� 占쏙옙占쏙옙求占� controller
-	//占십울옙占쏙옙 service, dto, dao 占쏙옙占쏙옙 login, join 占쏙옙占쏙옙占쏘서 占쏙옙占�
-	//url 占쏙옙占쏙옙 *.login, *.join 占쏙옙占쏙옙
+	//login, join ��������占� ������������黎���占� controller
+	//�����몄�������� service, dto, dao ������������ login, join ������������������ ��������占�
+	//url ������������ *.login, *.join ������������
 	
 	@Autowired
 	MemberJoinService joinService;
@@ -43,7 +43,7 @@ public class MemberController {
 	@RequestMapping(value="/logout.login")
 	public String logout(HttpSession session){
 		session.invalidate();
-		return "loginPage";
+		return "redirect:/";
 	}
 	
 	
