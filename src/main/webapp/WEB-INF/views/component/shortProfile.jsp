@@ -15,20 +15,21 @@
 			<div class="personal_profile_info" style="">
 				<span class="personal_profile_userid"><font>${whosPage}</font></span>
 				<span class="">
-					<c:if test="${follow==0}">
-						<input type="button" id="followButton" followState="${follow}" class="btn btn-default border-top-radius btn-xs personal_profile_follow" value="follow">
+					<c:if test="${userId ne whosPage}">
+						<c:if test="${follow==0}">
+							<input type="button" id="followButton" followState="${follow}" user="${whosPage}" class="btn btn-default border-top-radius btn-xs personal_profile_follow" value="+follow">
+						</c:if>
+						<c:if test="${follow==1}">
+							<input type="button" id="followButton" followState="${follow}" user="${whosPage}" class="btn btn-default border-top-radius btn-xs active personal_profile_follow active" value="-unfollow">
+						</c:if>
 					</c:if>
-					<c:if test="${follow==1}">
-					<input type="button" id="followButton" followState="${follow}" class="btn btn-default border-top-radius btn-xs active personal_profile_follow" value="-unfollow">
-					</c:if>
-				
 			
 				</span>
 
 			</div>
 			<div class="">
 
-					<a>www.picturact.com</a>
+					<a>Hi~ This is ${whosPage}'s page</a>
 
 			</div>
 			

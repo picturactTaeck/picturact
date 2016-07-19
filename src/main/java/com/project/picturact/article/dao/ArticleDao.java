@@ -1,12 +1,18 @@
 package com.project.picturact.article.dao;
 
-import com.project.picturact.component.dto.ArticleInfo;
-import com.project.picturact.component.dto.ImageInfo;
+import java.util.ArrayList;
+
+import com.project.picturact.article.dto.ArticleContent;
+import com.project.picturact.article.dto.ArticleInfo;
+import com.project.picturact.article.dto.ImageInfo;
 
 public interface ArticleDao {
 
 	public int getNextArticleNum();
 	public void insertImgInfo(ImageInfo imgInfo);
-	public void insertArticle(ArticleInfo article);
+	public void insertArticle(ArticleContent article);
+	public ArrayList<ImageInfo> getArticleFile(int articleNum);
+	public ArrayList<ArticleContent> getMainPageArticle(ArticleInfo articleInfo);
+	public ArrayList<ArticleContent> getPersonalArticle(ArticleInfo articleInfo);
 
 }

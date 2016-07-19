@@ -27,7 +27,7 @@
 		
 	</ul>
 </div>
-	<div id="chat">
-		<%@ include file="chat.jsp" %>
-	</div>
+
+		<%@ include file="chat2.jsp" %>
+
 </div>

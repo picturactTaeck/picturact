@@ -27,6 +27,46 @@
 
 
 	</insert>
+	
+	<select id="getMainPageArticle" resultType="articleContent"
+		parameterType="String">
+
+		SELECT ARTICLENUM, USERID,
+				REGEXP_REPLACE(content, <![CDATA['<[^>]*>|\&([^;])*;']]>,'') content, WRITEDATE, HOWMANYFILES, RM
+			 FROM (SELECT article.*, ROWNUM RM FROM (SELECT * FROM PICTURACT_ARTICLE WHERE 
+		<if test="lastArticleNum==0"></if>
+		<if test="lastArticleNum!=0"> <![CDATA[ ARTICLENUM<]]>#{lastArticle} AND </if>
+			 USERID IN 
+      			(SELECT FOLLOWID FROM PICTURACT_PERSONRELATION WHERE USERID='master') 
+         			OR USERID='master' ORDER BY ARTICLENUM DESC) article )
+   	
+   			WHERE  RM BETWEEN 1 AND 10
+		
+	
+	</select>
+
+	<select id="getArticleFile" parameterType="int" resultType="imageInfo">
+		SELECT * FROM PICTURACT_FILELIST WHERE ARTICLENUM=#{articleNum}
+		ORDER BY FILENUM DESC
+
+	</select>
+	
+	<select id="getPersonalArticle" resultType="articleContent"
+		parameterType="articleInfo">
+
+		SELECT ARTICLENUM, USERID,
+		REGEXP_REPLACE(content, <![CDATA['<[^>]*>|\&([^;])*;']]>,'') content, WRITEDATE, HOWMANYFILES
+			
+		 FROM (SELECT article.*, ROWNUM RM FROM (SELECT * FROM PICTURACT_ARTICLE WHERE 
+		<if test="lastArticleNum==0"></if>
+		<if test="lastArticleNum!=0"> <![CDATA[ ARTICLENUM<]]>#{lastArticle} AND </if>
+			 USERID=#{userId}) article)
+   			WHERE  RM BETWEEN 1 AND 10
+   			ORDER BY ARTICLENUM DESC
+		
+		
+		
+	</select>
 
 	<!-- <select id="getNextArticleNum" resultType="int"> -->
 	<!-- SELECT bbs_seq.nextval -->

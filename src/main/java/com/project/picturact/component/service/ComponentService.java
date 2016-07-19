@@ -2,13 +2,11 @@ package com.project.picturact.component.service;
 
 import java.util.ArrayList;
 
-import com.project.picturact.component.dto.ArticleInfo;
+import com.project.picturact.article.dto.ArticleContent;
 
 public interface ComponentService {
 
-	public ArrayList<ArticleInfo> getMainArticle(String userId);
 
-	public ArrayList<ArticleInfo> getPersonalArticle(String userId);
 
 	public ArrayList<String> getFollowList(String userId);
 

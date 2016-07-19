@@ -18,10 +18,11 @@
 	
 
 	<typeAliases>
-		<typeAlias alias="articleInfo" type="com.project.picturact.component.dto.ArticleInfo"/>
-		<typeAlias alias="imageInfo" type="com.project.picturact.component.dto.ImageInfo"/>
+		<typeAlias alias="articleContent" type="com.project.picturact.article.dto.ArticleContent"/>
+		<typeAlias alias="imageInfo" type="com.project.picturact.article.dto.ImageInfo"/>
 		<typeAlias alias="noticeDto" type="com.project.picturact.admin.dto.NoticeDto"/>
 		<typeAlias alias="memberDto" type="com.project.picturact.member.dto.MemberDto"/>
+		<typeAlias alias="articleInfo" type="com.project.picturact.article.dto.ArticleInfo"/>
 	</typeAliases>
 
 	<mappers>

@@ -5,35 +5,7 @@
 
 <mapper namespace="com.project.picturact.component.dao.ComponentDao">
 
-	<select id="getMainPageArticle" resultType="articleInfo"
-		parameterType="String">
 
-		SELECT ARTICLENUM, USERID,
-		REGEXP_REPLACE(content, <![CDATA['<[^>]*>|\&([^;])*;']]>,'')
-		content, WRITEDATE, HOWMANYFILES
-		FROM PICTURACT_ARTICLE
-		WHERE USERID IN (SELECT FOLLOWID FROM PICTURACT_PERSONRELATION WHERE
-		USERID=#{userId}) OR USERID=#{userId}
-		ORDER BY ARTICLENUM DESC
-	</select>
-
-	<select id="getArticleFile" parameterType="int" resultType="imageInfo">
-		SELECT * FROM PICTURACT_FILELIST WHERE ARTICLENUM=#{articleNum}
-		ORDER BY FILENUM DESC
-
-	</select>
-
-
-	<select id="getPersonalPageArticle" resultType="articleInfo"
-		parameterType="String">
-
-		SELECT ARTICLENUM, USERID,
-		REGEXP_REPLACE(content, <![CDATA['<[^>]*>|\&([^;])*;']]>,'')
-		content, WRITEDATE, HOWMANYFILES
-		FROM PICTURACT_ARTICLE
-		WHERE USERID=#{userId}
-		ORDER BY ARTICLENUM DESC
-	</select>
 
 	<select id="getFollowList" parameterType="String" resultType="String">
 		SELECT FOLLOWID FROM PICTURACT_PERSONRELATION WHERE USERID=#{userId}
@@ -41,7 +13,7 @@
 
 	<select id="getFollowState" resultType="int" parameterType="hashmap">
 		SELECT COUNT(*) FROM PICTURACT_PERSONRELATION
-		WHERE USERID IN (#{pageId}) AND FOLLOWID IN (#{userId})
+		WHERE USERID IN (#{userId}) AND FOLLOWID IN (#{pageId})
 	</select>
 	
 

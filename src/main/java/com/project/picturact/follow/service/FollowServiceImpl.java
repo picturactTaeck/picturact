@@ -20,11 +20,13 @@ public class FollowServiceImpl implements FollowService {
 		HashMap<String, String> relationInfo = new HashMap<String, String>();
 		relationInfo.put("pageId", pageId);
 		relationInfo.put("userId", userId);
-		
+		System.out.println(follow);
 		if(follow == FollowState.FOLLOW){
 			followDao.unfollow(relationInfo);
+//			System.out.println("delete");
 		}else{
 			followDao.follow(relationInfo);
+//			System.out.println("insert");
 		}
 		
 		return followDao.getFollowState(relationInfo);

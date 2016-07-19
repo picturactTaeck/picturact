@@ -15,17 +15,15 @@ $(document).ready(function(){
 	//when the input image 
 	$("#addPostImg").on("change", function(){
 		showThumbnails(this.files);
-	
-	
 		$(this).val("");
 	
 	});
-	//deleting file immediately
+	
+	//delete file immediately
 	$(document).on("click",".thumbnailClick",function(){
-		
 		var index = $(".thumbnailClick").index($(this));
-		alert(index);
 		$(this).remove();
+		alert("thumbnail delete");
 		//splice function is remove element of array
 		imgs.splice(index,1);
 		
@@ -49,13 +47,10 @@ $(document).ready(function(){
 		 	data:formData,
 		 	dataType:"text",
 			success: function (data){
-				
 				$("#addImage").val("");
 				$("#postContent").text("");
 				$("#viewThumbnails").html("");
 				imgs = new Array();
-				alert(data);
-
 			},
 			error: function(a,b,c){
 				alert('실패 a : '+ a + " b : " + b + " c : " + c);
@@ -95,15 +90,6 @@ $(document).ready(function(){
 
 
 });
-
-
-
-
-
-
-
-
-
 
 
 

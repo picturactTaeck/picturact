@@ -7,73 +7,16 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
+import com.project.picturact.article.dto.ArticleContent;
+import com.project.picturact.article.dto.ImageInfo;
 import com.project.picturact.component.dao.ComponentDao;
-import com.project.picturact.component.dto.ArticleInfo;
-import com.project.picturact.component.dto.ImageInfo;
 
 @Service
 public class ComponentServiceImpl implements ComponentService {
 	@Inject
 	ComponentDao componentDao;
 
-	@Override
-	public ArrayList<ArticleInfo> getMainArticle(String userId) {
-		// TODO Auto-generated method stub
-		
-		
-		return this.mappingFiles(componentDao.getMainPageArticle(userId));
-	}
-	
-	
-	
-	
-	
-	@Override
-	public ArrayList<ArticleInfo> getPersonalArticle(String userId) {
-		// TODO Auto-generated method stub
-		System.out.println("service : "+userId);
-		return this.mappingFiles(componentDao.getPersonalPageArticle(userId));
-	}
 
-
-
-
-
-	public ArrayList<ArticleInfo> mappingFiles(ArrayList<ArticleInfo> article) {
-		// TODO Auto-generated method stub
-		
-		for(ArticleInfo i : article){
-			i.setFileList(componentDao.getArticleFile(i.getArticleNum()));
-		}
-		
-		return article;
-	}
-//	
-//	public ArrayList<ArticleInfo> mappingOriginFiles(ArrayList<ArticleInfo> article) {
-//		// TODO Auto-generated method stub
-//		
-//		for(ArticleInfo i : article){
-////			for(ImageInfo j : componentDao.getArticleFile(i.getArticleNum())){
-////				j.setOriginFname(j.getStoredFname().substring(0, j.getStoredFname().indexOf('_')-1)+""+
-////						j.getStoredFname().substring(j.getStoredFname().indexOf('_')+1, j.getStoredFname().length()));
-////				System.out.println("original : "+j.getOriginFname());
-////			}
-//			i.setFileList(componentDao.getArticleFile(i.getArticleNum()));
-//			
-//			for(ImageInfo j :i.getFileList()){
-//				j.setOriginFname(j.getStoredFname().substring(0, j.getStoredFname().indexOf('_')-1)+""+
-//						j.getStoredFname().substring(j.getStoredFname().indexOf('_')+1, j.getStoredFname().length()));
-//				System.out.println("original : "+j.getOriginFname());
-//				System.out.println("stored : " +j.getStoredFname());
-//				
-//			}
-//		}
-//		
-//		return article;
-//	}
-//
-
-	
 	
 
 
@@ -94,6 +37,8 @@ public class ComponentServiceImpl implements ComponentService {
 		// TODO Auto-generated method stub
 		
 		HashMap<String, String> followInfo = new HashMap<String, String>();
+		followInfo.put("pageId", pageId);
+		followInfo.put("userId", userId);
 		
 		
 		return componentDao.getFollowState(followInfo);

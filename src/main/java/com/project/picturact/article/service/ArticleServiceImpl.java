@@ -1,6 +1,7 @@
 package com.project.picturact.article.service;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Iterator;
 
 import javax.annotation.Resource;
@@ -11,8 +12,9 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.project.picturact.article.dao.ArticleDao;
-import com.project.picturact.component.dto.ArticleInfo;
-import com.project.picturact.component.dto.ImageInfo;
+import com.project.picturact.article.dto.ArticleContent;
+import com.project.picturact.article.dto.ArticleInfo;
+import com.project.picturact.article.dto.ImageInfo;
 
 @Service
 public class ArticleServiceImpl implements ArticleService {
@@ -22,6 +24,8 @@ public class ArticleServiceImpl implements ArticleService {
 	
 	@Resource(name="saveDir")
 	String saveDir;
+	
+	ArticleInfo articleInfo;
 
 	@Override
 	public void postArticle(String userId, String content, MultipartHttpServletRequest postImgs) throws IOException, Exception {
@@ -29,7 +33,7 @@ public class ArticleServiceImpl implements ArticleService {
 
 		int nextArticleNum = articleDao.getNextArticleNum();
 		ImageInfo imgInfo;
-		ArticleInfo article = new ArticleInfo();
+		ArticleContent article = new ArticleContent();
 		article.setUserId(userId);
 		article.setArticleNum(nextArticleNum);
 		article.setContent(content);
@@ -50,6 +54,41 @@ public class ArticleServiceImpl implements ArticleService {
 		
 		
 		
+	}
+
+	@Override
+	public ArrayList<ArticleContent> getMainArticles(String userId, int lastArticleNum) {
+		// TODO Auto-generated method stub
+		
+		articleInfo = new ArticleInfo();
+		articleInfo.setUserId(userId);
+		articleInfo.setLastArticleNum(lastArticleNum);
+		
+		
+		return this.mappingFiles(articleDao.getMainPageArticle(articleInfo));
+	}
+	
+	
+	
+
+	@Override
+	public ArrayList<ArticleContent> getPersonalArticles(String whosPage, int lastArticleNum) {
+		// TODO Auto-generated method stub
+		articleInfo = new ArticleInfo();
+		articleInfo.setUserId(whosPage);
+		articleInfo.setLastArticleNum(lastArticleNum);
+		
+		return  this.mappingFiles(articleDao.getPersonalArticle(articleInfo));
+	}
+
+	public ArrayList<ArticleContent> mappingFiles(ArrayList<ArticleContent> article) {
+		// TODO Auto-generated method stub
+		
+		for(ArticleContent i : article){
+			i.setFileList(articleDao.getArticleFile(i.getArticleNum()));
+		}
+		
+		return article;
 	}
 	
 	

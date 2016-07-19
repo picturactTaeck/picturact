@@ -1,8 +1,8 @@
 	$(document).ready(function(){
 		
 		$("#followButton").on("click", function(){
-;
-			changeFollowState('${whosPage}', $("#followButton").val());
+
+			changeFollowState();
 			
 		});
 		
@@ -10,8 +10,8 @@
 		
 		
 	});
-	function changeFollowState(whosPage, userId){
-
+	function changeFollowState(){
+		alert($("#followButton").attr("user"));
 
 		
 		$.ajax({
@@ -19,22 +19,25 @@
 			url:"/changeState.follow",
 			// 			data{}에서는 EL을 ""로 감싸야함..그외에는 그냥 사용
 						data:{	
-							pageId:whosPage,
+							pageId:$("#followButton").attr("user"),
 							follow:$("#followButton").attr("followState")
 							
 						},
 						success:function(data){
-
+							alert(data);
+							
 							if(data==1){
-								$("#followButton").attr("class","btn btn-warning btn-sm active");
+								$("#followButton").attr("class","btn btn-default border-top-radius btn-xs active personal_profile_follow active");
 								$("#followButton").val("-unfollow");
 
 
 							}else if(data==0){
-								$("#followButton").attr("class","btn btn-warning btn-sm");
+								$("#followButton").attr("class","btn btn-default border-top-radius btn-xs active personal_profile_follow");
 								$("#followButton").val("+follow");
+								alert($("#followButton").attr("class"));
 
 							}
+							
 							
 						}
 			

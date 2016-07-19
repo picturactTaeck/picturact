@@ -1,0 +1,81 @@
+/* for chating popup area */
+.chatDiv{
+	position:fixed;
+	bottom : 0px; 
+	width: 100%; 
+	height:280px;
+	z-index: 1;
+}
+
+
+/* chating popup div */
+.chat_popup{
+	 width: 230px;
+	 height: 270px;
+	 background-color: rgb(255,255,255);
+/* 	 position:absolute; */
+/* 	 bottom:0px;  */
+	 margin:5px 5px;
+	 border: 1px solid rgb(200,200,200);
+	 float: left;	
+}
+
+/* chating popup's header */
+.chat_popup .chat_header{
+	height: auto; 
+	width:100%; 
+	background-color: rgb(250,250,250);
+	border-bottom: 1px solid rgb(200,200,200);	
+	
+}
+.chat_popup .chat_close {
+	width:30px;
+	height:30px;
+	float: right;
+	
+}
+.chat_popup .chat_close img{
+	width:20px;
+	height:20px;
+	margin: 5px 5px;
+	
+}
+
+
+
+/* for showing id  */
+.chat_popup .chat_header .chat_withWho{
+	height:30px;
+	width:200px;
+}
+
+.chat_popup .chat_header .chat_withWho div{
+	height : 30px;
+	padding : 5px 10px;
+
+}
+
+.chat_content{
+	width : 100%;
+	height:200px;
+	border-bottom: 1px solid rgb(200,200,200);	
+}
+
+/* this area for write and send message */
+.chat_popup .chat_footer{
+	padding-top:5px;
+	height:40px;
+	width: 100%;
+}
+.chat_footer > div{
+	width : 165px;
+	float : left;
+	height:30px;
+	border: 1px solid rgb(220,220,220);	
+	margin : 0px 3px;
+}
+.chat_footer > input{
+	float: right;
+	margin : 0px 3px;
+}
+

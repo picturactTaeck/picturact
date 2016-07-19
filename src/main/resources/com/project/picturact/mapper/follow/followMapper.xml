@@ -11,11 +11,11 @@
 	</insert>
 	
 	<delete id="unfollow" parameterType="hashmap">
-		DELETE FORM PICTURACT_PERSONRELATION WHERE USERID=#{userId} AND FOLLOWID=#{pageId}
+		DELETE FROM PICTURACT_PERSONRELATION WHERE USERID=#{userId} AND FOLLOWID=#{pageId}
 	</delete>
 	
-	<select id="getFollowState" parameterType="hashmap">
-		SELETEC COUNT(*) FROM PICTURACT_PERSONRELATION  WHERE USERID=#{userId} AND FOLLOWID=#{pageId}
+	<select id="getFollowState" parameterType="hashmap" resultType="int">
+		SELECT COUNT(*) FROM PICTURACT_PERSONRELATION  WHERE USERID=#{userId} AND FOLLOWID=#{pageId}
 	</select>
 
 

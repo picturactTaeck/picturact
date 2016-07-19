@@ -1,4 +1,4 @@
-package com.project.picturact.component.dto;
+package com.project.picturact.article.dto;
 
 
 import java.util.ArrayList;
@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class ArticleInfo {
+public class ArticleContent {
 	private int articleNum;
 	private String userId;
 	private String title;
@@ -166,9 +166,16 @@ public class ArticleInfo {
 
 	@Override
 	public String toString() {
-		return "BBSDto [articleNum=" + articleNum + ", userId=" + userId + ", title=" + title + ", content=" + content
-				+ ", writeDate=" + writeDate + ", howManyFiles=" + howManyFiles + ", fileList=" + fileList + "]";
+		return "ArticleContent [articleNum=" + articleNum + ", userId=" + userId + ", title=" + title + ", content="
+				+ content + ", writeDate=" + writeDate + ", howManyFiles=" + howManyFiles + ", fileList=" + fileList
+				+ "]";
 	}
+
+
+
+
+
+
 	
 	
 	

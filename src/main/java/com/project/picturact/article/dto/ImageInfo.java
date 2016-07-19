@@ -1,4 +1,4 @@
-package com.project.picturact.component.dto;
+package com.project.picturact.article.dto;
 
 public class ImageInfo {
 	private int fileNum;
@@ -39,28 +39,9 @@ public class ImageInfo {
 	}
 	@Override
 	public String toString() {
-		return "FileDto [fileNum=" + fileNum + ", orginFname=" + originFname + ", storedFname=" + storedFname
+		return "ImageInfo [fileNum=" + fileNum + ", originFname=" + originFname + ", storedFname=" + storedFname
 				+ ", fileLength=" + fileLength + ", articleNum=" + articleNum + "]";
 	}
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + fileNum;
-		return result;
-	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		ImageInfo other = (ImageInfo) obj;
-		if (fileNum != other.fileNum)
-			return false;
-		return true;
-	}
+	
 	
 }

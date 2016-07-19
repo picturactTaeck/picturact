@@ -23,7 +23,7 @@ $.ajaxSetup({
 $(document).ready(function(){
 	
 	 $("#idCheck").on("click", function(){
-		 alert("login check");
+// 		 alert("login check");
 		 console.log("ajax");
 		 var id=$("#userId").val();
 		 var pass=$("#userPassword").val(); 
@@ -48,7 +48,7 @@ $(document).ready(function(){
 					userPassword:$("#userPassword").val()
 				},
 				success:function(data){
-					alert(data.loginStatus);
+// 					alert(data.loginStatus);
 					if(data.loginStatus=="loginOK"){
 						alert("welcome");
 						location.href="/";
