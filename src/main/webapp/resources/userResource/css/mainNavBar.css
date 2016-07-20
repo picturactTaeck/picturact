@@ -1,0 +1,64 @@
+.main_navy_style{
+  background-color: rgb(60,60,60);
+  border-color: background-color: rgb(70,70,70);
+  text
+}
+
+.main_navy_style_text_color > div>a {
+  color:  rgb(150,150,150);
+
+}
+.main_navy_style_text_color > div>a:hover,
+.main_navy_style_text_color > div>a:focus {
+  color:  rgb(220,220,220);
+  background-color: transparent
+
+}
+.picturact_logo{
+	color : #ffcc00;
+}
+
+.picturact_logo:hover,
+.picturact_logo:focus{
+	color : #ffa800;
+}
+
+
+.navbar_textleftflow > div{
+    float: left;
+    margin:5px 10px;
+}
+.navbar_textrightflow > div{
+    float: right;
+    margin:5px 10px;
+}
+
+.navmenu{
+	margin-top: 10px;
+}
+.searchArea{
+	margin:0px auto;
+	margin-top: 5px;
+	background-color: white;
+	float:left;
+	
+	
+}
+.searchEdit{
+	max-width:200px;
+	min-width:150px;
+	height:26px;
+	padding:3px;
+	overflow-x:hidden;
+	
+	
+	
+
+	
+}
+.searchArea > div{
+	float:left;
+
+	
+}
+
