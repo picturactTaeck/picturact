@@ -6,7 +6,7 @@
 <mapper namespace="com.project.picturact.article.dao.ArticleDao">
 
 	<select id="getNextArticleNum" resultType="int">
-		SELECT PIC_ARTICLE_SEQ.NEXTVAL FROM  DUAL
+		SELECT ARTICLE_SEQ.NEXTVAL FROM  DUAL
 	</select>
 
 
@@ -22,7 +22,7 @@
 	<insert id="insertImgInfo" parameterType="imageInfo">
 
 		INSERT INTO PICTURACT_FILELIST
-			VALUES(PIC_FILE_SEQ.NEXTVAL,#{storedFname},#{fileLength},#{articleNum})
+			VALUES(FILE_SEQ.NEXTVAL,#{storedFname},#{fileLength},#{articleNum})
 
 
 
