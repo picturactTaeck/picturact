@@ -35,14 +35,14 @@
 
 
 <!-- 	user style css -->
-<link rel="stylesheet" href="resources/userResource/css/mainNavBar.css" />
+<link rel="stylesheet" href="resources/userResource/css/mainNavBar.css?<?=filemtime('mainNavBar.css')?>" />
 <link rel="stylesheet" href="resources/userResource/css/postArticle.css" />
 <link rel="stylesheet" href="resources/userResource/css/mainPageArticle.css" />
 <link rel="stylesheet" href="resources/userResource/css/imageView.css" />
-<link rel="stylesheet" href="resources/userResource/css/personalPageArticle.css" />
-<link rel="stylesheet" href="resources/userResource/css/personalPageProfile.css" />
-<link rel="stylesheet" href="resources/userResource/css/friend_nav.css" />
-<link rel="stylesheet" href="resources/userResource/css/chat2.css" />
+<link rel="stylesheet" href="resources/userResource/css/personalPageArticle.css?<?=filemtime('personalPageArticle.css')?>" />
+<link rel="stylesheet" href="resources/userResource/css/personalPageProfile.css?<?=filemtime('personalPageProfile.css')?>" />
+<link rel="stylesheet" href="resources/userResource/css/friend_nav.css?<?=filemtime('friend_nav.css')?>" />
+<link rel="stylesheet" href="resources/userResource/css/chat2.css?<?=filemtime('chat2.css')?>" />
 
 <!-- 	user style js -->
 
@@ -53,7 +53,7 @@
 <script src="resources/userResource/js/getPersonalArticle.js"></script>
 
 <!-- Node js testing server check!!!!! -->
-<script src="http://210.119.12.240:3033/socket.io/socket.io.js"></script>
+<script src="http://pknu1.kr:3033/socket.io/socket.io.js"></script>
 
 <!-- 	font css -->
 <link rel="stylesheet"
