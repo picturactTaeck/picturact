@@ -7,7 +7,7 @@
 					<div>{{chatId}}</div>
 				</div>
 			</div>
-			<div class="chat_content" id="chat{{chatId}}">
+			<div class="chat_content chat_scroll custom_scroll" id="chat{{chatId}}" >
 				
 			</div>
 			<div class="chat_footer">
@@ -21,13 +21,13 @@
 
 
 <script id="chatAppend" type="text/x-handlebars-template" >
-	<div class="row" style="margin:0px">
+	<div class="row" style="margin:5px;">
 				
-		<div class="container" style="float:{{whereAppend userId}};max-width: 190px; ">
-			<div style="font-size: 13; text-align:{{whereAppend userId}}">
+		<div class="" style="float:{{whereAppend userId}};max-width: 190px; text-align:{{whereAppend userId}}">
+			<div style="font-size: 13; ">
 				{{userId}}
 			</div>
-			<div style="border: 1px solid rgb(170,170,170); border-radius:0.5em; padding : 2px; font-size:12; white-space:nomal;word-break:break-all;">
+			<div style="float:{{whereAppend userId}};width:auto;border: 1px solid rgb(170,170,170); border-radius:0.5em; padding : 2px; font-size:12;word-break:break-all;">
 				{{message}}
 			</div>
 		</div>

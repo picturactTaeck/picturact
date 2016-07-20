@@ -30,34 +30,25 @@
 <!-- 	original bootstrap's ones -->
 <script src="resources/bootstrap/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css" />
-<link rel="stylesheet"
-	href="resources/bootstrap/css/bootstrap-theme.min.css" />
+<link rel="stylesheet" href="resources/bootstrap/css/bootstrap-theme.min.css" />
 
 
 
 <!-- 	user style css -->
-<link rel="stylesheet"
-	href="resources/userResource/css/mainNavyBar.css?<?=filemtime('style.css')?>" />
+<link rel="stylesheet" href="resources/userResource/css/mainNavyBar.css?<?=filemtime('style.css')?>" />
 <link rel="stylesheet" href="resources/userResource/css/postArticle.css" />
-<link rel="stylesheet"
-	href="resources/userResource/css/mainPageArticle.css" />
+<link rel="stylesheet" href="resources/userResource/css/mainPageArticle.css" />
 <link rel="stylesheet" href="resources/userResource/css/imageView.css" />
-<link rel="stylesheet"
-	href="resources/userResource/css/personalPageArticle.css?<?=filemtime('personalPageArticle.css')?>" />
-<link rel="stylesheet"
-	href="resources/userResource/css/personalPageProfile.css?<?=filemtime('personalPageProfile.css')?>" />
-<link rel="stylesheet"
-	href="resources/userResource/css/friend_nav.css?<?=filemtime('friend_nav.css')?>" />
-<link rel="stylesheet" href="resources/userResource/css/chat2.css" />
+<link rel="stylesheet" href="resources/userResource/css/personalPageArticle.css?<?=filemtime('personalPageArticle.css')?>" />
+<link rel="stylesheet" href="resources/userResource/css/personalPageProfile.css?<?=filemtime('personalPageProfile.css')?>" />
+<link rel="stylesheet" href="resources/userResource/css/friend_nav.css?<?=filemtime('friend_nav.css')?>" />
+<link rel="stylesheet" href="resources/userResource/css/chat2.css?<?=filemtime('chat2.css')?>" />
 
 <!-- 	user style js -->
 
-<script
-	src="resources/userResource/js/friend_nav.js?<?=filetime('friend_nav.js')?>"></script>
-<script
-	src="resources/userResource/js/postArticle.js?<?=filetime('postArticle.js')?>"></script>
-<script
-	src="resources/userResource/js/follow.js?<?=filetime('follow.js')?>"></script>
+<script src="resources/userResource/js/friend_nav.js?<?=filetime('friend_nav.js')?>"></script>
+<script src="resources/userResource/js/postArticle.js?<?=filetime('postArticle.js')?>"></script>
+<script src="resources/userResource/js/follow.js?<?=filetime('follow.js')?>"></script>
 <%-- 	<script src="resources/userResource/js/chat2.js?<?=filemtime('chat2.js')?>"></script> --%>
 <script src="resources/userResource/js/getPersonalArticle.js"></script>
 
