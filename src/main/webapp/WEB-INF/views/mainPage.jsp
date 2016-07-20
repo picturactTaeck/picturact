@@ -49,7 +49,7 @@
 <script src="resources/userResource/js/friend_nav.js?<?=filetime('friend_nav.js')?>"></script>
 <script src="resources/userResource/js/postArticle.js?<?=filetime('postArticle.js')?>"></script>
 <script src="resources/userResource/js/follow.js?<?=filetime('follow.js')?>"></script>
-<%-- 	<script src="resources/userResource/js/chat2.js?<?=filemtime('chat2.js')?>"></script> --%>
+	<script src="resources/userResource/js/chat2.js"></script>
 <script src="resources/userResource/js/getPersonalArticle.js"></script>
 
 <!-- Node js testing server check!!!!! -->
@@ -77,88 +77,6 @@
 					getArticle('getPersonal.article', '${whosPage}');
 				}
 
-				var socket = io.connect('http://210.119.12.240:3033');
-				socket.emit('join', {'userId' : '${userId}'});
-				
-				
-				$(".chatFollower").on(
-						"click",
-						function() {
-							event.preventDefault();
-							alert($(this).attr("follower"));
-							$.ajax({
-								url : "/get.message",
-								type : "POST",
-								async : true,
-								data : {
-									chatId : $(this).attr("follower")
-								},
-								dataType : "json",
-								success : function(data) {
-
-									var source = $("#chatArea").html();
-									var template = Handlebars.compile(source);
-
-									Handlebars.registerHelper('whereAppend',
-											function(userId, options) {
-												if ('${userId}' == userId) {
-													return 'right';
-
-												} else {
-													return 'left';
-												}
-											});
-									Handlebars.registerPartial(
-											'chatContentAppend', $(
-													"#chatAppend").html());
-
-									var html = "";
-
-									var html = template(data);
-									$("#chatDiv").append(html);
-
-								},
-								error : function(xhr) {
-									alert("error html = " + xhr.statusText);
-									// 				function(a,b,c){
-									// 					 alert('실패 a : '+ a + " b : " + b + " c : " + c);}
-								}
-
-							});
-
-						});
-
-				$(document).on("click", ".chat_close", function() {
-
-					var index = $(".chat_close").index($(this));
-					$('.chat_popup').eq(index).remove()
-
-				});
-
-				$(document).on("click", ".sendMessage", function() {
-
-					var toWho = $(this).attr("toWho");
-					var message = $("#sendChatCon" + toWho).text();
-					alert(message);
-					socket.emit('message', {'sendId' : '${userId}','receiveId' : toWho,	'message' : message});
-					var data = {'userId' : '${userId}','message' : message};
-					
-					var source = $("#chatAppend").html();
-					var template = Handlebars.compile(source);
-					var html = template(data);
-					$('#chat' + toWho).append(html);
-					$("#sendChatCon" + toWho).text("");
-				});
-
-				socket.on('message', function(data) {
-					var source = $("#chatAppend").html();
-					var template = Handlebars.compile(source);
-					var html = template(data);
-					$('#chat' + data.userId).append(html);
-
-				});
-				
-				
 
 			});
 </script>
@@ -172,7 +90,7 @@
 	<!--Friend Navigation -->
 	<%@ include file="friend/friend_nav.jsp"%>
 	<!-- 	chat area it will appear bottom of browser -->
-	<div id="chatDiv" class="chatDiv"></div>
+	<div id="chatDiv" class="chatDiv" user='${userId}'></div>
 
 
 	<!--     		Article -->

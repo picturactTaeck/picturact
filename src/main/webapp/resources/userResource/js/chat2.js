@@ -27,82 +27,87 @@
 
 
 $(document).ready(function(){
-   var socket = io.connect('http://210.119.12.240:3033');
-//   $('#enter').click(function(){
-//	  var userid = document.getElementById('userid');
-//	  var roomname = document.getElementById('roomname');
-	  socket.emit('join',{'userid':'master', 'roomname':'testnodejsserver'});
-//	  document.getElementById('log').style.display='none';
-//	  document.getElementById('chat').style.display='block';
-//   });
-   
-   socket.on('join',function(data){
-	   
-	   
-   });
-   
- $(".chatFollower").on("click",function () {
-	 alert("chat");
-	 
-	 $.ajax({
-		 url:"get.message",
-		 data:{
-			 chatId:$(this).attr("follower")
-		 },
-		 dataType:"json",
-		 success: function (data){
-			 
-			var source=$("#chatArea").html();
-			var template = Handlebars.compile(source);
-
-
-
-			Handlebars.registerHelper('isOne', function(howManyFiles, options) {
-				 if(howManyFiles==1){
-					 return options.fn(this);
-				 }else{
-					 return options.inverse(this);
-				 }
-
-			 });
-
-
-			var html = "";
-
-
-			var html = template(data);
-			$("#chatDiv").append(html);
-
-
-		 },
-		 error: function(a,b,c){
-			 alert('실패 a : '+ a + " b : " + b + " c : " + c);
-		 }
-
-		 
-	 });
-	 
-	 
+	var socket = io.connect('http://210.119.12.240:3033');
+	socket.emit('join', {'userId' : $("#chatDiv").attr("user")});
 	
+	Handlebars.registerHelper('whereAppend',function(userId, options) {
+		if ($("#chatDiv").attr("user") == userId) {
+			return 'right';
 
-   });
+		} else {
+			return 'left';
+		}
+	});
+	
+	$(".chatFollower").on("click",function() {
+				event.preventDefault();
 
+				loadChatArea($(this).attr("follower"));
 
-   $(document).on("click",".chat_close",function(){
-		
+			});
+
+	$(document).on("click", ".chat_close", function() {
+
 		var index = $(".chat_close").index($(this));
 		$('.chat_popup').eq(index).remove()
 
-		
 	});
-   
-   $('#btn').click(function(){
-    var message = $('#text').val();
-    socket.emit('message',message);
-  });
-   
-   socket.on('message',function(data){
-	   $('#textappend').append('<dd style=margin:0px;>'+data+'</dd>');
-	   $('#text').val('');
-	   });
+
+	$(document).on("click", ".sendMessage", function() {
+
+		var toWho = $(this).attr("toWho");
+		var message = $("#sendChatCon" + toWho).text();
+		socket.emit('message', {'sendId' : $("#chatDiv").attr("user"),'receiveId' : toWho,	'message' : message});
+		var data = {'userId' : $("#chatDiv").attr("user"),'message' : message};
+		
+		var source = $("#chatAppend").html();
+		var template = Handlebars.compile(source);
+		var html = template(data);
+		$('#chat' + toWho).append(html);
+		$("#sendChatCon" + toWho).text("");
+	});
+
+	socket.on('message', function(data) {
+		if($('#chat' + data.userId).length==0 ){
+			loadChatArea(data.userId);
+			
+		}else{
+			var source = $("#chatAppend").html();
+			var template = Handlebars.compile(source);
+			var html = template(data);
+			$('#chat'+ data.userId).append(html);
+		}
+	});
+	
+	function loadChatArea(chatId){
+		$.ajax({
+			url : "/get.message",
+			type : "POST",
+			async : true,
+			data : {
+				chatId : chatId
+			},
+			dataType : "json",
+			success : function(data) {
+
+				var source = $("#chatArea").html();
+				var template = Handlebars.compile(source);
+
+				
+				Handlebars.registerPartial('chatContentAppend', $("#chatAppend").html());
+
+				var html = "";
+
+				var html = template(data);
+				$("#chatDiv").append(html);
+
+			},
+			error : function(xhr) {
+				alert("error html = " + xhr.statusText);
+				// 				function(a,b,c){
+				// 					 alert('실패 a : '+ a + " b : " + b + " c : " + c);}
+			}
+
+		});
+	}
    });

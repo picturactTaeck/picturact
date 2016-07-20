@@ -8,6 +8,9 @@
 				</div>
 			</div>
 			<div class="chat_content chat_scroll custom_scroll" id="chat{{chatId}}" >
+			{{#loadChat}}
+				{{>chatContentAppend}}
+			{{/loadChat}}
 				
 			</div>
 			<div class="chat_footer">
