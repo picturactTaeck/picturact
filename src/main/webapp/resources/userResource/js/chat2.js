@@ -57,7 +57,19 @@ $(document).ready(function(){
 
 		var toWho = $(this).attr("toWho");
 		var message = $("#sendChatCon" + toWho).text();
-		socket.emit('message', {'sendId' : $("#chatDiv").attr("user"),'receiveId' : toWho,	'message' : message});
+		
+		//get current time
+		var date = new Date();
+		var separateDate =
+			dateString(date.getFullYear(),4) + '-' +
+			dateString(date.getMonth() + 1, 2) + '-' +
+			dateString(date.getDate(), 2) + ' ' +
+
+			dateString(date.getHours(), 2) + ':' +
+			dateString(date.getMinutes(), 2)+ ':' +
+			dateString(date.getSeconds(), 2);
+		
+		socket.emit('message', {'sendId' : $("#chatDiv").attr("user"),'receiveId' : toWho,	'message' : message, date:separateDate});
 		var data = {'userId' : $("#chatDiv").attr("user"),'message' : message};
 		
 		var source = $("#chatAppend").html();
@@ -110,5 +122,18 @@ $(document).ready(function(){
 			}
 
 		});
+	}
+	
+	//get current time to String
+	function dateString(date, setDate){
+		
+		var zero = '';
+		date = date.toString();
+
+		if (date.length < setDate) {
+		for (i = 0; i < setDate - date.length; i++)
+		zero += '0';
+		}
+		return zero + date;
 	}
    });
