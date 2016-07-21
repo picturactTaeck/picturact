@@ -20,6 +20,7 @@ public class MemeberJoinServiceImpl implements MemberJoinService {
 		
 //		Ajax로 해야지!!! (ajax Form 사용해보기!!!알아만 두기)
 		mav.setViewName("JSON");
+		System.out.println(memberDto.toString());
 		memberJoinDao.joinMember(memberDto);
 		return mav;
 	}

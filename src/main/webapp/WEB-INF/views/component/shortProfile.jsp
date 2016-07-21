@@ -23,7 +23,10 @@
 							<input type="button" id="followButton" followState="${follow}" user="${whosPage}" class="btn btn-default border-top-radius btn-xs active personal_profile_follow active" value="-unfollow">
 						</c:if>
 					</c:if>
-			
+					<!-- Personal Information Edit Button -->
+					<c:if test="${userId == whosPage}">
+						<a id="editInfo" href="/editInfo" class="btn btn-default btn-xs pull-right" user="${userId}">Edit</a>
+					</c:if>
 				</span>
 
 			</div>

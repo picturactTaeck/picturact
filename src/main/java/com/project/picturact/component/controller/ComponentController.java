@@ -71,5 +71,15 @@ public class ComponentController {
 		mav.setViewName("mainPage");
 		return mav;
 	}
+	
+	@RequestMapping(value="/editInfo")
+	public ModelAndView editPage(HttpSession session){
+		mav = new ModelAndView();
+
+		mav.addObject("whatPost", WhatPost.EDIT_PAGE);
+		mav.addObject("userId", session.getAttribute("id"));
+		mav.setViewName("redirect:/edit.member");
+		return mav;
+	}
 
 }

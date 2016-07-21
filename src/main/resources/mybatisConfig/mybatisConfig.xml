@@ -32,5 +32,6 @@
 		<mapper resource="com/project/picturact/mapper/follow/followMapper.xml"/>
 		<mapper resource="com/project/picturact/mapper/member/memberJoinMapper.xml"/>
 		<mapper resource="com/project/picturact/mapper/member/memberLoginMapper.xml"/>
+		<mapper resource="com/project/picturact/mapper/member/memberEditMapper.xml"/>
 	</mappers>
 </configuration>

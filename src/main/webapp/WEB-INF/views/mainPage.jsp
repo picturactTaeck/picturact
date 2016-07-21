@@ -52,6 +52,7 @@
 <script src="resources/userResource/js/follow.js?<?=filetime('follow.js')?>"></script>
 	<script src="resources/userResource/js/chat2.js"></script>
 <script src="resources/userResource/js/getPersonalArticle.js"></script>
+<script src="resources/userResource/js/getPersonalArticle.js"></script>
 
 <!-- Node js testing server check!!!!! -->
 <script src="http://pknu1.kr:3033/socket.io/socket.io.js"></script>
@@ -118,6 +119,11 @@
 	<!--     		Notice -->
 	<c:if test="${whatPost==3}">
 		<%@ include file="notice/notice.jsp"%>
+	</c:if>
+	
+	<!-- 	Personal Information Page -->
+	<c:if test="${whatPost==4}">
+		<%@ include file="component/profileEdit.jsp" %>
 	</c:if>
 
 	<section id="articlesArea"></section>

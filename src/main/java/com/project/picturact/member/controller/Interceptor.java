@@ -15,7 +15,7 @@ public class Interceptor extends HandlerInterceptorAdapter {
 			if(request.getSession().getAttribute("userId") == null ){
 //				System.out.println("3");
 					// redirect -> loginPage.jsp
-					response.sendRedirect("/loginPage.login");
+					response.sendRedirect("/loginPage.member");
 //					System.out.println("4");
 					return false;
 			}

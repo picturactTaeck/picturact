@@ -35,6 +35,12 @@
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
 	</bean>	
 	
+	<bean id="MemeberEditDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="com.project.picturact.member.dao.MemberEditDao" />
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
+	</bean>	
+	
 	<bean id="ArticleDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
 		<property name="mapperInterface" value="com.project.picturact.article.dao.ArticleDao" />
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
@@ -51,24 +57,24 @@
 
 
 <!-- jdbc DataSource -->
-<!-- 	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean"> -->
-<!-- 		<property name="jndiName" value="java:comp/env/pknu" /> -->
-<!-- 		<property name="resourceRef" value="true" /> -->
-<!-- 	</bean> -->
+	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName" value="java:comp/env/pknu" />
+		<property name="resourceRef" value="true" />
+	</bean>
 
 <!-- 	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" -->
 <!-- 	id="propertyConfigurer"> -->
 <!-- 	<property name="location" value="classpath:db.properties"></property> -->
 <!-- 	</bean> -->
-	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="core.log.jdbc.driver.OracleDriver" />
-		<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:XE" />
-		<property name="username" value="pknu01" />
-		<property name="password" value="0001" />
+<!-- 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> -->
+<!-- 		<property name="driverClassName" value="core.log.jdbc.driver.OracleDriver" /> -->
+<!-- 		<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:XE" /> -->
+<!-- 		<property name="username" value="pknu01" /> -->
+<!-- 		<property name="password" value="0001" /> -->
 <!-- 		<property name="username" value="project" /> -->
 <!-- 		<property name="password" value="1234" /> -->
 
-	</bean>
+<!-- 	</bean> -->
 
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />

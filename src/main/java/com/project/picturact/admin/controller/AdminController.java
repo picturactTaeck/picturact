@@ -31,8 +31,8 @@ public class AdminController {
 		mav.addObject("whatPost", WhatPost.NOTICE);
 		
 		//Testing, they will be added in session with pageNum, @ModelAttribute
-		mav.addObject("sessionId", "popo");
-		mav.addObject("auth", "Y");
+//		mav.addObject("sessionId", "popo");
+//		mav.addObject("auth", "Y");
 		
 		mav.addObject("pageNum", pageNum);
 		mav.setViewName("mainPage");
