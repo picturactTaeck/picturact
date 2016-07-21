@@ -11,7 +11,7 @@
 		WHERE RM BETWEEN #{startRow} and #{endRow}
 	</select>
 	<insert id="insertNotice" parameterType="noticeDto">
-		INSERT INTO PICTURACT_NOTICE VALUES(NOT_SEQ.NEXTVAL,#{userId},#{title},#{content},SYSDATE,0)
+		INSERT INTO PICTURACT_NOTICE VALUES(NOTICE_SEQ.NEXTVAL,#{userId},#{title},#{content},SYSDATE,0)
 	</insert>
 	<select id="getNoticeCount" resultType="Integer">
 		SELECT COUNT(*) FROM PICTURACT_NOTICE

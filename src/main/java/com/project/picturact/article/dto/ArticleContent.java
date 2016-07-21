@@ -13,6 +13,9 @@ public class ArticleContent {
 	private String content;
 	private String writeDate;
 	private int howManyFiles;
+	private String lat;
+	private String lng;
+	private String location;
 	private ArrayList<ImageInfo> fileList;
 	
 	
@@ -164,11 +167,8 @@ public class ArticleContent {
 
 
 
-	@Override
-	public String toString() {
-		return "ArticleContent [articleNum=" + articleNum + ", userId=" + userId + ", title=" + title + ", content="
-				+ content + ", writeDate=" + writeDate + ", howManyFiles=" + howManyFiles + ", fileList=" + fileList
-				+ "]";
+	public String getLat() {
+		return lat;
 	}
 
 
@@ -176,18 +176,80 @@ public class ArticleContent {
 
 
 
+
+	public void setLat(String lat) {
+		this.lat = lat;
+	}
+
+
+
+
+
+
+
+	public String getLng() {
+		return lng;
+	}
+
+
+
+
+
+
+
+	public void setLng(String lng) {
+		this.lng = lng;
+	}
+
+
+
+
+
+
+
+	public String getLocation() {
+		return location;
+	}
+
+
+
+
+
+
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+
+
+
+
+
+
+	@Override
+	public String toString() {
+		return "ArticleContent [articleNum=" + articleNum + ", userId=" + userId + ", title=" + title + ", content="
+				+ content + ", writeDate=" + writeDate + ", howManyFiles=" + howManyFiles + ", lat=" + lat + ", lng="
+				+ lng + ", location=" + location + ", fileList=" + fileList + "]";
+	}
 	
 	
+
+
+
+
+
+
+
+
 	
-	
 
 
 
 
 
 
-
-	
 
 
 

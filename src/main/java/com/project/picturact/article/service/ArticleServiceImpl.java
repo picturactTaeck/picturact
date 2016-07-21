@@ -28,15 +28,12 @@ public class ArticleServiceImpl implements ArticleService {
 	ArticleInfo articleInfo;
 
 	@Override
-	public void postArticle(String userId, String content, MultipartHttpServletRequest postImgs) throws IOException, Exception {
+	public void postArticle( ArticleContent article, MultipartHttpServletRequest postImgs) throws IOException, Exception {
 		// TODO Auto-generated method stub
 
 		int nextArticleNum = articleDao.getNextArticleNum();
 		ImageInfo imgInfo;
-		ArticleContent article = new ArticleContent();
-		article.setUserId(userId);
 		article.setArticleNum(nextArticleNum);
-		article.setContent(content);
 		article.setHowManyFiles(postImgs.getFiles("postImgs").size());
 		articleDao.insertArticle(article);
 

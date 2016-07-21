@@ -12,19 +12,27 @@
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
 <!-- 			<div class="collapse navbar-collapse"> -->
-			<div  >
+
+			
+			<div  class="col-xs-19 col-lg-10 navmenu">
 <!-- 				<ul class="nav navbar-nav main_navy_style_text_color"> -->
-				<ul class="main_navy_style_text_color navbar_textleftflow ">
-					<li><a href="/main.notice?pageNum=1">Notice</a></li>
-					<li><a href="/personalInfoEdit.do">Profile</a></li>
+				<div class="main_navy_style_text_color navbar_textleftflow ">
+					<div><a href="/main.notice?pageNum=1">Notice</a></div>
+					<div><a href="/personalInfoEdit.do">Profile</a></div>
 <!-- 					<li><a id="menu-toggle" href="#">Friend</a></li> -->
 <!-- 					<li><a href="/logout.main">Logout</a></li> -->
-				</ul>
+				</div>
+<!-- 				<div class="searchArea"> -->
+
+<!-- 						<div class="searchEdit" contentEditable="true"></div> -->
+<!-- 						<div><a href="/"><i class="glyphicon glyphicon-search" aria-hidden="true" style="color:rgb(100,100,100)"></i></a></div> -->
+
+<!-- 				</div> -->
 				
-				<ul class="main_navy_style_text_color navbar_textrightflow ">
-		        	<li><a href="/logout.login"><i class="glyphicon glyphicon-off" aria-hidden="true"></i></a></li>
-		        	<li><a id="friend_nav" href="/"><i class="glyphicon glyphicon-user" aria-hidden="true"></i></a></li>
-		      	</ul>
+				<div class="main_navy_style_text_color navbar_textrightflow ">
+		        	<div><a href="/logout.login"><i class="glyphicon glyphicon-off" aria-hidden="true"></i></a></div>
+		        	<div><a id="friend_nav" href="/"><i class="glyphicon glyphicon-user" aria-hidden="true"></i></a></div>
+		      	</div>
 			</div>
 			<!-- /.navbar-collapse -->
 		</div>
