@@ -23,13 +23,14 @@ public class ArticleController {
 	
 	@RequestMapping(value="/post.article")
 	@ResponseBody
-	public String postArticle( String content , MultipartHttpServletRequest postImgs, HttpSession session){
+	public String postArticle( ArticleContent article , MultipartHttpServletRequest postImgs, HttpSession session){
 
 		String userId = (String) session.getAttribute("userId");
+		article.setUserId(userId);
 		
 
 		try{
-			articleService.postArticle(userId, content, postImgs);
+			articleService.postArticle( article, postImgs);
 		}catch(Exception e){
 			e.printStackTrace();
 		}
