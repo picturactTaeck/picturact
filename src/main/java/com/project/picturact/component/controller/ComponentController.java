@@ -1,5 +1,6 @@
 package com.project.picturact.component.controller;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,8 @@ import com.project.picturact.component.service.ComponentService;
 public class ComponentController {
 	@Autowired
 	ComponentService componentService;
-	
+	@Resource(name="saveDir")
+	String saveDir;
 
 	ModelAndView mav;
 	
@@ -34,6 +36,7 @@ public class ComponentController {
 //		mav.addObject("articleList", componentService.getMainArticle(userId));
 		mav.addObject("followList",componentService.getFollowList(userId));
 		mav.addObject("whatPost", WhatPost.MAIN_PAGE);
+		mav.addObject("saveDir", saveDir);
 		mav.setViewName("mainPage");
 		
 		return mav;

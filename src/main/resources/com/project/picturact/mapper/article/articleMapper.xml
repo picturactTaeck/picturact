@@ -6,16 +6,16 @@
 <mapper namespace="com.project.picturact.article.dao.ArticleDao">
 
 	<select id="getNextArticleNum" resultType="int">
-		SELECT ARTICLE_SEQ.NEXTVAL FROM  DUAL
+		SELECT ARTICLE_SEQ.NEXTVAL FROM DUAL
 	</select>
 
 
 
 
 
-	<insert id="insertArticle" parameterType="articleInfo">
+	<insert id="insertArticle" parameterType="articleContent">
 		INSERT INTO PICTURACT_ARTICLE VALUES(
-			#{articleNum},#{userId},#{content},SYSDATE,#{howManyFiles})
+			#{articleNum},#{userId},#{content},SYSDATE,#{howManyFiles},#{lat},#{lng},#{location})
 
 	</insert>
 
@@ -29,7 +29,7 @@
 	</insert>
 	
 	<select id="getMainPageArticle" resultType="articleContent"
-		parameterType="String">
+		parameterType="articleInfo">
 
 		SELECT ARTICLENUM, USERID,
 				REGEXP_REPLACE(content, <![CDATA['<[^>]*>|\&([^;])*;']]>,'') content, WRITEDATE, HOWMANYFILES, RM
@@ -37,8 +37,8 @@
 		<if test="lastArticleNum==0"></if>
 		<if test="lastArticleNum!=0"> <![CDATA[ ARTICLENUM<]]>#{lastArticle} AND </if>
 			 USERID IN 
-      			(SELECT FOLLOWID FROM PICTURACT_PERSONRELATION WHERE USERID='master') 
-         			OR USERID='master' ORDER BY ARTICLENUM DESC) article )
+      			(SELECT FOLLOWID FROM PICTURACT_PERSONRELATION WHERE USERID=#{userId}) 
+         			OR USERID=#{userId} ORDER BY ARTICLENUM DESC) article )
    	
    			WHERE  RM BETWEEN 1 AND 10
 		

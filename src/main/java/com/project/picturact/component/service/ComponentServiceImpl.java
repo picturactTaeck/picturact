@@ -3,20 +3,21 @@ package com.project.picturact.component.service;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import javax.annotation.Resource;
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
-import com.project.picturact.article.dto.ArticleContent;
-import com.project.picturact.article.dto.ImageInfo;
 import com.project.picturact.component.dao.ComponentDao;
 
 @Service
 public class ComponentServiceImpl implements ComponentService {
 	@Inject
 	ComponentDao componentDao;
+	
 
-
+	
+	
 	
 
 
