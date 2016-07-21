@@ -20,13 +20,14 @@
 			<div class="row post_button">
 				<input type="button" id="postArticle" class="btn btn-default btn-sm border-top-radius" value="upload">
 				<input type="button" id="reset" class="btn btn-default btn-sm border-top-radius" value="reset">
+				<span id="yourLocation"></span>
 			</div>
 
 			 
 
 		</form>
 
-
+		<%@ include file="../map/modal.jsp"%>
 
 	</div>
 

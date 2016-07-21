@@ -16,10 +16,26 @@ public class MemeberJoinServiceImpl implements MemberJoinService {
 	ModelAndView mav;
 	
 	@Override
-	public void joinMember(MemberDto memberDto) {
-		System.out.println("memberJoinServiceImpl 시작");
+	public ModelAndView joinMember(MemberDto memberDto) {
+		
+//		Ajax로 해야지!!! (ajax Form 사용해보기!!!알아만 두기)
+		mav.setViewName("JSON");
 		memberJoinDao.joinMember(memberDto);
-		System.out.println("memberJoinServiceImpl 완료");
+		return mav;
+	}
+
+	@Override
+	public ModelAndView joinIdCheck(String joinId) {
+//		Id find Database
+		String result = memberJoinDao.joinIdCheck(joinId);
+		mav = new ModelAndView();
+		
+		if(result == null){
+			result="OK";
+			mav.addObject("result", result);
+		}
+		mav.setViewName("JSON");
+		return mav;
 	}
 
 }

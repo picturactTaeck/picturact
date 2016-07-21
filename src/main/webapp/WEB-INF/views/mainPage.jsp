@@ -56,6 +56,12 @@
 <!-- Node js testing server check!!!!! -->
 <script src="http://pknu1.kr:3033/socket.io/socket.io.js"></script>
 
+	<!-- google map -->
+	<script src="resources/userResource/js/map.js"></script>	
+	<link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARM8OQ3-FZctDPJpmiRN9aCXkiQeSrcPM&callback=initialize"></script>	
+
+
 <!-- 	font css -->
 <link rel="stylesheet"
 	href="resources/userResource/css/font.css?<?=filemtime('font.css')?>" />
