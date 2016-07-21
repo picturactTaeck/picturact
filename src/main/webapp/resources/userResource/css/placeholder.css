@@ -1,0 +1,5 @@
+/* div³»ºÎ¿¡ placeholders */
+.form-control[placeholder]:empty:before {
+    content: attr(placeholder);
+    color: #BDBDBD;
+}

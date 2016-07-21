@@ -6,4 +6,6 @@ public interface MemberJoinDao {
 	
 	public void joinMember(MemberDto memberDto);
 
+	public String joinIdCheck(String joinId);
+
 }

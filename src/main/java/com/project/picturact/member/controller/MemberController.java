@@ -32,8 +32,6 @@ public class MemberController {
 	    	return "loginPage";
 	}
 	
-	
-
 	@RequestMapping(value="/login.login")
 	@ResponseBody
 	public ModelAndView login(String userId, String userPassword, HttpSession session){
@@ -50,25 +48,21 @@ public class MemberController {
 	
 	
 	@RequestMapping(value="/join.join", method=RequestMethod.POST)
-	public ModelAndView join(HttpServletRequest request){
-		String userId = request.getParameter("userId");
-		String password = request.getParameter("password");
-		String nickName = request.getParameter("nickName");
-		String userName = request.getParameter("userName");
-		String eMail = request.getParameter("eMail");
+	public ModelAndView join(HttpServletRequest request, String joinId, String joinPassword, String nickName, String userName, String eMail){
 		
 		MemberDto memberDto = new MemberDto();
-		memberDto.setUserId(userId);
-		memberDto.setPassword(password);
+		memberDto.setUserId(joinId);
+		memberDto.setPassword(joinPassword);
 		memberDto.setNickname(nickName);
 		memberDto.setUsername(userName);
 		memberDto.setEmail(eMail);
 		
-		mav = new ModelAndView();
-		System.out.println(memberDto.toString());
-		joinService.joinMember(memberDto);
-		mav.setViewName("loginPage");
-		return mav;
+		return joinService.joinMember(memberDto);
+	}
+
+	@RequestMapping(value="/joinIdCheck.join")
+	public ModelAndView joinIdCheck(String joinId){
+		return joinService.joinIdCheck(joinId);
 	}
 
 }
