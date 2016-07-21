@@ -21,7 +21,7 @@ public class MemberLoginServiceImpl implements MemberLoginService {
 	public ModelAndView loginCheck(String userId, String userPassword, HttpSession session) {
 //		DB에 저장된 해당 아이디의 비밀번호
 		String correctPassword = memberLoginDao.passwordCheck(userId); 
-		
+		 
 		mav = new ModelAndView();
 		
 		if(correctPassword != null){
