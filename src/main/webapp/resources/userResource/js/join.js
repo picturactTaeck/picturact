@@ -58,30 +58,32 @@ $(function(){
 
 //member join --------------------------------------------------------
 
-function join(){
-	var joinId = $("#joinId").text();
-	var joinPassword = $("#joinPassword").text();
-	var nickName = $("#nickName").text();
-	var userName = $("#userName").text();
-	var eMail = $("#eMail").text();
-	
-	
-	alert("아이디 :"+joinId+", 비밀번호 :"+joinPassword+", 닉네임 :"+nickName+", 실제이름 :"+userName+", 이메일 :"+eMail);
-	
-	$.ajax({
-		url:"/join.member",
-		type : "POST",
-		data:{	
-			joinId: joinId,
-			joinPassword: joinPassword,
-			nickName: nickName,
-			userName: userName,
-			eMail: eMail
-		},
-		success:function(data){
-			alert("회원가입 성공!");
-			document.location.href="/";
-		}
-	
+$(function(){
+	$("#joinMember").on('click',function(){
+		var joinId = $("#joinId").text();
+		var joinPassword = $("#joinPassword").text();
+		var nickName = $("#nickName").text();
+		var userName = $("#userName").text();
+		var eMail = $("#eMail").text();
+		
+		
+		alert("아이디 :"+joinId+", 비밀번호 :"+joinPassword+", 닉네임 :"+nickName+", 실제이름 :"+userName+", 이메일 :"+eMail);
+		
+		$.ajax({
+			url:"/join.join",
+			type : "POST",
+			data:{	
+				joinId: joinId,
+				joinPassword: joinPassword,
+				nickName: nickName,
+				userName: userName,
+				eMail: eMail
+			},
+			success:function(data){
+				alert("회원가입 성공!");
+				document.location.href="/";
+			}
+		
+		});
 	});
-};
+});

@@ -48,7 +48,7 @@
 <!-- 			     div로 변경 -->
                       <span style="float:right">
 <!-- 				                        <input type="button" class="btn btn-default" value="Join" /> -->
-                       <input type="button" class="btn btn-default" onclick="join()" value="Ajax Join" >
+                       <input type="button" class="btn btn-default" id="joinMember" value="Ajax Join" >
 <!--                        <button type="submit" class="btn btn-default" >Join</button> -->
                        <input type="button" class="btn btn-link-2 scroll-link" onclick="location.href='#page-top'" value="Cancel">
                        
