@@ -9,7 +9,7 @@ import com.project.picturact.member.dao.MemberJoinDao;
 import com.project.picturact.member.dto.MemberDto;
 
 @Service
-public class MemeberJoinServiceImpl implements MemberJoinService {
+public class MemberJoinServiceImpl implements MemberJoinService {
 	@Inject
 	MemberJoinDao memberJoinDao;
 	MemberDto memberDto;
@@ -18,7 +18,7 @@ public class MemeberJoinServiceImpl implements MemberJoinService {
 	@Override
 	public ModelAndView joinMember(MemberDto memberDto) {
 		
-//		Ajax·Î ÇØ¾ßÁö!!! (ajax Form »ç¿ëÇØº¸±â!!!¾Ë¾Æ¸¸ µÎ±â)
+//		Ajaxï¿½ï¿½ ï¿½Ø¾ï¿½ï¿½ï¿½!!! (ajax Form ï¿½ï¿½ï¿½ï¿½Øºï¿½ï¿½ï¿½!!!ï¿½Ë¾Æ¸ï¿½ ï¿½Î±ï¿½)
 		mav.setViewName("JSON");
 		System.out.println(memberDto.toString());
 		memberJoinDao.joinMember(memberDto);

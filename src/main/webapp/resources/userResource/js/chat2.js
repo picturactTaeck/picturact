@@ -59,7 +59,7 @@ $(document).ready(function(){
 		var toWho = $(this).attr("toWho");
 		var message = $("#sendChatCon" + toWho).text();
 
-		socket.emit('message', {'sender' : $("#chatDiv").attr("user"),'receiver' : toWho,	'message' : message});
+
 
 		
 		//get current time

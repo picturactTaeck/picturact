@@ -30,7 +30,7 @@
 <!-- 				</div> -->
 				
 				<div class="main_navy_style_text_color navbar_textrightflow ">
-		        	<div><a href="/logout.login"><i class="glyphicon glyphicon-off" aria-hidden="true"></i></a></div>
+		        	<div><a href="/logout.member"><i class="glyphicon glyphicon-off" aria-hidden="true"></i></a></div>
 		        	<div><a id="friend_nav" href="/"><i class="glyphicon glyphicon-user" aria-hidden="true"></i></a></div>
 		      	</div>
 			</div>

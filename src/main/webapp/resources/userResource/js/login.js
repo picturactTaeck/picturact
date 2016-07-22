@@ -25,7 +25,7 @@ $(function(){
 $.ajaxSetup({
 	type : "POST",
 	async : true,
-	dataType : "json",
+	dataType : "JSON",
 	error : function(xhr){
 		alert("error html3 = " + xhr.statusText);
 	}
