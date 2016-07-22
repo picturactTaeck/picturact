@@ -43,19 +43,23 @@
 <link rel="stylesheet" href="resources/userResource/css/personalPageArticle.css?<?=filemtime('personalPageArticle.css')?>" />
 <link rel="stylesheet" href="resources/userResource/css/personalPageProfile.css?<?=filemtime('personalPageProfile.css')?>" />
 <link rel="stylesheet" href="resources/userResource/css/friend_nav.css?<?=filemtime('friend_nav.css')?>" />
-<link rel="stylesheet" href="resources/userResource/css/chat2.css?<?=filemtime('chat2.css')?>" />
+<link rel="stylesheet" href="resources/userResource/css/chat2.css" />
 
 <!-- 	user style js -->
 
 <script src="resources/userResource/js/friend_nav.js?<?=filetime('friend_nav.js')?>"></script>
 <script src="resources/userResource/js/postArticle.js?<?=filetime('postArticle.js')?>"></script>
 <script src="resources/userResource/js/follow.js?<?=filetime('follow.js')?>"></script>
-	<script src="resources/userResource/js/chat2.js"></script>
+	<script src="resources/userResource/js/chat2.js?<?=filetime('chat2.js')?>"></script>
 <script src="resources/userResource/js/getPersonalArticle.js"></script>
 <script src="resources/userResource/js/getPersonalArticle.js"></script>
 
 <!-- Node js testing server check!!!!! -->
-<script src="http://pknu1.kr:3033/socket.io/socket.io.js"></script>
+
+<!-- <script src="http://pknu1.kr:3033/socket.io/socket.io.js"></script> -->
+<script src="http://127.0.0.1:3033/socket.io/socket.io.js"></script>
+
+<!-- <script src="http://pknu1.kr:3033/socket.io/socket.io.js"></script> -->
 
 	<!-- google map -->
 	<script src="resources/userResource/js/map.js"></script>	
@@ -100,7 +104,6 @@
 	<!-- 	chat area it will appear bottom of browser -->
 	<div id="chatDiv" class="chatDiv" user='${userId}'></div>
 
-	${saveDir}
 	<!--     		Article -->
 	<c:if test="${whatPost==1}">
 		<%-- 				<%@ include file="mainPage/mainPageArticle.jsp" %> --%>

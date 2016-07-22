@@ -27,7 +27,8 @@
 
 
 $(document).ready(function(){
-	var socket = io.connect('http://pknu1.kr:3033');
+//	var socket = io.connect('http://pknu1.kr:3033');
+	var socket = io.connect('http://127.0.0.1:3033');
 	socket.emit('join', {'userId' : $("#chatDiv").attr("user")});
 	
 	Handlebars.registerHelper('whereAppend',function(userId, options) {
@@ -57,6 +58,9 @@ $(document).ready(function(){
 
 		var toWho = $(this).attr("toWho");
 		var message = $("#sendChatCon" + toWho).text();
+
+		socket.emit('message', {'sender' : $("#chatDiv").attr("user"),'receiver' : toWho,	'message' : message});
+
 		
 		//get current time
 		var date = new Date();
@@ -69,7 +73,8 @@ $(document).ready(function(){
 			dateString(date.getMinutes(), 2)+ ':' +
 			dateString(date.getSeconds(), 2);
 		
-		socket.emit('message', {'sendId' : $("#chatDiv").attr("user"),'receiveId' : toWho,	'message' : message, date:separateDate});
+		socket.emit('message', {'sender' : $("#chatDiv").attr("user"),'receiver' : toWho,	'message' : message, date:separateDate});
+
 		var data = {'userId' : $("#chatDiv").attr("user"),'message' : message};
 		
 		var source = $("#chatAppend").html();
