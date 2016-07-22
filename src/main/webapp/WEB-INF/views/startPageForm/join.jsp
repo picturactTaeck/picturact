@@ -6,7 +6,7 @@
                    		</div>
                    	
                    		<div class="form-top-right">
-                  <form action="/join.join" method="post">
+                  <form action="/join.member" method="post">
                    <input type="hidden" name="joinId" value="" />
                    <div class="form-group">
                    <div class="row">

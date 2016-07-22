@@ -51,7 +51,7 @@ $(document).ready(function(){
 		 
 		 $.ajax({
 			 	type : "POST",
-				url:"/login.login",
+				url:"/login.member",
 	// 			data{}에서는 EL을 ""로 감싸야함..그외에는 그냥 사용
 				data:{	
 					userId:$("#userId").text(),

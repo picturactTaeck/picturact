@@ -16,7 +16,7 @@ $(function(){
 		if(joinIdImpl != ""){
 		
 			$.ajax({
-				url:"/joinIdCheck.join",
+				url:"/joinIdCheck.member",
 				data:{	
 					joinId:joinIdImpl
 				},
@@ -69,7 +69,7 @@ function join(){
 	alert("아이디 :"+joinId+", 비밀번호 :"+joinPassword+", 닉네임 :"+nickName+", 실제이름 :"+userName+", 이메일 :"+eMail);
 	
 	$.ajax({
-		url:"/join.join",
+		url:"/join.member",
 		type : "POST",
 		data:{	
 			joinId: joinId,
