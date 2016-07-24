@@ -12,6 +12,7 @@ import com.project.picturact.member.dto.MemberDto;
 public class MemberJoinServiceImpl implements MemberJoinService {
 	@Inject
 	MemberJoinDao memberJoinDao;
+	
 	MemberDto memberDto;
 	ModelAndView mav;
 	
