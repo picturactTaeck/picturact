@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-config.dtd" >
+<configuration>
+	<settings>
+		<setting name="cacheEnabled" value="true"/>
+		<setting name="lazyLoadingEnabled" value="false"/>
+		<setting name="multipleResultSetsEnabled" value="true"/>
+		<setting name="useColumnLabel" value="true"/>
+		<setting name="useGeneratedKeys" value="false"/>
+		<setting name="defaultExecutorType" value="SIMPLE"/>
+		<setting name="defaultStatementTimeout" value="25000"/>
+<!-- 		전통적인 데이터베이스 컬럼명 형태인 A_COLUMN 을 CamelCase 형태의 -->
+<!-- 		자바 프로퍼티 형태인 aColumn으로 자동으로 매핑하도록함 -->
+		<setting name="mapUnderscoreToCamelCase" value="false"/>
+		<setting value="VARCHAR" name="jdbcTypeForNull"/>
+	</settings>
+	
+
+	<typeAliases>
+		<typeAlias alias="articleContent" type="com.project.picturact.article.dto.ArticleContent"/>
+		<typeAlias alias="imageInfo" type="com.project.picturact.article.dto.ImageInfo"/>
+		<typeAlias alias="noticeDto" type="com.project.picturact.admin.dto.NoticeDto"/>
+		<typeAlias alias="memberDto" type="com.project.picturact.member.dto.MemberDto"/>
+		<typeAlias alias="articleInfo" type="com.project.picturact.article.dto.ArticleInfo"/>
+	</typeAliases>
+
+	<mappers>
+		<mapper resource="com/project/picturact/mapper/component/componentMapper.xml"/>
+		<mapper resource="com/project/picturact/mapper/admin/noticeMapper.xml"/>
+		<mapper resource="com/project/picturact/mapper/article/articleMapper.xml"/>
+		<mapper resource="com/project/picturact/mapper/follow/followMapper.xml"/>
+		<mapper resource="com/project/picturact/mapper/member/memberJoinMapper.xml"/>
+		<mapper resource="com/project/picturact/mapper/member/memberLoginMapper.xml"/>
+		<mapper resource="com/project/picturact/mapper/member/memberEditMapper.xml"/>
+	</mappers>
+</configuration>

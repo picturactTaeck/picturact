@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+'-//mybatis.org//DTD Sql Mapper 3.0//EN' 
+'http://Mybatis.org/dtd/mybatis-3-mapper.dtd'>
+
+<mapper namespace="com.project.picturact.member.dao.MemberJoinDao">
+
+	<insert id="joinMember" parameterType="memberDto">
+		INSERT INTO PICTURACT_MEMBER VALUES(#{userId},#{password},#{username},#{nickname},#{email}, null,'N')
+	</insert>	
+
+<select id="joinIdCheck" parameterType="String" resultType="String">
+		SELECT USERID FROM PICTURACT_MEMBER WHERE USERID=#{joinId} 
+	</select>
+
+</mapper>

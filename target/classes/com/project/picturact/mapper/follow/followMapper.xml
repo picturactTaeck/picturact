@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+'-//mybatis.org//DTD Sql Mapper 3.0//EN' 
+'http://Mybatis.org/dtd/mybatis-3-mapper.dtd'>
+
+<mapper namespace="com.project.picturact.follow.dao.FollowDao">
+
+	
+	<insert id="follow" parameterType="hashmap">
+		INSERT INTO PICTURACT_PERSONRELATION VALUES(#{userId}, #{pageId})
+	</insert>
+	
+	<delete id="unfollow" parameterType="hashmap">
+		DELETE FROM PICTURACT_PERSONRELATION WHERE USERID=#{userId} AND FOLLOWID=#{pageId}
+	</delete>
+	
+	<select id="getFollowState" parameterType="hashmap" resultType="int">
+		SELECT COUNT(*) FROM PICTURACT_PERSONRELATION  WHERE USERID=#{userId} AND FOLLOWID=#{pageId}
+	</select>
+
+
+</mapper>

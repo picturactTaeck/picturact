@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+'-//mybatis.org//DTD Sql Mapper 3.0//EN' 
+'http://Mybatis.org/dtd/mybatis-3-mapper.dtd'>
+
+<mapper namespace="com.project.picturact.component.dao.ComponentDao">
+
+
+
+	<select id="getFollowList" parameterType="String" resultType="String">
+		SELECT FOLLOWID FROM PICTURACT_PERSONRELATION WHERE USERID=#{userId}
+	</select>
+
+	<select id="getFollowState" resultType="int" parameterType="hashmap">
+		SELECT COUNT(*) FROM PICTURACT_PERSONRELATION
+		WHERE USERID IN (#{userId}) AND FOLLOWID IN (#{pageId})
+	</select>
+	
+
+
+
+	<!-- <insert id="insertArticle" parameterType="bbsDto"> -->
+	<!-- INSERT INTO PICTURACT_ARTICLE VALUES -->
+	<!-- ( -->
+
+	<!-- #{articleNum},#{userId},#{content},SYSDATE,#{howManyFiles}) -->
+
+	<!-- </insert> -->
+
+	<!-- <insert id="insertFileArticle" parameterType="fileDto"> -->
+
+	<!-- INSERT INTO PICTURACT_FILELIST -->
+	<!-- VALUES(FILE_SEQ.NEXTVAL,#{originFname},#{storedFname},#{fileLength},#{articleNum}) -->
+
+
+
+	<!-- </insert> -->
+
+	<!-- <select id="getNextArticleNum" resultType="int"> -->
+	<!-- SELECT bbs_seq.nextval -->
+	<!-- FROM dual -->
+	<!-- </select> -->
+
+	
+	<!-- <select id="deleteRelation"> -->
+	<!-- DELETE FROM PICTURACT_PERSONRELATION -->
+	<!-- WHERE USERID IN (#{id}) AND FOLLOWID IN (#{userId}) -->
+	<!-- </select> -->
+
+	<!-- <select id="insertRelation"> -->
+	<!-- INSERT INTO PICTURACT_PERSONRELATION VALUES(#{id},#{userId}) -->
+
+	<!-- </select> -->
+
+
+	<!-- <select id="getFollowerList" parameterType="String" resultType="String"> -->
+	<!-- SELECT FOLLOWID FROM PICTURACT_PERSONRELATION WHERE USERID=#{userId} -->
+	<!-- </select> -->
+
+	<!-- <select id="getUserName" parameterType="String" resultType="String"> -->
+	<!-- SELECT USERNAME FROM PICTURACT_MEMBER WHERE USERID= #{userId} -->
+	<!-- </select> -->
+
+	<!-- <delete id="deleteComment" parameterType="int"> -->
+	<!-- DELETE FROM PICTURACT_COMMENT WHERE ARTICLENUM = #{articleNum} -->
+	<!-- </delete> -->
+
+	<!-- <delete id="deleteFileList" parameterType="int"> -->
+	<!-- DELETE FROM PICTURACT_FILELIST WHERE ARTICLENUM = #{articleNum} -->
+	<!-- </delete> -->
+	<!-- <delete id="deleteArticle" parameterType="int"> -->
+	<!-- DELETE FROM PICTURACT_ARTICLE WHERE ARTICLENUM = #{articleNum} -->
+	<!-- </delete> -->
+
+
+
+</mapper>

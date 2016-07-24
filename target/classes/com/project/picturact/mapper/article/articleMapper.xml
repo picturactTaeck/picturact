@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+'-//mybatis.org//DTD Sql Mapper 3.0//EN' 
+'http://Mybatis.org/dtd/mybatis-3-mapper.dtd'>
+
+<mapper namespace="com.project.picturact.article.dao.ArticleDao">
+
+	<select id="getNextArticleNum" resultType="int">
+		SELECT ARTICLE_SEQ.NEXTVAL FROM DUAL
+	</select>
+
+
+
+
+
+	<insert id="insertArticle" parameterType="articleContent">
+		INSERT INTO PICTURACT_ARTICLE VALUES(
+			#{articleNum},#{userId},#{content},SYSDATE,#{howManyFiles},#{lat},#{lng},#{location})
+
+	</insert>
+
+	<insert id="insertImgInfo" parameterType="imageInfo">
+
+		INSERT INTO PICTURACT_FILELIST
+			VALUES(FILE_SEQ.NEXTVAL,#{storedFname},#{fileLength},#{articleNum})
+
+
+
+	</insert>
+	
+	<select id="getMainPageArticle" resultType="articleContent"
+		parameterType="articleInfo">
+
+		SELECT ARTICLENUM, USERID,
+				REGEXP_REPLACE(content, <![CDATA['<[^>]*>|\&([^;])*;']]>,'') content, WRITEDATE, HOWMANYFILES, RM
+			 FROM (SELECT article.*, ROWNUM RM FROM (SELECT * FROM PICTURACT_ARTICLE WHERE 
+		<if test="lastArticleNum==0"></if>
+		<if test="lastArticleNum!=0"> <![CDATA[ ARTICLENUM<]]>#{lastArticle} AND </if>
+			 USERID IN 
+      			(SELECT FOLLOWID FROM PICTURACT_PERSONRELATION WHERE USERID=#{userId}) 
+         			OR USERID=#{userId} ORDER BY ARTICLENUM DESC) article )
+   	
+   			WHERE  RM BETWEEN 1 AND 10
+		
+	
+	</select>
+
+	<select id="getArticleFile" parameterType="int" resultType="imageInfo">
+		SELECT * FROM PICTURACT_FILELIST WHERE ARTICLENUM=#{articleNum}
+		ORDER BY FILENUM DESC
+
+	</select>
+	
+	<select id="getPersonalArticle" resultType="articleContent"
+		parameterType="articleInfo">
+
+		SELECT ARTICLENUM, USERID,
+		REGEXP_REPLACE(content, <![CDATA['<[^>]*>|\&([^;])*;']]>,'') content, WRITEDATE, HOWMANYFILES
+			
+		 FROM (SELECT article.*, ROWNUM RM FROM (SELECT * FROM PICTURACT_ARTICLE WHERE 
+		<if test="lastArticleNum==0"></if>
+		<if test="lastArticleNum!=0"> <![CDATA[ ARTICLENUM<]]>#{lastArticle} AND </if>
+			 USERID=#{userId}) article)
+   			WHERE  RM BETWEEN 1 AND 10
+   			ORDER BY ARTICLENUM DESC
+		
+		
+		
+	</select>
+
+	<!-- <select id="getNextArticleNum" resultType="int"> -->
+	<!-- SELECT bbs_seq.nextval -->
+	<!-- FROM dual -->
+	<!-- </select> -->
+
+	<!-- <select id="checkRelation" resultType="int" parameterType="hashmap"> -->
+	<!-- SELECT COUNT(*) FROM PICTURACT_PERSONRELATION -->
+	<!-- WHERE USERID IN (#{id}) AND FOLLOWID IN (#{userId}) -->
+	<!-- </select> -->
+
+	<!-- <select id="deleteRelation"> -->
+	<!-- DELETE FROM PICTURACT_PERSONRELATION -->
+	<!-- WHERE USERID IN (#{id}) AND FOLLOWID IN (#{userId}) -->
+	<!-- </select> -->
+
+	<!-- <select id="insertRelation"> -->
+	<!-- INSERT INTO PICTURACT_PERSONRELATION VALUES(#{id},#{userId}) -->
+
+	<!-- </select> -->
+
+
+	<!-- <select id="getFollowerList" parameterType="String" resultType="String"> -->
+	<!-- SELECT FOLLOWID FROM PICTURACT_PERSONRELATION WHERE USERID=#{userId} -->
+	<!-- </select> -->
+
+	<!-- <select id="getUserName" parameterType="String" resultType="String"> -->
+	<!-- SELECT USERNAME FROM PICTURACT_MEMBER WHERE USERID= #{userId} -->
+	<!-- </select> -->
+
+	<!-- <delete id="deleteComment" parameterType="int"> -->
+	<!-- DELETE FROM PICTURACT_COMMENT WHERE ARTICLENUM = #{articleNum} -->
+	<!-- </delete> -->
+
+	<!-- <delete id="deleteFileList" parameterType="int"> -->
+	<!-- DELETE FROM PICTURACT_FILELIST WHERE ARTICLENUM = #{articleNum} -->
+	<!-- </delete> -->
+	<!-- <delete id="deleteArticle" parameterType="int"> -->
+	<!-- DELETE FROM PICTURACT_ARTICLE WHERE ARTICLENUM = #{articleNum} -->
+	<!-- </delete> -->
+
+
+
+</mapper>

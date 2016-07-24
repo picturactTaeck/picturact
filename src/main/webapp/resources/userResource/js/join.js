@@ -89,6 +89,25 @@ $(function(){
 //member join --------------------------------------------------------
 
 
+
 $('#reset').on('click',function(){
 	$('#idCheckDiv').text("");
 });
+
+	$("#joinMember").on('click',function(){
+		var formData = $('join').serialize();
+		
+		
+		alert("아이디 :"+joinId+", 비밀번호 :"+joinPassword+", 닉네임 :"+nickName+", 실제이름 :"+userName+", 이메일 :"+eMail);
+		
+		$.ajax({
+			url:"/join.memeber",
+			dataType:"text",
+			data:formData,
+			success:function(data){
+				alert("회원가입 성공!");
+				document.location.href="/";
+			}
+		
+		});
+	});
