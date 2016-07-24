@@ -8,8 +8,10 @@ var lat, lng;
 
 function initialize() {
 	var myLoc = getLocation();
-	if (myLoc == null)
+	if (myLoc == null){
+		alert("myLoc : "+myLoc);
 		return false;
+	}
 
 	myLocation(myLoc);
 

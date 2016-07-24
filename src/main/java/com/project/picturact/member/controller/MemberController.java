@@ -49,14 +49,9 @@ public class MemberController {
 	
 	
 	@RequestMapping(value="/join.member", method=RequestMethod.POST)
-	public ModelAndView join(HttpServletRequest request, String joinId, String joinPassword, String nickName, String userName, String eMail){
+	public ModelAndView join(MemberDto memberDto){
 		
-		MemberDto memberDto = new MemberDto();
-		memberDto.setUserId(joinId);
-		memberDto.setPassword(joinPassword);
-		memberDto.setNickname(nickName);
-		memberDto.setUsername(userName);
-		memberDto.setEmail(eMail);
+		
 		
 		return joinService.joinMember(memberDto);
 	}

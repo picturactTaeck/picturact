@@ -52,19 +52,18 @@
 <script src="resources/userResource/js/follow.js?<?=filetime('follow.js')?>"></script>
 	<script src="resources/userResource/js/chat2.js?<?=filetime('chat2.js')?>"></script>
 <script src="resources/userResource/js/getPersonalArticle.js"></script>
-<script src="resources/userResource/js/getPersonalArticle.js"></script>
 
 <!-- Node js testing server check!!!!! -->
 
+<script src="http://localhost:3033/socket.io/socket.io.js"></script>
 <!-- <script src="http://pknu1.kr:3033/socket.io/socket.io.js"></script> -->
-<script src="http://127.0.0.1:3033/socket.io/socket.io.js"></script>
 
 <!-- <script src="http://pknu1.kr:3033/socket.io/socket.io.js"></script> -->
 
 	<!-- google map -->
 	<script src="resources/userResource/js/map.js"></script>	
 	<link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
-	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARM8OQ3-FZctDPJpmiRN9aCXkiQeSrcPM&callback=initialize"></script>	
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARM8OQ3-FZctDPJpmiRN9aCXkiQeSrcPM"></script>	
 
 
 <!-- 	font css -->

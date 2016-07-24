@@ -10,10 +10,36 @@ $.ajaxSetup({
 	}
 });
 $(function(){
-	$("#joinId").blur(function(){
-		var joinIdImpl = $("#joinId").text();
+	$('#submitJoin').on('click',function join(){
+		var formData = $("#join").serialize();
+		alert(formData);
+		$.ajax({
+			url:'/join.member',
+			data:formData,
+			dataType:"text",
+			success:function(data){
+				alert("회원가입 성공!");
+				document.location.href="/";
+				
+			},
+			error: function(a,b,c){
+				alert('실패 a : '+ a + " b : " + b + " c : " + c);
+			}
+		
+		
+		});
+		
+		 
+		
+//		$('#join').submit();
+	});
+
+	
+	$("#joinId").on("blur", function(){
+		var joinIdImpl = $("#joinId").val();
  		alert(joinIdImpl);
 		if(joinIdImpl != ""){
+			alert("hey");
 		
 			$.ajax({
 				url:"/joinIdCheck.member",
@@ -25,11 +51,15 @@ $(function(){
 					idCheck(data);
 					var html;
 					if(data.result=="OK"){					
-						html="<font face='Impact' align='center'>OK</font>";
-						$("#idConfirm").html(html).css("color","blue");
+//						html="<font face='Impact' align='center'>OK</font>";
+//						$("#idConfirm").html(html).css("color","blue");
+						$("#idConfirm").attr("style","color:blue");
+						$("#idConfirm").text("OK");
 					}else{
-						html="<font face='Impact' align='center'>NO</font>";
-						$("#idConfirm").html(html).css("color","red");
+//						html="<font face='Impact' align='center'>NO</font>";
+//						$("#idConfirm").html(html).css("color","red");
+						$("#idConfirm").attr("style","color:red");
+						$("#idConfirm").text("NO");
 					}
 	
 				}
@@ -58,30 +88,7 @@ $(function(){
 
 //member join --------------------------------------------------------
 
-function join(){
-	var joinId = $("#joinId").text();
-	var joinPassword = $("#joinPassword").text();
-	var nickName = $("#nickName").text();
-	var userName = $("#userName").text();
-	var eMail = $("#eMail").text();
-	
-	
-	alert("아이디 :"+joinId+", 비밀번호 :"+joinPassword+", 닉네임 :"+nickName+", 실제이름 :"+userName+", 이메일 :"+eMail);
-	
-	$.ajax({
-		url:"/join.member",
-		type : "POST",
-		data:{	
-			joinId: joinId,
-			joinPassword: joinPassword,
-			nickName: nickName,
-			userName: userName,
-			eMail: eMail
-		},
-		success:function(data){
-			alert("회원가입 성공!");
-			document.location.href="/";
-		}
-	
-	});
-};
+
+$('#reset').on('click',function(){
+	$('#idCheckDiv').text("");
+});

@@ -1,0 +1,36 @@
+.loginDiv{
+	word-break:break-all;
+	
+}
+
+.loginDiv > div{
+	width:100%;
+	margin-bottom: 10px;
+	
+	
+}
+
+input{
+	max-width:100%;
+	position:relative;
+}
+
+input[type=button], button{
+	position:static;
+	float:right;
+	margin-left: 5px;
+
+}
+
+.idCheckDiv{
+	z-index:1;
+	position:relative;
+	left:80%;
+	top: 7px;
+	width:50px;
+	height:0px;
+	margin:0px 0px;
+	
+	font-weight: bolder;
+
+}

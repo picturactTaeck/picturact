@@ -1,27 +1,3 @@
-function div_show(value){
-	if(value=="Join"){
-// 		alert(value);
-// 		.attr쓰기
-		$("#changeLogin").attr("style", "display:none");
-		$("#changeJoin").attr("style", "display:");
-// 		$("#changeLogin").hide();
-// 		$("#changeJoin").show();
-	}else{
-// 		alert(value);
-		$("#changeLogin").attr("style", "display:");
-		$("#changeJoin").attr("style", "display:none");
-// 		$("#changeLogin").show();
-// 		$("#changeJoin").hide();
-	}
-}
-
-$(function(){
-	$("#Login, #Join").on("click",function(){
-		div_show(this.id);
-	});
-});
-
-
 $.ajaxSetup({
 	type : "POST",
 	async : true,
@@ -32,11 +8,20 @@ $.ajaxSetup({
 });
 $(document).ready(function(){
 	
+	$("#changeLogin").on("click",function(){
+		$("#loginForm").attr("style", "display:inline");
+		$("#joinForm").attr("style", "display:none");
+	});
+	$("#changeJoin").on("click",function(){
+		$("#joinForm").attr("style", "display:inline");
+		$("#loginForm").attr("style", "display:none");
+	});
+	
 	 $("#idCheck").on("click", function(){
 // 		 alert("login check");
 // 		 console.log("ajax");
-		 var id=$("#userId").text();
-		 var pass=$("#userPassword").text(); 
+		 var id=$("#userId").val();
+		 var pass=$("#userPassword").val(); 
 		 
 		 if(id==""){
 		 	alert("Enter your id.");
@@ -53,10 +38,7 @@ $(document).ready(function(){
 			 	type : "POST",
 				url:"/login.member",
 	// 			data{}에서는 EL을 ""로 감싸야함..그외에는 그냥 사용
-				data:{	
-					userId:$("#userId").text(),
-					userPassword:$("#userPassword").text()
-				},
+				data:{userId:id, userPassword:pass},
 				success:function(data){
 					alert(data.loginStatus);
 					if(data.loginStatus=="loginOK"){
@@ -74,6 +56,8 @@ $(document).ready(function(){
 					
 				}
 				
+				
 		 });
+		
 	 });		 
 });

@@ -19,9 +19,10 @@ public class MemberJoinServiceImpl implements MemberJoinService {
 	public ModelAndView joinMember(MemberDto memberDto) {
 		
 //		Ajax�� �ؾ���!!! (ajax Form ����غ���!!!�˾Ƹ� �α�)
-		mav.setViewName("JSON");
+		
 		System.out.println(memberDto.toString());
 		memberJoinDao.joinMember(memberDto);
+		mav.setViewName("JSON");
 		return mav;
 	}
 
