@@ -15,7 +15,7 @@
 						var source=$("#makeMainArticlesView").html();
 
 
-						var template = Handlebars.compile(source);
+						
 
 // 						if count of files is one it return true
 // 						it help when the picture appear
@@ -49,11 +49,20 @@
 
 						});
 						
+//						it return true when location exist
+						Handlebars.registerHelper('locationExist', function(location, options) {
+			  				if(location!=null){
+			  					return options.fn(this);
+			  				}else{
+			  					return options.inverse(this);
+			  				}
+
+						});
 						
-						var html = "";
+						var template = Handlebars.compile(source);
 
 
-							$('#articlesArea').append(template(data));	
+						$('#articlesArea').append(template(data));	
 
 
 					},

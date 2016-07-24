@@ -37,8 +37,13 @@ $(document).ready(function(){
 			formData.append("postImgs", imgs[i]);
 		}
 		formData.append("content",$("#postContent").text());
+		formData.append("lat",$('#yourLocation > a').attr("lat"));
+		formData.append("lng",$('#yourLocation > a').attr("lng"));
+		formData.append("location",$('#yourLocation > a').text());
 		
-
+		alert($('#yourLocation > a').attr("lat"));
+		alert($('#yourLocation > a').attr("lng"));
+		alert($('#yourLocation > a').text());
 		//It can be send data asynchronously to server
 		$.ajax({
 			url:"/post.article",

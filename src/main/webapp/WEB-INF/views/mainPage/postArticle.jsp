@@ -17,11 +17,17 @@
 				</div>
 
 			</div>
+			<div class="row tag_sth">
+				<a  ><i class="glyphicon glyphicon-user" aria-hidden="true" ></i></a>
+				<span id="tagPerson"></span>
+				<a data-toggle="modal" data-target="#myModal" id="loadMapModal"><i class="glyphicon glyphicon-map-marker" aria-hidden="true" ></i></a>
+				<span id="yourLocation"></span>
+			</div>
 			<div class="row post_button">
-				<a data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-map-marker" aria-hidden="true" style="margin: 12px;"></i></a>
+				
 				<input type="button" id="postArticle" class="btn btn-default btn-sm border-top-radius" value="upload">
 				<input type="button" id="reset" class="btn btn-default btn-sm border-top-radius" value="reset">
-				<span id="yourLocation"></span>
+				
 			</div>
 
 			 

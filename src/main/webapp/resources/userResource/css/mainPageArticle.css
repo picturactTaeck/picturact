@@ -52,7 +52,22 @@ body {
 .article_content{
 	width : 100%;
 	padding: 10px;
+	word-break:break-all;
+	font-size: 11pt;
+	
 
+	
+}
+.article_content > a{
+	font-weight: bold;
+	color: rgb(50,50,50);
+	font-size: 9pt;
+}
+
+.article_content > a:FOCUS,
+.article_content > a:HOVER{
+	font-weight: bold;
+	color: rgb(20,20,20);
 	
 }
 

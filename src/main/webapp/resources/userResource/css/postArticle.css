@@ -80,7 +80,26 @@ body {
 	font-weight: 600;
 	color : rgb(80,80,80);
 }
+/* tag location and person */
+.tag_sth{
+	
+	
+}
+.tag_sth  a{
+	
+	color: rgb(130,130,130);
+}
+.tag_sth a:hover,
+.tag_sth a:FOCUS{
+	color: rgb(70,70,70);
+	
+}
 
+.tag_sth  a >i{
+	margin:7px;
+	
+	
+}
 
 
 

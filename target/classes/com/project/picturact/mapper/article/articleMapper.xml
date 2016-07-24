@@ -31,7 +31,7 @@
 	<select id="getMainPageArticle" resultType="articleContent"
 		parameterType="articleInfo">
 
-		SELECT ARTICLENUM, USERID,
+		SELECT ARTICLENUM, USERID, LAT, LNG, LOCATION,	
 				REGEXP_REPLACE(content, <![CDATA['<[^>]*>|\&([^;])*;']]>,'') content, WRITEDATE, HOWMANYFILES, RM
 			 FROM (SELECT article.*, ROWNUM RM FROM (SELECT * FROM PICTURACT_ARTICLE WHERE 
 		<if test="lastArticleNum==0"></if>
@@ -54,7 +54,7 @@
 	<select id="getPersonalArticle" resultType="articleContent"
 		parameterType="articleInfo">
 
-		SELECT ARTICLENUM, USERID,
+		SELECT ARTICLENUM, USERID,  LAT, LNG, LOCATION,
 		REGEXP_REPLACE(content, <![CDATA['<[^>]*>|\&([^;])*;']]>,'') content, WRITEDATE, HOWMANYFILES
 			
 		 FROM (SELECT article.*, ROWNUM RM FROM (SELECT * FROM PICTURACT_ARTICLE WHERE 

@@ -27,6 +27,7 @@ public class ArticleController {
 
 		String userId = (String) session.getAttribute("userId");
 		article.setUserId(userId);
+		System.out.println(article.toString());
 		
 
 		try{

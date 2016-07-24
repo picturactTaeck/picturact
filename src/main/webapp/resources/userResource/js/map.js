@@ -6,6 +6,13 @@ var lat, lng;
 // window.onload=initialize();
 // window.onload = initialize;
 
+
+$(document).ready(function(){
+	$('#loadMapModal').on('click',function(){
+		initialize();
+	});
+});
+
 function initialize() {
 	var myLoc = getLocation();
 	if (myLoc == null){

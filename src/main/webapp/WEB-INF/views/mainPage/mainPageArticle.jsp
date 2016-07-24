@@ -111,8 +111,12 @@
 
 
 
-		<div class="article_content">{{content}}</div>
-			
+		<div class="article_content">{{content}}
+			{{#locationExist location}}
+				&nbsp;&nbsp;&nbsp;-<a lat="{{lat}}" lng="{{lng}}">{{location}}</a>
+			{{/locationExist}}
+		</div>
+
 		<div class="main_article_reply"> reply</div>
 	</div>
 {{/each}}

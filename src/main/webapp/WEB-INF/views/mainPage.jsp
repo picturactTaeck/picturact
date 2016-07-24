@@ -37,7 +37,7 @@
 
 <!-- 	user style css -->
 <link rel="stylesheet" href="resources/userResource/css/mainNavBar.css?<?=filemtime('mainNavBar.css')?>" />
-<link rel="stylesheet" href="resources/userResource/css/postArticle.css" />
+<link rel="stylesheet" href="resources/userResource/css/postArticle.css?<?=filemtime('postArticle.css')?>" />
 <link rel="stylesheet" href="resources/userResource/css/mainPageArticle.css" />
 <link rel="stylesheet" href="resources/userResource/css/imageView.css" />
 <link rel="stylesheet" href="resources/userResource/css/personalPageArticle.css?<?=filemtime('personalPageArticle.css')?>" />
@@ -48,10 +48,10 @@
 <!-- 	user style js -->
 
 <script src="resources/userResource/js/friend_nav.js?<?=filetime('friend_nav.js')?>"></script>
-<script src="resources/userResource/js/postArticle.js?<?=filetime('postArticle.js')?>"></script>
+<script src="resources/userResource/js/postArticle.js"></script>
 <script src="resources/userResource/js/follow.js?<?=filetime('follow.js')?>"></script>
 	<script src="resources/userResource/js/chat2.js?<?=filetime('chat2.js')?>"></script>
-<script src="resources/userResource/js/getPersonalArticle.js"></script>
+<script src="resources/userResource/js/getArticle.js"></script>
 
 <!-- Node js testing server check!!!!! -->
 
