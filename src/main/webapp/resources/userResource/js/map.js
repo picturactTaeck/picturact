@@ -1,17 +1,18 @@
-var geocoder;
-var map;
-var marker;
-var lat, lng;
+
 // $(document).ready(function() { initialize() });
 // window.onload=initialize();
 // window.onload = initialize;
 
 
 $(document).ready(function(){
+	var geocoder;
+	var map;
+	var marker;
+	var lat, lng;
 	$('#loadMapModal').on('click',function(){
 		initialize();
 	});
-});
+
 
 function initialize() {
 	var myLoc = getLocation();
@@ -45,17 +46,18 @@ function myLocation(myLoc) {
 		geocoder = new google.maps.Geocoder();
 		var latlng = new google.maps.LatLng(lat, lng);
 		var myOptions = {
-			zoom : 8,
+			zoom : 18,
 			center : latlng,
 			mapTypeId : google.maps.MapTypeId.ROADMAP
 		}
-		map = new google.maps.Map(document.getElementById("map_canvas"),
-				myOptions);
+		map = new google.maps.Map($("#map_canvas"),myOptions);
+		addMark(lat, lng, map);
+		
 	});
 }
 
-function codeAddress() {
-	var address = document.getElementById("address").value;
+$("#getClickPosition").on("click",function codeAddress() {
+	var address = $("#address").value();
 	alert("address :" + address);
 
 	// r.innerHTML = '';
@@ -91,7 +93,7 @@ function codeAddress() {
 		}
 
 	});
-}
+});
 
 $(document).on("click", ".testMap", function(event) {
 	event.preventDefault();
@@ -128,7 +130,7 @@ $(document).on(
 
 		});
 
-function addMark(lat, lng) {
+function addMark(lat, lng,map) {
 	if (typeof marker != 'undefined') {
 		marker.setMap(null);
 	}
@@ -138,7 +140,7 @@ function addMark(lat, lng) {
 		position : new google.maps.LatLng(lat, lng)
 	});
 }
-
+});
 //function location1(lat, lng, location2) {
 //
 //	alert("lat :" + lat + ", lng :" + lng + ", yourLocation :" + location2 + "  들어오나");
