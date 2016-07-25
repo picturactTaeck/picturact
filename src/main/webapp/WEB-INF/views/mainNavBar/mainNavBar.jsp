@@ -17,7 +17,7 @@
 			<div  class="col-xs-19 col-lg-10 navmenu">
 <!-- 				<ul class="nav navbar-nav main_navy_style_text_color"> -->
 				<div class="main_navy_style_text_color navbar_textleftflow ">
-					<div><a href="/${userId}">Profile</a></div>
+					<div><a href="/${userId}">My page</a></div>
 					<div><a href="/main.notice?pageNum=1">Notice</a></div>
 <!-- 					<li><a id="menu-toggle" href="#">Friend</a></li> -->
 <!-- 					<li><a href="/logout.main">Logout</a></li> -->

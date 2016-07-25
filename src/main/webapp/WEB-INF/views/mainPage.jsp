@@ -37,7 +37,7 @@
 
 <!-- 	user style css -->
 <link rel="stylesheet" href="resources/userResource/css/mainNavBar.css?<?=filemtime('mainNavBar.css')?>" />
-<link rel="stylesheet" href="resources/userResource/css/postArticle.css?<?=filemtime('postArticle.css')?>" />
+<link rel="stylesheet" href="resources/userResource/css/postArticle.css?version=2" />
 <link rel="stylesheet" href="resources/userResource/css/mainPageArticle.css" />
 <link rel="stylesheet" href="resources/userResource/css/imageView.css" />
 <link rel="stylesheet" href="resources/userResource/css/personalPageArticle.css?<?=filemtime('personalPageArticle.css')?>" />
@@ -50,12 +50,12 @@
 <script src="resources/userResource/js/friend_nav.js?<?=filetime('friend_nav.js')?>"></script>
 <script src="resources/userResource/js/postArticle.js"></script>
 <script src="resources/userResource/js/follow.js?<?=filetime('follow.js')?>"></script>
-	<script src="resources/userResource/js/chat2.js?<?=filetime('chat2.js')?>"></script>
+<script src="resources/userResource/js/chat2.js?version=2"></script>
 <script src="resources/userResource/js/getArticle.js"></script>
 
 <!-- Node js testing server check!!!!! -->
 
-<script src="http://localhost:3033/socket.io/socket.io.js"></script>
+<script src="http://210.119.12.240:3033/socket.io/socket.io.js"></script>
 <!-- <script src="http://pknu1.kr:3033/socket.io/socket.io.js"></script> -->
 
 <!-- <script src="http://pknu1.kr:3033/socket.io/socket.io.js"></script> -->
@@ -129,10 +129,6 @@
 	</c:if>
 
 	<section id="articlesArea"></section>
-
-
-
-
 
 
 

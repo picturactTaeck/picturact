@@ -1,10 +1,4 @@
 
-
-body {
-
-}
-
-
 .post_article{
 	max-width: 400px;
 	background-color: rgb(245,245,245);
@@ -13,6 +7,8 @@ body {
 	border-style: solid;
 	margin-bottom: 30px;
 }
+
+
 
 .post_article > form{
 	margin : 0px;
@@ -82,7 +78,12 @@ body {
 }
 /* tag location and person */
 .tag_sth{
-	
+	border-bottom: thin;
+	border-bottom-color: rgb(230,230,230);
+	border-bottom-style: solid;
+	border-top: thin;
+	background-color: white;
+
 	
 }
 .tag_sth  a{

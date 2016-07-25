@@ -26,21 +26,7 @@
 
 
 				<div id="article{{articleNum}}" class="carousel slide " data-ride="carousel">
-					<!-- Indicators -->
-					<ol class="carousel-indicators">
-					{{#fileList}}
 
-					 	{{#if @first}}
-					 		<li data-target="#article{{articleNum}}" data-slide-to="@key-1" class="active"></li>
-
-		                {{else}}
-		                	<li data-target="#article{{articleNum}}" data-slide-to="@key-1"></li>
-		                {{/if}}
-	
-					{{/fileList}}
-
-
-					</ol>
 
 					<!-- Wrapper for slides -->
 					<div class="carousel-inner " role="listbox">

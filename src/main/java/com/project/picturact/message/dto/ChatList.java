@@ -1,25 +1,50 @@
 package com.project.picturact.message.dto;
 
+import java.util.ArrayList;
+
+
 public class ChatList {
-	private String userId;
-	private String chatContent;
-	public String getUserId() {
-		return userId;
+	private String id;
+	private String who;
+	private ArrayList<ChatContent> content;
+	public String getId() {
+		return id;
 	}
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setId(String id) {
+		this.id = id;
 	}
-	public String getChatContent() {
-		return chatContent;
+	public String getWho() {
+		return who;
 	}
-	public void setChatContent(String chatContent) {
-		this.chatContent = chatContent;
+	public void setWho(String who) {
+		this.who = who;
+	}
+	public ArrayList<ChatContent> getContent() {
+		return content;
+	}
+	public void setContent(ArrayList<ChatContent> content) {
+		this.content = content;
 	}
 	@Override
 	public String toString() {
-		return "ChatList [userId=" + userId + ", chatContent=" + chatContent + "]";
+		return "ChatList [id=" + id + ", who=" + who + ", content=" + content + "]";
 	}
+
+	
+
 	
 	
+	
+
+
+	
+	
+	
+	
+	
+	
+
+
+
 
 }
