@@ -61,7 +61,6 @@ public class ComponentController {
 	
 	@RequestMapping(value="/notice")
 	public ModelAndView noticePage(HttpSession session){
-		String id = (String) session.getAttribute("id");
 		mav = new ModelAndView();
 
 		mav.addObject("whatPost", WhatPost.NOTICE);
@@ -73,9 +72,9 @@ public class ComponentController {
 	@RequestMapping(value="/editInfo")
 	public ModelAndView editPage(HttpSession session){
 		mav = new ModelAndView();
-
+		String userId = (String)session.getAttribute("userId");
 		mav.addObject("whatPost", WhatPost.EDIT_PAGE);
-		mav.addObject("userId", session.getAttribute("id"));
+		mav.addObject("userId", userId);
 		mav.setViewName("redirect:/edit.member");
 		return mav;
 	}

@@ -43,6 +43,7 @@
 <link rel="stylesheet"
 	href="resources/userResource/css/friend_nav.css" />
 <link rel="stylesheet" href="resources/userResource/css/chat2.css" />
+<link rel="stylesheet" href="resources/userResource/css/editProfile.css" />
 
 <!-- 	user style js -->
 
@@ -52,7 +53,7 @@
 <script
 	src="resources/userResource/js/follow.js"></script>
 <script src="resources/userResource/js/chat2.js"></script>
-
+<script src="resources/userResource/js/personalInfoEdit.js"></script>
 
 <!-- Node js testing server check!!!!! -->
 

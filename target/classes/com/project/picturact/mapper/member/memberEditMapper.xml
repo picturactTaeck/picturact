@@ -6,7 +6,11 @@
 <mapper namespace="com.project.picturact.member.dao.MemberEditDao">
 
 	<select id="getMemberInfo" parameterType="String" resultType="memberDto">
-		SELECT USERID, NICKNAME, USERNAME, EMAIL, PROFILEIMG, ADMIN FROM PICTURACT_MEMBER WHERE USERID=#{userId}
+		SELECT USERID, NICKNAME, USERNAME, EMAIL, PROFILEIMG, PROFILEMESSAGE FROM PICTURACT_MEMBER WHERE USERID=#{userId}
 	</select>
+		<update id="editProfile" parameterType="memberDto">
+		UPDATE PICTURACT_MEMBER SET username=#{username}, NICKNAME=#{nickname}, email=#{email}, PROFILEIMG=#{profileImg}, PROFILEMESSAGE=#{profileMessage}
+		 WHERE USERID=#{userId}
+	</update>
 
 </mapper>

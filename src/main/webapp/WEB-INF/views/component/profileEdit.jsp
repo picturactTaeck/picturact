@@ -7,54 +7,50 @@
 <div class="container">
 <div class="row">
 <div class="col-md-8 col-md-offset-2">
-<form class="form-horizontal">
+<form class="form-horizontal" action="/editInfo.member" id="modify" method="post" enctype="multipart/form-data" >
   <fieldset>
-    <legend>${member}</legend>
-    <div class="form-group">
-    	<div class="col-lg-3">
-    	<c:if test="${memberDto.profileImg == null}">
-    	<div class="post_warp_filebutton">
-			<input type="file" id="modify_profileImg" name="modify_profileImg" accept="image/*">
-		</div>
-    	</c:if>
-    	
-    	<c:if test="${memberDto.profileImg != null}">
-	 		<div class="img_position">
-				<div class="centered"> 
-					<img class="img-responsive article_img" src="http://placehold.it/150x150" alt="">
-	
-				</div>
+    <legend>Member Information - ${member.userId}</legend>
+    <div class="form-group ">
+    	<div class="col-sm-3">
+    	<input type="hidden" name="userId" value="${member.userId}">
+    	<input type="hidden" id="modify_profileImg" name="profileImg" value="${member.profileImg}">
+		
+		<input type="file" id="uploadProfile" name="newProfile" style="display:none" accept="images/*">
+		<div id="insert_profileImg" class="img_position" >
+			<div class="centered">
+				<img class="mg-responsive article_img" id="show_profile" src="${member.profileImg}" alt="" >
 			</div>
-		</c:if>
+		</div>
+		
     	</div>
     	
-    	<div class="col-lg-9">
+    	<div class="col-sm-9">
     	  <div class="form-group">
     		<label class="col-lg-2 control-label">Name</label>
 	      	<div class="col-lg-10">
-	        	<input type="text" class="form-control" id="modify_username" placeholder="${memberDto.username}">
+	        	<input type="text" class="form-control" id="modify_username" name="username" value="${member.username}">
 	      	</div>
 	      </div>
 	      <div class="form-group">
 	      	<label class="col-lg-2 control-label">Nickname</label>
 		    <div class="col-lg-10">
-		      <input type="text" class="form-control" id="modify_nickname" placeholder="${memberDto.nickname}">
+		      <input type="text" class="form-control" id="modify_nickname" name="nickname" value="${member.nickname}">
 		    </div>
 		   </div>
     	</div>
-    	
     </div>
     
     <div class="form-group">
       <label class="col-lg-2 control-label">E-mail</label>
       <div class="col-lg-10">
-        <input type="text" class="form-control" id="modify_email" placeholder="${memberDto.email}">
+        <input type="text" class="form-control" id="modify_email" name="email" value="${member.email}">
       </div>
     </div>
     <div class="form-group">
       <label class="col-lg-2 control-label">Profile Message</label>
       <div class="col-lg-10">
-        <textarea class="form-control" rows="3" id="modify_profile_message"></textarea>
+        <textarea class="form-control" rows="3" id="modify_profile_message" name="profileMessage" value="${member.profileMessage}"></textarea>
+        
       </div>
     </div>
     
@@ -65,7 +61,7 @@
       </div>
     </div>
   </fieldset>
-</form>
+ </form>
 </div>
 </div>
 </div>

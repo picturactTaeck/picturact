@@ -1,0 +1,8 @@
+
+#show_profile{
+	position:relative;
+	overflow:hidden;
+	background-size: cover ;
+	cursor:pointer;
+	z-index: 1;
+}

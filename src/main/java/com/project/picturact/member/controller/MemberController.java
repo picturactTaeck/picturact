@@ -7,7 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.project.picturact.member.dto.MemberDto;
@@ -61,11 +63,24 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value="/edit.member")
-	public ModelAndView personalEdit(@ModelAttribute String userId, int whatPost){
+	public ModelAndView personalEdit(String userId, int whatPost){
 		mav = new ModelAndView();
+		mav.addObject("userId", userId);
 		mav.addObject("member", editService.getMemberInfo(userId));
 		mav.addObject("whatPost", whatPost);
 		mav.setViewName("mainPage");
 		return mav;
+	}
+	
+	
+	
+	@RequestMapping(value="/editInfo.member", method=RequestMethod.POST)
+	public String editProfile(@RequestParam("newProfile") MultipartFile newProfile, MemberDto memberDto) throws Exception{
+//		System.out.println(profileMessage);
+		System.out.println(memberDto.toString());
+		
+		editService.editProfile(memberDto,newProfile);
+		
+		return "redirect:/editInfo";
 	}
 }
