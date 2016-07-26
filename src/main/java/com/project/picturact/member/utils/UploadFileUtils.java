@@ -21,7 +21,7 @@ public class UploadFileUtils {
 		//for saved name in database
 		String saveFile = "/img/profile/"+savedName;
 		
-		makeProfileSize(saveDir, savedName);
+//		makeProfileSize(saveDir, savedName);
 		
 		return saveFile;
 	}

@@ -5,9 +5,13 @@
 	<div class="row personal_page_profile_row">
 		<div class="col-xs-4  personal_profile_img">
 			<div class="profile_img">
-				<img src="${profileInfo.profileImg}" alt="..."
-					class="img-rounded img-responsive profile_img">
+				<div class="img_position">
+						<div class="centered"> 
+							<img class="img-rounded  img-responsive article_img profile_img" src="${profileInfo.profileImg}" alt="...">
+						</div>
+					</div>
 			</div>
+
 
 		</div>
 		<div class="col-xs-8 ">
