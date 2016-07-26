@@ -9,6 +9,7 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import com.project.picturact.component.dao.ComponentDao;
+import com.project.picturact.member.dto.ProfileDto;
 
 @Service
 public class ComponentServiceImpl implements ComponentService {
@@ -45,6 +46,16 @@ public class ComponentServiceImpl implements ComponentService {
 		return componentDao.getFollowState(followInfo);
 	}
 
+
+
+
+
+	@Override
+	public ProfileDto getProfile(String pageId) {
+		// TODO Auto-generated method stub
+		return componentDao.getProfile(pageId);
+	}
+	
 
 	
 	

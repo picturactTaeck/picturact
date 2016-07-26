@@ -11,20 +11,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="description" content="">
 <meta name="author" content="PICTURACT">
-<!-- 	<meta name="viewport" content="width=device-width; initial-scale=1.0"> -->
-
-<!-- 	<link rel="shortcut icon" href="/favicon.ico"> -->
-<!-- 	<link rel="apple-touch-icon" href="/apple-touch-icon.png"> -->
-
 
 
 <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
 <!-- 	handlebars cdn -->
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
-<!-- 	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.runtime.js"></script> -->
-<!-- 	<script src="resources/handlebars/handlebars.runtime.js"></script> -->
-
 
 
 
@@ -45,7 +37,7 @@
 	href="resources/userResource/css/mainPageArticle.css" />
 <link rel="stylesheet" href="resources/userResource/css/imageView.css" />
 <link rel="stylesheet"
-	href="resources/userResource/css/personalPageArticle.css?<?=filemtime('personalPageArticle.css')?>" />
+	href="resources/userResource/css/personalPageArticle.css?version=1" />
 <link rel="stylesheet"
 	href="resources/userResource/css/personalPageProfile.css?<?=filemtime('personalPageProfile.css')?>" />
 <link rel="stylesheet"
@@ -56,7 +48,7 @@
 
 <script
 	src="resources/userResource/js/friend_nav.js?<?=filetime('friend_nav.js')?>"></script>
-<script src="resources/userResource/js/postArticle.js"></script>
+<script src="resources/userResource/js/postArticle.js?version=1"></script>
 <script
 	src="resources/userResource/js/follow.js?<?=filetime('follow.js')?>"></script>
 <script src="resources/userResource/js/chat2.js?version=2"></script>

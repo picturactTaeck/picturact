@@ -8,6 +8,7 @@ public class MemberDto {
 	private String email;
 	private String profileImg;
 	private String admin;
+	private String profileMessage;
 	
 	public String getUserId() {
 		return userId;
@@ -51,10 +52,17 @@ public class MemberDto {
 	public void setAdmin(String admin) {
 		this.admin = admin;
 	}
+	public String getProfileMessage() {
+		return profileMessage;
+	}
+	public void setProfileMessage(String profileMessage) {
+		this.profileMessage = profileMessage;
+	}
 	@Override
 	public String toString() {
 		return "MemberDto [userId=" + userId + ", password=" + password + ", username=" + username + ", nickname="
-				+ nickname + ", email=" + email + ", profileImg=" + profileImg + ", admin=" + admin + "]";
+				+ nickname + ", email=" + email + ", profileImg=" + profileImg + ", admin=" + admin
+				+ ", profileMessage=" + profileMessage + "]";
 	}
 	
 }

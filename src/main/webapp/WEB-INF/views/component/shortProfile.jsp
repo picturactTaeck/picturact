@@ -5,7 +5,7 @@
 	<div class="row personal_page_profile_row">
 		<div class="col-xs-4  personal_profile_img">
 			<div class="profile_img">
-				<img src="http://placehold.it/130x130" alt="..."
+				<img src="${profileInfo.profileImg}" alt="..."
 					class="img-rounded img-responsive profile_img">
 			</div>
 
@@ -30,9 +30,11 @@
 				</span>
 
 			</div>
-			<div class="">
+			<div class="" style="word-break:break-all;">
 
-					<a>Hi~ This is ${whosPage}'s page</a>
+					${profileInfo.profileMessage}
+					<br>
+					${profileInfo.email}
 
 			</div>
 			

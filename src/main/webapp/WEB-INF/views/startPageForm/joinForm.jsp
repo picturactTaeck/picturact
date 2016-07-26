@@ -5,7 +5,7 @@
 		
 		<div class="loginDiv">
 			<div>
-				<font size="4">Jogin</font>
+				<font size="4">Join</font>
 			</div>
 			<div>
 				<font size="2">Fill in the form below to get instant access:</font>

@@ -13,10 +13,12 @@ public class ArticleContent {
 	private String content;
 	private String writeDate;
 	private int howManyFiles;
+	private String profileImg;
 	private String lat;
 	private String lng;
 	private String location;
 	private ArrayList<ImageInfo> fileList;
+	
 	
 	
 	
@@ -227,13 +229,42 @@ public class ArticleContent {
 
 
 
+	public String getProfileImg() {
+		return profileImg;
+	}
+
+
+
+
+
+
+
+	public void setProfileImg(String profileImg) {
+		this.profileImg = profileImg;
+	}
+
+
+
+
+
+
+
 	@Override
 	public String toString() {
 		return "ArticleContent [articleNum=" + articleNum + ", userId=" + userId + ", title=" + title + ", content="
-				+ content + ", writeDate=" + writeDate + ", howManyFiles=" + howManyFiles + ", lat=" + lat + ", lng="
-				+ lng + ", location=" + location + ", fileList=" + fileList + "]";
+				+ content + ", writeDate=" + writeDate + ", howManyFiles=" + howManyFiles + ", profileImg=" + profileImg
+				+ ", lat=" + lat + ", lng=" + lng + ", location=" + location + ", fileList=" + fileList + "]";
 	}
+
+
+
+
+
+
+
 	
+
+
 	
 
 

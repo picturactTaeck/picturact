@@ -29,7 +29,24 @@ body {
     margin:0px;
   }
 }
+.viewArticleModalClick{
+	position: absolute;
+	z-index: 1;
+	height:50%;
+	width:50%;
+}
 
+.viewArticleModalClick div{
+	position: relative;
+	width:100%;
+	padding-top: 100%; 
+	top: 100%;
+    left: 100%;
+    transform: translate(-45%, -50%);
+    -webkit-transform: translate(-45%, -50%);
+
+	margin-left: 0px;
+}
 
 
 .personal_articles_row{
@@ -43,6 +60,17 @@ body {
 	max-width: 250px;
 }
 
+.articleModalBody{
+	padding:10px;
+	
+}
 
-
+.articleModalBody .articleImg{
+	width: 60%;
+	
+}
+.articleModalBody .articleComment{
+	width: 40%;
+	
+}
 

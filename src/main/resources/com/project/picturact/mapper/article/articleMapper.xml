@@ -32,12 +32,12 @@
 		parameterType="articleInfo">
 
 		SELECT ARTICLENUM, USERID, LAT, LNG, LOCATION,	
-				REGEXP_REPLACE(content, <![CDATA['<[^>]*>|\&([^;])*;']]>,'') content, WRITEDATE, HOWMANYFILES, RM
-			 FROM (SELECT article.*, ROWNUM RM FROM (SELECT * FROM PICTURACT_ARTICLE WHERE 
+				REGEXP_REPLACE(content, <![CDATA['<[^>]*>|\&([^;])*;']]>,'') content, WRITEDATE, HOWMANYFILES, RM, PROFILEIMG
+			 FROM (SELECT article.*, ROWNUM RM , member.PROFILEIMG FROM(SELECT * FROM PICTURACT_ARTICLE WHERE 
 			 USERID IN 
       			(SELECT FOLLOWID FROM PICTURACT_PERSONRELATION WHERE USERID=#{userId}) 
-         			OR USERID=#{userId} ORDER BY ARTICLENUM DESC) article  
-         			<if test="lastArticleNum!=0">WHERE  <![CDATA[ ARTICLENUM <]]> #{lastArticleNum} </if>
+         			OR USERID=#{userId} ORDER BY ARTICLENUM DESC) article, PICTURACT_MEMBER member  WHERE article.USERID = member.USERID
+         			<if test="lastArticleNum!=0">AND <![CDATA[ ARTICLENUM <]]> #{lastArticleNum} </if>
          			)
    	
    			WHERE  RM BETWEEN 1 AND 10
@@ -66,46 +66,11 @@
 		
 		
 	</select>
+	
+	<select id="getOneArticle" parameterType="int" resultType="articleContent">
+		SELECT * FROM PICTURACT_ARTICLE WHERE ARTICLENUM=#{articleNum}
 
-	<!-- <select id="getNextArticleNum" resultType="int"> -->
-	<!-- SELECT bbs_seq.nextval -->
-	<!-- FROM dual -->
-	<!-- </select> -->
-
-	<!-- <select id="checkRelation" resultType="int" parameterType="hashmap"> -->
-	<!-- SELECT COUNT(*) FROM PICTURACT_PERSONRELATION -->
-	<!-- WHERE USERID IN (#{id}) AND FOLLOWID IN (#{userId}) -->
-	<!-- </select> -->
-
-	<!-- <select id="deleteRelation"> -->
-	<!-- DELETE FROM PICTURACT_PERSONRELATION -->
-	<!-- WHERE USERID IN (#{id}) AND FOLLOWID IN (#{userId}) -->
-	<!-- </select> -->
-
-	<!-- <select id="insertRelation"> -->
-	<!-- INSERT INTO PICTURACT_PERSONRELATION VALUES(#{id},#{userId}) -->
-
-	<!-- </select> -->
-
-
-	<!-- <select id="getFollowerList" parameterType="String" resultType="String"> -->
-	<!-- SELECT FOLLOWID FROM PICTURACT_PERSONRELATION WHERE USERID=#{userId} -->
-	<!-- </select> -->
-
-	<!-- <select id="getUserName" parameterType="String" resultType="String"> -->
-	<!-- SELECT USERNAME FROM PICTURACT_MEMBER WHERE USERID= #{userId} -->
-	<!-- </select> -->
-
-	<!-- <delete id="deleteComment" parameterType="int"> -->
-	<!-- DELETE FROM PICTURACT_COMMENT WHERE ARTICLENUM = #{articleNum} -->
-	<!-- </delete> -->
-
-	<!-- <delete id="deleteFileList" parameterType="int"> -->
-	<!-- DELETE FROM PICTURACT_FILELIST WHERE ARTICLENUM = #{articleNum} -->
-	<!-- </delete> -->
-	<!-- <delete id="deleteArticle" parameterType="int"> -->
-	<!-- DELETE FROM PICTURACT_ARTICLE WHERE ARTICLENUM = #{articleNum} -->
-	<!-- </delete> -->
+	</select>
 
 
 

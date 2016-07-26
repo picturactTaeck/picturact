@@ -97,5 +97,39 @@
 				
 			}
 			
+			$(document).on('click','.viewArticleModal',function(){
+				alert("modal");
+				$.ajax({
+					url:'getOne.article',
+				 	data:{
+				 		articleNum:$(this).attr('articleNum')
+				 		},
+				 	
+				 	dataType:"json",
+					success: function (data){
+						var source=$("#makeModalArticle").html();
+
+
+// 						if count of files is one it return true
+// 						it help when the picture appear
+						Handlebars.registerHelper('isOne', function(howManyFiles, options) {
+			  				if(howManyFiles==1){
+			  					return options.fn(this);
+			  				}else{
+			  					return options.inverse(this);
+			  				}
+
+						});
+						
+						var template = Handlebars.compile(source);
+
+
+						$('#articleModalImg').append(template(data));	
+						
+					}
+				});
+				
+			});
+			
 			
 //		})

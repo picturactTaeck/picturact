@@ -14,5 +14,6 @@ public interface ArticleDao {
 	public ArrayList<ImageInfo> getArticleFile(int articleNum);
 	public ArrayList<ArticleContent> getMainPageArticle(ArticleInfo articleInfo);
 	public ArrayList<ArticleContent> getPersonalArticle(ArticleInfo articleInfo);
+	public ArticleContent getOneArticle(int articleNum);
 
 }

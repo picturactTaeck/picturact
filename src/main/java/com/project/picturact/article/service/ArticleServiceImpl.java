@@ -87,6 +87,17 @@ public class ArticleServiceImpl implements ArticleService {
 		
 		return article;
 	}
+
+	@Override
+	public ArticleContent getOneArticle(int articleNum) {
+		// TODO Auto-generated method stub
+		ArticleContent article = new ArticleContent();
+		article = articleDao.getOneArticle(articleNum);
+		article.setFileList(articleDao.getArticleFile(articleNum));
+		return article;
+	}
+	
+	
 	
 	
 	

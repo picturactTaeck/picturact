@@ -29,7 +29,7 @@ public class ArticleController {
 		article.setUserId(userId);
 		System.out.println(article.toString());
 		
-
+		
 		try{
 			articleService.postArticle( article, postImgs);
 		}catch(Exception e){
@@ -48,7 +48,7 @@ public class ArticleController {
 	public ArrayList<ArticleContent> getMainArticle(int lastArticleNum, HttpSession session){
 		String userId = (String) session.getAttribute("userId");
 		
-		
+		System.out.println(articleService.getMainArticles(userId,lastArticleNum));
 		return articleService.getMainArticles(userId,lastArticleNum);
 		
 	}
@@ -59,6 +59,16 @@ public class ArticleController {
 
 		
 		return articleService.getPersonalArticles(whosPage ,lastArticleNum);
+		
+	}
+	
+	@RequestMapping(value="/getOne.article")
+	@ResponseBody
+	public ArticleContent gerOne(int articleNum){
+		
+		
+		
+		return articleService.getOneArticle(articleNum);
 		
 	}
 	

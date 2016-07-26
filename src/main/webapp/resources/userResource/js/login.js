@@ -8,11 +8,11 @@ $.ajaxSetup({
 });
 $(document).ready(function(){
 	
-	$("#changeLogin").on("click",function(){
+	$(".changeLogin").on("click",function(){
 		$("#loginForm").attr("style", "display:inline");
 		$("#joinForm").attr("style", "display:none");
 	});
-	$("#changeJoin").on("click",function(){
+	$(".changeJoin").on("click",function(){
 		$("#joinForm").attr("style", "display:inline");
 		$("#loginForm").attr("style", "display:none");
 	});

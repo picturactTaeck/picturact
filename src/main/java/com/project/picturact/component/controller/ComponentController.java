@@ -31,6 +31,7 @@ public class ComponentController {
 		
 //		get main page article service(userId -> log in id)
 //		mav.addObject("articleList", componentService.getMainArticle(userId));
+		
 		mav.addObject("followList",componentService.getFollowList(userId));
 		mav.addObject("whatPost", WhatPost.MAIN_PAGE);
 		mav.setViewName("mainPage");
@@ -48,6 +49,7 @@ public class ComponentController {
 	public ModelAndView personPage(@PathVariable String pageId,HttpSession session){
 		String userId = (String) session.getAttribute("userId");
 		mav = new ModelAndView();
+		mav.addObject("profileInfo", componentService.getProfile(pageId));
 		mav.addObject("whatPost", WhatPost.PERSONAL_PAGE);
 		mav.addObject("follow",componentService.getFollowState(pageId,userId));
 		mav.addObject("whosPage",pageId);

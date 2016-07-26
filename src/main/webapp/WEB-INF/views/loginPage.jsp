@@ -16,7 +16,7 @@
 <!--  1. 파일 따로 만들기, jquery 쓰기--> 
 
 <script src="resources/bootstrap/js/bootstrap.min.js"></script>
-<script src="resources/userResource/js/login.js?<?=filemtime('login.js')?>"></script>
+<script src="resources/userResource/js/login.js"></script>
 <script src="resources/userResource/js/join.js"></script>
 
 </head>
@@ -30,8 +30,8 @@
 				<div style="float: left; font-size: 20; font-weight: bolder; ">picturact</div>
 			</div>
 			<div class="col-xs-6" style=" margin:5px 0px;">
-				<div style="float: right; font-size: 15;font-weight: bold; margin-left: 10px;">Join</div>
-				<div style="float: right; font-size: 15;font-weight: bold; margin-left: 10px;">Loin</div>
+				<div style="float: right; font-size: 15;font-weight: bold; margin-left: 10px;" class="changeLogin" >Join</div>
+				<div style="float: right; font-size: 15;font-weight: bold; margin-left: 10px;" class="changeJoin">Loin</div>
 			</div>
 
 		</div>
@@ -58,8 +58,8 @@
 							<img style="margin: auto auto;" class="img-responsive article_img" src="/resources/img/logo.png" alt="">
 				</div>
 <!-- 			<div style="float: right"> -->
-	 			<input type="button"	class="btn btn-default btn-sm" id="changeLogin" value="Login" /> 
-	 			<input type="button" class="btn btn-default btn-sm" id="changeJoin" value="Join" />
+	 			<input type="button"	class="btn btn-default btn-sm changeLogin"  value="Login" /> 
+	 			<input type="button" class="btn btn-default btn-sm changeJoin"  value="Join" />
 
 <!-- 			</div> -->
 		</div>

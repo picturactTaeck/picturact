@@ -5,7 +5,7 @@
 {{#each .}}
 	<div class="container main_article" >
 		<div class="row article_profile ">
-			<img src="http://placehold.it/40x40" alt="profile"><a href="/{{userId}}">{{userId}} </a>
+			<img src="{{profileImg}}" alt="profile"><a href="/{{userId}}">{{userId}}</a> 
 		</div>
 
 
@@ -121,3 +121,5 @@
 	</div>
 {{/each}}
 </script>
+
+

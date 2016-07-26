@@ -16,4 +16,6 @@ public interface ArticleService {
 
 	public void postArticle(ArticleContent article, MultipartHttpServletRequest postImgs) throws IOException, Exception;
 
+	public ArticleContent getOneArticle(int articleNum);
+
 }
