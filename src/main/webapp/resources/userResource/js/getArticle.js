@@ -124,7 +124,7 @@
 						var template = Handlebars.compile(source);
 
 
-						$('#articleModalImg').append(template(data));	
+						$('#articleModalImg').html(template(data));	
 						
 					}
 				});
