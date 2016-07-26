@@ -39,25 +39,24 @@ function myLocation(myLoc) {
 	myLoc.getCurrentPosition(function(position) {// getCurrentPosition() 최초
 													// 위치를 얻음
 		lat = position.coords.latitude; // 위도를 얻음
-		alert("lat :" + lat);
 		lng = position.coords.longitude; // 경도를 얻음
-		alert("lng :" + lng);
 
 		geocoder = new google.maps.Geocoder();
 		var latlng = new google.maps.LatLng(lat, lng);
 		var myOptions = {
-			zoom : 18,
+			zoom : 16,
 			center : latlng,
 			mapTypeId : google.maps.MapTypeId.ROADMAP
 		}
-		map = new google.maps.Map($("#map_canvas"),myOptions);
-		addMark(lat, lng, map);
+
+		map = new google.maps.Map($("#map_canvas")[0],myOptions);
+
 		
 	});
 }
 
 $("#getClickPosition").on("click",function codeAddress() {
-	var address = $("#address").value();
+	var address = $("#address").val();
 	alert("address :" + address);
 
 	// r.innerHTML = '';

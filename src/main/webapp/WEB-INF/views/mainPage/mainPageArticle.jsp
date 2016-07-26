@@ -3,9 +3,9 @@
 
 <script id="makeMainArticlesView" type="text/x-handlebars-template" >
 {{#each .}}
-	<div class="container main_article " articleNum="{{articleNum}}">
+	<div class="container main_article" >
 		<div class="row article_profile ">
-			<img src="http://placehold.it/40x40" alt="profile"><a href="/{{userId}}">{{userId}}</a>
+			<img src="http://placehold.it/40x40" alt="profile"><a href="/{{userId}}">{{userId}} </a>
 		</div>
 
 

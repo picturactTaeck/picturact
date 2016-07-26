@@ -31,65 +31,62 @@
 <!-- 	original bootstrap's ones -->
 <script src="resources/bootstrap/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css" />
-<link rel="stylesheet" href="resources/bootstrap/css/bootstrap-theme.min.css" />
+<link rel="stylesheet"
+	href="resources/bootstrap/css/bootstrap-theme.min.css" />
 
 
 
 <!-- 	user style css -->
-<link rel="stylesheet" href="resources/userResource/css/mainNavBar.css?<?=filemtime('mainNavBar.css')?>" />
-<link rel="stylesheet" href="resources/userResource/css/postArticle.css?version=2" />
-<link rel="stylesheet" href="resources/userResource/css/mainPageArticle.css" />
+<link rel="stylesheet"
+	href="resources/userResource/css/mainNavBar.css?<?=filemtime('mainNavBar.css')?>" />
+<link rel="stylesheet"
+	href="resources/userResource/css/postArticle.css?version=2" />
+<link rel="stylesheet"
+	href="resources/userResource/css/mainPageArticle.css" />
 <link rel="stylesheet" href="resources/userResource/css/imageView.css" />
-<link rel="stylesheet" href="resources/userResource/css/personalPageArticle.css?<?=filemtime('personalPageArticle.css')?>" />
-<link rel="stylesheet" href="resources/userResource/css/personalPageProfile.css?<?=filemtime('personalPageProfile.css')?>" />
-<link rel="stylesheet" href="resources/userResource/css/friend_nav.css?<?=filemtime('friend_nav.css')?>" />
+<link rel="stylesheet"
+	href="resources/userResource/css/personalPageArticle.css?<?=filemtime('personalPageArticle.css')?>" />
+<link rel="stylesheet"
+	href="resources/userResource/css/personalPageProfile.css?<?=filemtime('personalPageProfile.css')?>" />
+<link rel="stylesheet"
+	href="resources/userResource/css/friend_nav.css?<?=filemtime('friend_nav.css')?>" />
 <link rel="stylesheet" href="resources/userResource/css/chat2.css" />
 
 <!-- 	user style js -->
 
-<script src="resources/userResource/js/friend_nav.js?<?=filetime('friend_nav.js')?>"></script>
+<script
+	src="resources/userResource/js/friend_nav.js?<?=filetime('friend_nav.js')?>"></script>
 <script src="resources/userResource/js/postArticle.js"></script>
-<script src="resources/userResource/js/follow.js?<?=filetime('follow.js')?>"></script>
+<script
+	src="resources/userResource/js/follow.js?<?=filetime('follow.js')?>"></script>
 <script src="resources/userResource/js/chat2.js?version=2"></script>
-<script src="resources/userResource/js/getArticle.js"></script>
+<script src="resources/userResource/js/getArticle.js?version=1"></script>
 
 <!-- Node js testing server check!!!!! -->
 
 <script src="http://210.119.12.240:3033/socket.io/socket.io.js"></script>
 <!-- <script src="http://pknu1.kr:3033/socket.io/socket.io.js"></script> -->
 
-<!-- <script src="http://pknu1.kr:3033/socket.io/socket.io.js"></script> -->
 
-	<!-- google map -->
-	<script src="resources/userResource/js/map.js"></script>	
-	<link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
-	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARM8OQ3-FZctDPJpmiRN9aCXkiQeSrcPM"></script>	
+<!-- google map -->
+<script src="resources/userResource/js/map.js?<?=filetime('map.js')?>"></script>
+<link
+	href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css"
+	rel="stylesheet" type="text/css" />
+<script type="text/javascript"
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARM8OQ3-FZctDPJpmiRN9aCXkiQeSrcPM"></script>
 
 
 <!-- 	font css -->
 <link rel="stylesheet"
 	href="resources/userResource/css/font.css?<?=filemtime('font.css')?>" />
-<!-- 	<script> -->
-<!-- // 	$(document).ready(function(){ -->
-<!-- // 		var index = 2; -->
-<!-- // 		alert("abc"); -->
-<%-- // 		alert("${followList["+index+"]}"); --%>
-<%-- // 		$('#aaa').text("${followList}"); --%>
-
-<!-- // 	}) -->
-<!-- 	</script> -->
 
 <script>
 	$(document).ready(function() {
 
-				if ('${whatPost}' == '1') {
-					getArticle('getMain.article', '');
-				} else if ('${whatPost}' == '2') {
-					getArticle('getPersonal.article', '${whosPage}');
-				}
+		
 
-
-			});
+	});
 </script>
 
 </head>
@@ -109,26 +106,39 @@
 		<%@ include file="mainPage/postArticle.jsp"%>
 		<%@ include file="mainPage/mainPageArticle.jsp"%>
 		<!--     			<script src="resources/userResource/js/getMainArticle.js"></script> -->
+		
+		<section id="articlesArea" getUrl="getMain" whosPage=""></section>
+		<div class="container" style="max-width: 100px;" id="viewMoreArticle"  lastArticleNum='0'>
+			<img style="" src="resources/img/mainPageImg/viewmore.png">
+		</div>
+
 	</c:if>
 
 	<!--     		PersonalPage -->
+
 	<c:if test="${whatPost==2}">
 		<%@ include file="component/shortProfile.jsp"%>
 		<%@ include file="component/gridOrganizedArticle.jsp"%>
 		<!--     			<script src="resources/userResource/js/getPersonalArticle.js"></script> -->
-	</c:if>
+		
+		<section id="articlesArea" whosPage="${whosPage}" getUrl="getPersonal"></section>
+		<div class="container" style="max-width: 100px;" id="viewMoreArticle" lastArticleNum='0'>
+			<img style="" src="resources/img/mainPageImg/viewmore.png">
+		</div>
 
+	</c:if>
+	
 	<!--     		Notice -->
 	<c:if test="${whatPost==3}">
 		<%@ include file="notice/notice.jsp"%>
 	</c:if>
-	
+
 	<!-- 	Personal Information Page -->
 	<c:if test="${whatPost==4}">
-		<%@ include file="component/profileEdit.jsp" %>
+		<%@ include file="component/profileEdit.jsp"%>
 	</c:if>
 
-	<section id="articlesArea"></section>
+	
 
 
 

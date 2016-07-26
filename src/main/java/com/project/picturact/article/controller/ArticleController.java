@@ -46,12 +46,8 @@ public class ArticleController {
 	@RequestMapping(value="/getMain.article")
 	@ResponseBody
 	public ArrayList<ArticleContent> getMainArticle(int lastArticleNum, HttpSession session){
-//		System.out.println("main : "+lastArticleNum);
 		String userId = (String) session.getAttribute("userId");
 		
-		
-
-				
 		
 		return articleService.getMainArticles(userId,lastArticleNum);
 		
@@ -60,10 +56,7 @@ public class ArticleController {
 	@RequestMapping(value="/getPersonal.article")
 	@ResponseBody
 	public ArrayList<ArticleContent> getArticle(int lastArticleNum,String whosPage , HttpServletRequest request){
-//		System.out.println("personal : "+lastArticleNum);
-//		System.out.println("request : "+request.getRequestURI()); 
-//		System.out.println("whosPage : "+whosPage);
-				
+
 		
 		return articleService.getPersonalArticles(whosPage ,lastArticleNum);
 		

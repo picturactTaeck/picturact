@@ -34,11 +34,11 @@
 		SELECT ARTICLENUM, USERID, LAT, LNG, LOCATION,	
 				REGEXP_REPLACE(content, <![CDATA['<[^>]*>|\&([^;])*;']]>,'') content, WRITEDATE, HOWMANYFILES, RM
 			 FROM (SELECT article.*, ROWNUM RM FROM (SELECT * FROM PICTURACT_ARTICLE WHERE 
-		<if test="lastArticleNum==0"></if>
-		<if test="lastArticleNum!=0"> <![CDATA[ ARTICLENUM<]]>#{lastArticle} AND </if>
 			 USERID IN 
       			(SELECT FOLLOWID FROM PICTURACT_PERSONRELATION WHERE USERID=#{userId}) 
-         			OR USERID=#{userId} ORDER BY ARTICLENUM DESC) article )
+         			OR USERID=#{userId} ORDER BY ARTICLENUM DESC) article  
+         			<if test="lastArticleNum!=0">WHERE  <![CDATA[ ARTICLENUM <]]> #{lastArticleNum} </if>
+         			)
    	
    			WHERE  RM BETWEEN 1 AND 10
 		
@@ -58,11 +58,10 @@
 		REGEXP_REPLACE(content, <![CDATA['<[^>]*>|\&([^;])*;']]>,'') content, WRITEDATE, HOWMANYFILES
 			
 		 FROM (SELECT article.*, ROWNUM RM FROM (SELECT * FROM PICTURACT_ARTICLE WHERE 
-		<if test="lastArticleNum==0"></if>
-		<if test="lastArticleNum!=0"> <![CDATA[ ARTICLENUM<]]>#{lastArticle} AND </if>
-			 USERID=#{userId}) article)
-   			WHERE  RM BETWEEN 1 AND 10
-   			ORDER BY ARTICLENUM DESC
+		<if test="lastArticleNum!=0"> <![CDATA[ ARTICLENUM <]]>#{lastArticleNum} AND </if>
+			 USERID=#{userId} ORDER BY ARTICLENUM DESC) article)
+   			WHERE  RM BETWEEN 1 AND 9
+ 
 		
 		
 		

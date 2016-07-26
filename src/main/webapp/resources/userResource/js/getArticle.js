@@ -1,16 +1,39 @@
 		
 
-//		$(document).ready(function(){
+		$(document).ready(function(){
+			getArticle();
+			$('#viewMoreArticle').on('click',function(){
+				getArticle();
+			});
 			
-			function getArticle(getUrl, whosPage){
+		
+		});
+			
+			function getArticle(){
+				var lastArticleNum=0;
+				if($('#articlesArea :eq(0)').length==0){
+					lastArticleNum=0;
+				}else{
+					lastArticleNum=$('#viewMoreArticle').attr('lastArticleNum');
+				}
+				var url = $('#articlesArea').attr('getUrl')+".article";
+
 				$.ajax({
-					url:getUrl,
+					url:url,
 				 	data:{
-				 		lastArticleNum:'0',
-				 		whosPage:whosPage
-				 	},
+				 		lastArticleNum:lastArticleNum,
+				 		whosPage:$('#articlesArea').attr('whosPage')
+				 		},
+				 	
 				 	dataType:"json",
 					success: function (data){
+						if(data.length==0){
+							alert('There is no information any more');
+							return false;
+						}
+						
+						
+						
 						
 						var source=$("#makeMainArticlesView").html();
 
@@ -63,6 +86,7 @@
 
 
 						$('#articlesArea').append(template(data));	
+						$('#viewMoreArticle').attr('lastArticleNum',data[data.length-1].articleNum);
 
 
 					},

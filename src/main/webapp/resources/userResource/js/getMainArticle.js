@@ -1,9 +1,13 @@
 		
 
 		$(document).ready(function(){
-			
+			var lastArticleNum=0;
 			getArticle();
-			
+			if($('#articlesArea').length==0){
+				lastArticleNum=0;
+			}else{
+				lastArticleNum=$('#articlesArea :last-child').attr('articleNum');
+			}
 			function getArticle(){
 				$.ajax({
 					url:"getMain.article",
@@ -30,6 +34,15 @@
 						});
 // 						this helper will return true when the number diveded to 3 remainder is 0
 //						then the row's div is appered
+						Handlebars.registerHelper('divideRowFirst', function(key, options) {
+			  				if(key%3==0){
+			  					return options.fn(this);
+			  				}else{
+			  					return options.inverse(this);
+			  				}
+
+						});
+						
 						Handlebars.registerHelper('divideRowFirst', function(key, options) {
 			  				if(key%3==0){
 			  					return options.fn(this);

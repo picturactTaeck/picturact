@@ -3,8 +3,8 @@ $(document).ready(function(){
 	var socket = io.connect('http://210.119.12.240:3033');
 	socket.emit('join', {'userId' : $("#chatDiv").attr("user")});
 	
-	Handlebars.registerHelper('whereAppend',function(userId, options) {
-		if ($("#chatDiv").attr("user") == userId) {
+	Handlebars.registerHelper('whereAppend',function(sender, options) {
+		if ($("#chatDiv").attr("user") == sender) {
 			return 'right';
 
 		} else {
@@ -61,7 +61,7 @@ $(document).ready(function(){
 
 	socket.on('message', function(data) {
 
-		if($('#chat' + data.userId).length==0 ){
+		if($('#chat' + data.sender).length==0 ){
 			loadChatArea(data.sender);
 			
 		}else{

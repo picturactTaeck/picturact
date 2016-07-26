@@ -8,10 +8,8 @@
 		{{#divideRowFirst @key}}
 			<div class = "row personal_articles_row">
 		{{/divideRowFirst}}
-		<div class="col-xs-4  personal_article_img personal_article_padding "  name="articles">
-			
+		<div class="col-xs-4  personal_article_img personal_article_padding "  name="articles" >
 			{{#isOne howManyFiles}}
-
 				{{#fileList}}
 
 					<div class="img_position">
