@@ -30,29 +30,29 @@
 
 <!-- 	user style css -->
 <link rel="stylesheet"
-	href="resources/userResource/css/mainNavBar.css?<?=filemtime('mainNavBar.css')?>" />
+	href="resources/userResource/css/mainNavBar.css" />
 <link rel="stylesheet"
-	href="resources/userResource/css/postArticle.css?version=2" />
+	href="resources/userResource/css/postArticle.css" />
 <link rel="stylesheet"
 	href="resources/userResource/css/mainPageArticle.css" />
 <link rel="stylesheet" href="resources/userResource/css/imageView.css" />
 <link rel="stylesheet"
-	href="resources/userResource/css/personalPageArticle.css?version=1" />
+	href="resources/userResource/css/personalPageArticle.css" />
 <link rel="stylesheet"
-	href="resources/userResource/css/personalPageProfile.css?<?=filemtime('personalPageProfile.css')?>" />
+	href="resources/userResource/css/personalPageProfile.css" />
 <link rel="stylesheet"
-	href="resources/userResource/css/friend_nav.css?<?=filemtime('friend_nav.css')?>" />
+	href="resources/userResource/css/friend_nav.css" />
 <link rel="stylesheet" href="resources/userResource/css/chat2.css" />
 
 <!-- 	user style js -->
 
 <script
-	src="resources/userResource/js/friend_nav.js?<?=filetime('friend_nav.js')?>"></script>
-<script src="resources/userResource/js/postArticle.js?version=1"></script>
+	src="resources/userResource/js/friend_nav.js"></script>
+<script src="resources/userResource/js/postArticle.js"></script>
 <script
-	src="resources/userResource/js/follow.js?<?=filetime('follow.js')?>"></script>
-<script src="resources/userResource/js/chat2.js?version=2"></script>
-<script src="resources/userResource/js/getArticle.js?version=1"></script>
+	src="resources/userResource/js/follow.js"></script>
+<script src="resources/userResource/js/chat2.js"></script>
+
 
 <!-- Node js testing server check!!!!! -->
 
@@ -103,6 +103,7 @@
 		<div class="container" style="max-width: 100px;" id="viewMoreArticle"  lastArticleNum='0'>
 			<img style="" src="resources/img/mainPageImg/viewmore.png">
 		</div>
+		<script src="resources/userResource/js/getArticle.js"></script>
 
 	</c:if>
 
@@ -117,6 +118,7 @@
 		<div class="container" style="max-width: 100px;" id="viewMoreArticle" lastArticleNum='0'>
 			<img style="" src="resources/img/mainPageImg/viewmore.png">
 		</div>
+		<script src="resources/userResource/js/getArticle.js"></script>
 
 	</c:if>
 	
