@@ -16,8 +16,8 @@ public class MemberEditServiceImpl implements MemberEditService {
 	MemberEditDao memberEditDao;
 	MemberDto memberDto;
 	
-	@Resource(name="saveProfileDir")
-	String saveProfileDir;
+	@Resource(name="saveDir")
+	String saveDir;
 	
 	@Override
 	public MemberDto getMemberInfo(String userId) {
@@ -40,7 +40,7 @@ public class MemberEditServiceImpl implements MemberEditService {
 	public void editProfile(MemberDto memberDto,MultipartFile newProfile) throws Exception {
 		String file = null;
 		if(!newProfile.isEmpty()){
-			file = UploadFileUtils.uploadFile(saveProfileDir, newProfile.getOriginalFilename(), newProfile.getBytes());
+			file = UploadFileUtils.uploadFile(saveDir, newProfile.getOriginalFilename(), newProfile.getBytes());
 			memberDto.setProfileImg(file);
 		}
 		System.out.println(memberDto.toString());
