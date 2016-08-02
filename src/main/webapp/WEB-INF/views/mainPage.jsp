@@ -15,8 +15,7 @@
 
 <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
 <!-- 	handlebars cdn -->
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
 
 
 
@@ -34,7 +33,7 @@
 <link rel="stylesheet"
 	href="resources/userResource/css/postArticle.css" />
 <link rel="stylesheet"
-	href="resources/userResource/css/mainPageArticle.css" />
+	href="resources/userResource/css/mainPageArticle.css?version=1" />
 <link rel="stylesheet" href="resources/userResource/css/imageView.css" />
 <link rel="stylesheet"
 	href="resources/userResource/css/personalPageArticle.css" />
@@ -54,11 +53,11 @@
 	src="resources/userResource/js/follow.js"></script>
 <script src="resources/userResource/js/chat2.js"></script>
 <script src="resources/userResource/js/personalInfoEdit.js"></script>
-
+<script src="resources/userResource/js/deleteArticle.js?version=1"></script>
 <!-- Node js testing server check!!!!! -->
 
-<!-- <script src="http://210.119.12.240:3033/socket.io/socket.io.js"></script> -->
-<script src="http://pknu1.kr:3033/socket.io/socket.io.js"></script>
+<script src="http://210.119.12.240:3033/socket.io/socket.io.js"></script>
+<!-- <script src="http://pknu1.kr:3033/socket.io/socket.io.js"></script> -->
 
 
 <!-- google map -->

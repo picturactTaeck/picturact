@@ -39,8 +39,11 @@ public class MemberEditServiceImpl implements MemberEditService {
 	@Override
 	public void editProfile(MemberDto memberDto,MultipartFile newProfile) throws Exception {
 		String file = null;
+		System.out.println("edit!");
 		if(!newProfile.isEmpty()){
-			file = UploadFileUtils.uploadFile(saveDir, newProfile.getOriginalFilename(), newProfile.getBytes());
+			System.out.println("here?");
+			System.out.println("savedir : " +saveDir);
+			file = UploadFileUtils.uploadFile(saveDir+"profile/", newProfile.getOriginalFilename(), newProfile.getBytes());
 			memberDto.setProfileImg(file);
 		}
 		System.out.println(memberDto.toString());

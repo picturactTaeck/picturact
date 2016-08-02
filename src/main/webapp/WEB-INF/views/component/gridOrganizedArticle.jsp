@@ -15,7 +15,7 @@
 
 					<div class="img_position">
 						<div class="centered"> 
-							<img class="img-responsive article_img" src="/img/{{storedFname}}" alt="">
+							<img class="img-responsive article_img" src="/img/image{{storedFname}}" alt="">
 
 						</div>
 					</div>
@@ -35,7 +35,7 @@
 							{{#if @first}}
 								<div class="item active img_position">
 									<div class="centered"> 
-										<img class="img-responsive article_img" src="/img/{{storedFname}}" alt="">
+										<img class="img-responsive article_img" src="/img/image{{storedFname}}" alt="">
 
 										<div class="carousel-caption"></div>
 									</div>
@@ -45,7 +45,7 @@
 
 								<div class="item img_position">
 									<div class="centered"> 
-										<img class="img-responsive article_img" src="/img/{{storedFname}}" alt="">
+										<img class="img-responsive article_img" src="/img/image{{storedFname}}" alt="">
 
 										<div class="carousel-caption"></div>		
 									</div>
@@ -101,7 +101,7 @@
 
 					<div class="img_position">
 						<div class="centered"> 
-							<img class="img-responsive article_img" src="/img/{{storedFname}}" alt="">
+							<img class="img-responsive article_img" src="/img/image{{storedFname}}" alt="">
 
 						</div>
 					</div>
@@ -121,7 +121,7 @@
 							{{#if @first}}
 								<div class="item active img_position">
 									<div class="centered"> 
-										<img class="img-responsive article_img" src="/img/{{storedFname}}" alt="">
+										<img class="img-responsive article_img" src="/img/image{{storedFname}}" alt="">
 
 										<div class="carousel-caption"></div>
 									</div>
@@ -131,7 +131,7 @@
 
 								<div class="item img_position">
 									<div class="centered"> 
-										<img class="img-responsive article_img" src="/img/{{storedFname}}" alt="">
+										<img class="img-responsive article_img" src="/img/image{{storedFname}}" alt="">
 
 										<div class="carousel-caption"></div>		
 									</div>

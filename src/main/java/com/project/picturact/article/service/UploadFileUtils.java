@@ -17,15 +17,15 @@ public class UploadFileUtils {
 			String originalName, byte[] fileData) throws Exception{
 		UUID uid = UUID.randomUUID();    
 	    String savedName = uid.toString() +"_"+originalName;    
-	    String savedPath = calcPath(saveDir+"/images/");    
-	    File target = new File(saveDir +savedPath,savedName);    
+	    String savedPath = calcPath(saveDir);    
+	    File target = new File(saveDir+savedPath,savedName);    
 	    FileCopyUtils.copy(fileData, target);
 	    
 
 	    String path = savedPath+ File.separator +savedName;
 	    
 
-	    return path.replace(File.separatorChar, '/');	
+	    return path.replace(File.separatorChar, '/');
 	}
 	
 	private static String calcPath(String uploadPath){    

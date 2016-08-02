@@ -15,5 +15,8 @@ public interface ArticleDao {
 	public ArrayList<ArticleContent> getMainPageArticle(ArticleInfo articleInfo);
 	public ArrayList<ArticleContent> getPersonalArticle(ArticleInfo articleInfo);
 	public ArticleContent getOneArticle(int articleNum);
+	public void deleteFileList(int articleNum);
+	public void deleteComment(int articleNum);
+	public void deleteArticle(int articleNum);
 
 }

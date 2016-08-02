@@ -90,7 +90,7 @@
 	
 <!-- 	파일저장 위치 -->
 	<bean class="java.lang.String" id="saveDir">
-<!-- 		<constructor-arg value="/home/pknu01/picturact/"/> -->
+<!-- 		<constructor-arg value="/home/pknu01/picturact/images/"/> -->
 <constructor-arg value="D:/TK/upload/"/>
 	</bean>
 	

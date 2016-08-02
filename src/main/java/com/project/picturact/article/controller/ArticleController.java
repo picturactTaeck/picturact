@@ -72,5 +72,15 @@ public class ArticleController {
 		
 	}
 	
+	@RequestMapping(value="/delete.article")
+	@ResponseBody
+	public String deleteArticle(int articleNum){
+		
+		
+		
+		return articleService.deleteArticle(articleNum);
+		
+	}
+	
 
 }

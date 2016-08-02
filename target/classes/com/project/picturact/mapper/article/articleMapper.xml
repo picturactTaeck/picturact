@@ -40,7 +40,7 @@
          			<if test="lastArticleNum!=0">AND <![CDATA[ ARTICLENUM <]]> #{lastArticleNum} </if>
          			)
    	
-   			WHERE  RM BETWEEN 1 AND 10
+   			WHERE  RM BETWEEN 1 AND 10 ORDER BY ARTICLENUM DESC 
 		
 	
 	</select>
@@ -71,6 +71,18 @@
 		SELECT * FROM PICTURACT_ARTICLE WHERE ARTICLENUM=#{articleNum}
 
 	</select>
+
+
+		
+	<delete id="deleteFileList" parameterType="int">
+		DELETE FROM PICTURACT_FILELIST WHERE ARTICLENUM=#{articleNum}
+	</delete>
+	<delete id="deleteComment" parameterType="int">
+		DELETE FROM PICTURACT_COMMENT WHERE ARTICLENUM=#{articleNum}
+	</delete>
+	<delete id="deleteArticle" parameterType="int">
+		DELETE FROM PICTURACT_ARTICLE WHERE ARTICLENUM=#{articleNum}
+	</delete>
 
 
 

@@ -18,4 +18,6 @@ public interface ArticleService {
 
 	public ArticleContent getOneArticle(int articleNum);
 
+	public String deleteArticle(int articleNum);
+
 }

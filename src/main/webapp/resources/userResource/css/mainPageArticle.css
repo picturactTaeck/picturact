@@ -36,11 +36,14 @@ body {
 /* 	margin-left: 0px; */
 	padding : 3px;
 	
+	
 }
 
-.article_profile > img{
+.article_profile >div{
 	width: 35px;
 	height: 35px;
+	padding-top:0px;
+	float: left;
 }
 
 .article_profile > a{
@@ -48,6 +51,10 @@ body {
 	font-size: larger;
 	font-weight: bold;
 	color: rgb(50,50,50);
+	float: left;
+	margin-top: 7px;
+
+
 }
 .article_content{
 	width : 100%;

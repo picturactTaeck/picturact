@@ -18,13 +18,13 @@ import com.project.picturact.article.dto.ImageInfo;
 
 @Service
 public class ArticleServiceImpl implements ArticleService {
-	
+
 	@Inject
 	ArticleDao articleDao;
-	
+
 	@Resource(name="saveDir")
 	String saveDir;
-	
+
 	ArticleInfo articleInfo;
 
 	@Override
@@ -37,36 +37,36 @@ public class ArticleServiceImpl implements ArticleService {
 		article.setHowManyFiles(postImgs.getFiles("postImgs").size());
 		articleDao.insertArticle(article);
 
-		
+
 		for(MultipartFile file:postImgs.getFiles("postImgs")){
 			imgInfo = new ImageInfo();
-			String storedFname = UploadFileUtils.uploadFile(saveDir, file.getOriginalFilename(), file.getBytes());
+			String storedFname = UploadFileUtils.uploadFile(saveDir+"image/", file.getOriginalFilename(), file.getBytes());
 			imgInfo.setArticleNum(nextArticleNum);
 			imgInfo.setStoredFname(storedFname);
 			imgInfo.setFileLength(file.getSize());
 			articleDao.insertImgInfo(imgInfo);
 		}
-		
-		
-		
-		
-		
+
+
+
+
+
 	}
 
 	@Override
 	public ArrayList<ArticleContent> getMainArticles(String userId, int lastArticleNum) {
 		// TODO Auto-generated method stub
-		
+
 		articleInfo = new ArticleInfo();
 		articleInfo.setUserId(userId);
 		articleInfo.setLastArticleNum(lastArticleNum);
-		
-		
+
+
 		return this.mappingFiles(articleDao.getMainPageArticle(articleInfo));
 	}
-	
-	
-	
+
+
+
 
 	@Override
 	public ArrayList<ArticleContent> getPersonalArticles(String whosPage, int lastArticleNum) {
@@ -74,17 +74,17 @@ public class ArticleServiceImpl implements ArticleService {
 		articleInfo = new ArticleInfo();
 		articleInfo.setUserId(whosPage);
 		articleInfo.setLastArticleNum(lastArticleNum);
-		
+
 		return  this.mappingFiles(articleDao.getPersonalArticle(articleInfo));
 	}
 
 	public ArrayList<ArticleContent> mappingFiles(ArrayList<ArticleContent> article) {
 		// TODO Auto-generated method stub
-		
+
 		for(ArticleContent i : article){
 			i.setFileList(articleDao.getArticleFile(i.getArticleNum()));
 		}
-		
+
 		return article;
 	}
 
@@ -96,11 +96,29 @@ public class ArticleServiceImpl implements ArticleService {
 		article.setFileList(articleDao.getArticleFile(articleNum));
 		return article;
 	}
-	
-	
-	
-	
-	
-	
+
+	@Override
+	public String deleteArticle(int articleNum) {
+		// TODO Auto-generated method stub
+		try{
+			articleDao.deleteFileList(articleNum);
+			articleDao.deleteComment(articleNum);
+			articleDao.deleteArticle(articleNum);
+			return "Delete success";
+		}catch(Exception e){
+			e.printStackTrace();
+			return "Delete fail";
+
+		}
+
+	}
+
+
+
+
+
+
+
+
 
 }

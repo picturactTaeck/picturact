@@ -19,8 +19,8 @@ public class UploadFileUtils {
 		FileCopyUtils.copy(fileData, target);
 		
 		//for saved name in database
-		String saveFile = saveDir+"/profile/"+savedName;
-		
+		String saveFile = "/img/profile/"+savedName;
+		System.out.println(saveFile);
 //		makeProfileSize(saveDir, savedName);
 		
 		return saveFile;
