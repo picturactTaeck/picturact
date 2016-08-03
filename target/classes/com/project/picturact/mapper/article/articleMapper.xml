@@ -27,7 +27,7 @@
 
 
 	</insert>
-	
+<!-- 	linux -->
 	<select id="getMainPageArticle" resultType="articleContent"
 		parameterType="articleInfo">
 
@@ -36,7 +36,7 @@
 			 FROM (SELECT article.*, ROWNUM RM , member.PROFILEIMG FROM(SELECT * FROM PICTURACT_ARTICLE WHERE 
 			 USERID IN 
       			(SELECT FOLLOWID FROM PICTURACT_PERSONRELATION WHERE USERID=#{userId}) 
-         			OR USERID=#{userId} ORDER BY ARTICLENUM DESC) article, PICTURACT_MEMBER member  WHERE article.USERID = member.USERID
+         			OR USERID=#{userId} ORDER BY ARTICLENUM <if test="lastArticleNum==0"> DESC </if>) article, PICTURACT_MEMBER member  WHERE article.USERID = member.USERID
          			<if test="lastArticleNum!=0">AND <![CDATA[ ARTICLENUM <]]> #{lastArticleNum} </if>
          			)
    	
@@ -44,6 +44,24 @@
 		
 	
 	</select>
+	
+	<!-- 	window -->
+<!-- 	<select id="getMainPageArticle" resultType="articleContent" -->
+<!-- 		parameterType="articleInfo"> -->
+
+<!-- 		SELECT ARTICLENUM, USERID, LAT, LNG, LOCATION,	 -->
+<!-- 				REGEXP_REPLACE(content, <![CDATA['<[^>]*>|\&([^;])*;']]>,'') content, WRITEDATE, HOWMANYFILES, RM, PROFILEIMG -->
+<!-- 			 FROM (SELECT article.*, ROWNUM RM , member.PROFILEIMG FROM(SELECT * FROM PICTURACT_ARTICLE WHERE  -->
+<!-- 			 USERID IN  -->
+<!--       			(SELECT FOLLOWID FROM PICTURACT_PERSONRELATION WHERE USERID=#{userId})  -->
+<!--          			OR USERID=#{userId} ORDER BY ARTICLENUM DESC ) article, PICTURACT_MEMBER member  WHERE article.USERID = member.USERID -->
+<!--          			<if test="lastArticleNum!=0">AND <![CDATA[ ARTICLENUM <]]> #{lastArticleNum} </if> -->
+<!--          			) -->
+   	
+<!--    			WHERE  RM BETWEEN 1 AND 10  -->
+		
+	
+<!-- 	</select> -->
 
 	<select id="getArticleFile" parameterType="int" resultType="imageInfo">
 		SELECT * FROM PICTURACT_FILELIST WHERE ARTICLENUM=#{articleNum}

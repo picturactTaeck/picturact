@@ -26,10 +26,16 @@ public class MessageDaoImpl implements MessageDao{
 //			return mongoTemplate.find
 
 //			System.out.println("mongo db connect?");
-			List<ChatList> getChatList= mongoTemplate.find(new Query(Criteria.where("who").is(chatId)),  ChatList.class, "chat_"+userId+"s");
+			String collectionName = null;
+			if(checkChar(userId)){
+				collectionName="chat_"+userId;
+			}else{
+				collectionName="chat_"+userId+"s";
+			}
+		
+			
+			List<ChatList> getChatList= mongoTemplate.find(new Query(Criteria.where("who").is(chatId)),  ChatList.class, collectionName);
 
-
-			System.out.println("aa : "+getChatList.toString());
 			return 	getChatList.get(0);
 //			return null;
 
@@ -42,6 +48,19 @@ public class MessageDaoImpl implements MessageDao{
 
 	}
 	
+	public boolean checkChar(String userId){
+		
+
+		    try {
+		        Integer.parseInt( userId.substring(userId.length()-2));
+		        return true;
+		    } catch (NumberFormatException e) {
+		        return false;
+
+
+	}
+	
 	
 
+	}
 }

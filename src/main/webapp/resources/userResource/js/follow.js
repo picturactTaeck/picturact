@@ -11,7 +11,7 @@
 		
 	});
 	function changeFollowState(){
-		alert($("#followButton").attr("user"));
+
 
 		
 		$.ajax({
@@ -24,17 +24,19 @@
 							
 						},
 						success:function(data){
-							alert(data);
+
 							
 							if(data==1){
 								$("#followButton").attr("class","btn btn-default border-top-radius btn-xs active personal_profile_follow active");
 								$("#followButton").val("-unfollow");
+								alert("follow complete!");
 
 
 							}else if(data==0){
 								$("#followButton").attr("class","btn btn-default border-top-radius btn-xs active personal_profile_follow");
 								$("#followButton").val("+follow");
-								alert($("#followButton").attr("class"));
+								alert("unfollow complete!");
+
 
 							}
 							
