@@ -121,6 +121,21 @@
 		<url-pattern>*.follow</url-pattern>
 	</servlet-mapping>
 	
+		<!--Comment Servlet -->
+	<servlet>
+		<servlet-name>commentServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>CLASSPATH:/servlet/comment-context.xml</param-value>
+		</init-param>
+	</servlet>
+		
+	<servlet-mapping>
+		<servlet-name>commentServlet</servlet-name>
+		<url-pattern>*.comment</url-pattern>
+	</servlet-mapping>
+	
 	<servlet-mapping>
 	  	<servlet-name>default</servlet-name>
 		<url-pattern>*.js</url-pattern>

@@ -8,16 +8,21 @@
       </div>
       <div class="articleModalBody">
       	<div class="articleImg" id="articleModalImg">
-      				
+      					
       	</div>
-      	<div class="articleComment"></div>
+      	<div class="articleComment" id="viewArticleComment" >
+			
+		</div>
+      	
       
       	
        
       </div>
       <div class="modal-footer">
+      	
 
       </div>
     </div>
   </div>
 </div>
+

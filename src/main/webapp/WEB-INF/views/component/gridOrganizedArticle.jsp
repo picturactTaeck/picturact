@@ -173,4 +173,5 @@
 
 
 <%@ include file="articleModal.jsp" %>
+<%@ include file="comment.jsp" %>
 

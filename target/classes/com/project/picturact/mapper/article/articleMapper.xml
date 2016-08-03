@@ -40,7 +40,7 @@
          			<if test="lastArticleNum!=0">AND <![CDATA[ ARTICLENUM <]]> #{lastArticleNum} </if>
          			)
    	
-   			WHERE  RM BETWEEN 1 AND 10 ORDER BY ARTICLENUM DESC 
+   			WHERE  RM BETWEEN 1 AND 10 
 		
 	
 	</select>

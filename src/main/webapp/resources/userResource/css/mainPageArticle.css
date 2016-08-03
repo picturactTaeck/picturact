@@ -82,6 +82,17 @@ body {
 	padding: 10px;	
 }
 
+.main_article_reply > a{
 
+	color: rgb(130,130,130);
+}
+
+.main_article_reply > a:FOCUS,
+.main_article_reply > a:HOVER{
+	font-weight: bold;
+	color: rgb(20,20,20);
+	cursor: pointer;
+	
+}
 
 

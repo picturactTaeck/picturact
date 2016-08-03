@@ -65,12 +65,37 @@ body {
 	
 }
 
+/* .articleModalBody .articleImg{ */
+/* 	width: 60%; */
+	
+/* } */
+/* .articleModalBody .articleComment{ */
+/* 	width: 40%; */
+	
+/* } */
+
+/* .articleModalBody{ */
+/* 	padding:10px; */
+	
+/* } */
+
 .articleModalBody .articleImg{
+	position:relative;
 	width: 60%;
+	margin-right:0x;
 	
 }
 .articleModalBody .articleComment{
+	position:absolute;
+	right:0;
+	top:10%;
 	width: 40%;
+	height:100%;
+	float: right;
+	padding: 5px;
 	
 }
+
+
+
 

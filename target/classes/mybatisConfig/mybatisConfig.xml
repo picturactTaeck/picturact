@@ -24,6 +24,7 @@
 		<typeAlias alias="memberDto" type="com.project.picturact.member.dto.MemberDto"/>
 		<typeAlias alias="profileDto" type="com.project.picturact.member.dto.ProfileDto"/>
 		<typeAlias alias="articleInfo" type="com.project.picturact.article.dto.ArticleInfo"/>
+		<typeAlias alias="commentDto" type="com.project.picturact.comment.dto.CommentDto"/>
 	</typeAliases>
 
 	<mappers>
@@ -34,5 +35,6 @@
 		<mapper resource="com/project/picturact/mapper/member/memberJoinMapper.xml"/>
 		<mapper resource="com/project/picturact/mapper/member/memberLoginMapper.xml"/>
 		<mapper resource="com/project/picturact/mapper/member/memberEditMapper.xml"/>
+		<mapper resource="com/project/picturact/mapper/comment/commentMapper.xml"/>
 	</mappers>
 </configuration>

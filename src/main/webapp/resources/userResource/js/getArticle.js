@@ -1,5 +1,3 @@
-		
-
 		$(document).ready(function(){
 			getArticle();
 			$('#viewMoreArticle').on('click',function(){
@@ -82,6 +80,16 @@
 
 						});
 						
+
+						Handlebars.registerHelper('isMine', function(userId, options) {
+			  				if(userId==$('#articlesArea').attr('userId')){
+			  					return options.fn(this);
+			  				}else{
+			  					return options.inverse(this);
+			  				}
+
+						});
+						
 						var template = Handlebars.compile(source);
 
 
@@ -98,7 +106,8 @@
 			}
 			
 			$(document).on('click','.viewArticleModal',function(){
-				alert("modal");
+
+				$('#viewArticleComment').attr('article',$(this).attr('articleNum'));
 				$.ajax({
 					url:'getOne.article',
 				 	data:{
@@ -126,10 +135,12 @@
 
 						$('#articleModalImg').html(template(data));	
 						
+						getComment($('#viewArticleComment'));
+						
 					}
 				});
 				
 			});
 			
 			
-//		})
+			

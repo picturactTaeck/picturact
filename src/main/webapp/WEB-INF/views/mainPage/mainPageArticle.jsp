@@ -15,7 +15,7 @@
 					
 			</div>
 
-			<a href="/{{userId}}">{{userId}}</a> {{articleNum}}
+			<a href="/{{userId}}">{{userId}}</a> 
 		</div>
 
 
@@ -107,16 +107,19 @@
 					<a href="#" class="btn btn-inverse">
 						<i class="glyphicon glyphicon-thumbs-up" ></i>
 					</a>
-					<a href="#" class="btn btn-inverse">
-						<i class="glyphicon glyphicon-pencil" ></i>
-					</a>
+					
 
 				</div>
-				<div class="btn-group">
-					<a class="btn btn-inverse deleteArticle" articleNum='{{articleNum}}'>
-						<i class="glyphicon glyphicon-trash" ></i>
+				{{#isMine userId}}
+					<div class="btn-group">
+						<a href="#" class="btn btn-inverse">
+						<i class="glyphicon glyphicon-pencil" ></i>
 					</a>
-				</div>
+						<a class="btn btn-inverse deleteArticle" articleNum='{{articleNum}}'>
+							<i class="glyphicon glyphicon-trash" ></i>
+						</a>
+					</div>
+				{{/isMine}}
 			</div>
 				
 		
@@ -129,9 +132,10 @@
 			{{/locationExist}}
 		</div>
 
-		<div class="main_article_reply"> reply</div>
+		<div class="main_article_reply" id="comment{{articleNum}}" article="{{articleNum}}"> <a class="getComment" >comments</a></div>
 	</div>
 {{/each}}
 </script>
 
 
+<%@ include file="../component/comment.jsp" %>

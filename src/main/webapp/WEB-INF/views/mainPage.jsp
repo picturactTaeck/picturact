@@ -22,28 +22,21 @@
 <!-- 	original bootstrap's ones -->
 <script src="resources/bootstrap/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css" />
-<link rel="stylesheet"
-	href="resources/bootstrap/css/bootstrap-theme.min.css" />
+<link rel="stylesheet" href="resources/bootstrap/css/bootstrap-theme.min.css" />
 
 
 
 <!-- 	user style css -->
-<link rel="stylesheet"
-	href="resources/userResource/css/mainNavBar.css" />
-<link rel="stylesheet"
-	href="resources/userResource/css/postArticle.css" />
-<link rel="stylesheet"
-	href="resources/userResource/css/mainPageArticle.css?version=1" />
+<link rel="stylesheet" href="resources/userResource/css/mainNavBar.css" />
+<link rel="stylesheet" href="resources/userResource/css/postArticle.css" />
+<link rel="stylesheet" href="resources/userResource/css/mainPageArticle.css?version=2" />
 <link rel="stylesheet" href="resources/userResource/css/imageView.css" />
-<link rel="stylesheet"
-	href="resources/userResource/css/personalPageArticle.css" />
-<link rel="stylesheet"
-	href="resources/userResource/css/personalPageProfile.css" />
-<link rel="stylesheet"
-	href="resources/userResource/css/friend_nav.css" />
+<link rel="stylesheet" href="resources/userResource/css/personalPageArticle.css?version=1" />
+<link rel="stylesheet" href="resources/userResource/css/personalPageProfile.css" />
+<link rel="stylesheet" href="resources/userResource/css/friend_nav.css" />
 <link rel="stylesheet" href="resources/userResource/css/chat2.css" />
 <link rel="stylesheet" href="resources/userResource/css/editProfile.css" />
-
+<link rel="stylesheet" href="resources/userResource/css/comment.css?version=2" />
 <!-- 	user style js -->
 
 <script
@@ -53,11 +46,12 @@
 	src="resources/userResource/js/follow.js"></script>
 <script src="resources/userResource/js/chat2.js"></script>
 <script src="resources/userResource/js/personalInfoEdit.js"></script>
-<script src="resources/userResource/js/deleteArticle.js?version=1"></script>
+<script src="resources/userResource/js/deleteArticle.js"></script>
+<script src="resources/userResource/js/comment.js?version=2"></script>
 <!-- Node js testing server check!!!!! -->
 
-<script src="http://210.119.12.240:3033/socket.io/socket.io.js"></script>
-<!-- <script src="http://pknu1.kr:3033/socket.io/socket.io.js"></script> -->
+<!-- <script src="http://210.119.12.240:3033/socket.io/socket.io.js"></script> -->
+<script src="http://pknu1.kr:3033/socket.io/socket.io.js"></script>
 
 
 <!-- google map -->
@@ -73,13 +67,7 @@
 <link rel="stylesheet"
 	href="resources/userResource/css/font.css?<?=filemtime('font.css')?>" />
 
-<script>
-	$(document).ready(function() {
 
-		
-
-	});
-</script>
 
 </head>
 
@@ -99,11 +87,11 @@
 		<%@ include file="mainPage/mainPageArticle.jsp"%>
 		<!--     			<script src="resources/userResource/js/getMainArticle.js"></script> -->
 		
-		<section id="articlesArea" getUrl="getMain" whosPage=""></section>
+		<section id="articlesArea" getUrl="getMain" whosPage="" userId='${userId}'></section>
 		<div class="container" style="max-width: 100px;" id="viewMoreArticle"  lastArticleNum='0'>
 			<img style="" src="resources/img/mainPageImg/viewmore.png">
 		</div>
-		<script src="resources/userResource/js/getArticle.js"></script>
+		<script src="resources/userResource/js/getArticle.js?version=3"></script>
 
 	</c:if>
 
@@ -114,11 +102,11 @@
 		<%@ include file="component/gridOrganizedArticle.jsp"%>
 		<!--     			<script src="resources/userResource/js/getPersonalArticle.js"></script> -->
 		
-		<section id="articlesArea" whosPage="${whosPage}" getUrl="getPersonal"></section>
+		<section id="articlesArea" whosPage="${whosPage}" getUrl="getPersonal" userId='${userId}'></section>
 		<div class="container" style="max-width: 100px;" id="viewMoreArticle" lastArticleNum='0'>
 			<img style="" src="resources/img/mainPageImg/viewmore.png">
 		</div>
-		<script src="resources/userResource/js/getArticle.js"></script>
+		<script src="resources/userResource/js/getArticle.js?version=3"></script>
 
 	</c:if>
 	
