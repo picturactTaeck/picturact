@@ -6,7 +6,7 @@
 <mapper namespace="com.project.picturact.member.dao.MemberJoinDao">
 
 	<insert id="joinMember" parameterType="memberDto">
-		INSERT INTO PICTURACT_MEMBER VALUES(#{userId},#{password},#{username},#{nickname},#{email}, 'resources/img/profile/noImg.jpg','N',#{profileMessage})
+		INSERT INTO PICTURACT_MEMBER VALUES(#{userId},#{password},#{username},#{nickname},#{email}, 'resources/img/profile/noImg.jpg','N','')
 	</insert>	
 
 <select id="joinIdCheck" parameterType="String" resultType="String">

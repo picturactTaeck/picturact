@@ -51,7 +51,7 @@
 <!-- Node js testing server check!!!!! -->
 
 <!-- <script src="http://210.119.12.240:3033/socket.io/socket.io.js"></script> -->
-<script src="http://pknu1.kr:3033/socket.io/socket.io.js"></script>
+<script src="http://127.0.0.1:3033/socket.io/socket.io.js"></script>
 
 
 <!-- google map -->

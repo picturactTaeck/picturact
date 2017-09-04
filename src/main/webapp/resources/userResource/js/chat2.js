@@ -1,5 +1,6 @@
 $(document).ready(function(){
-	var socket = io.connect('http://pknu1.kr:3033');
+	var socket = io.connect('http://127.0.0.1:3033');
+//	var socket = io.connect('http://pknu1.kr:3033');
 //	var socket = io.connect('http://210.119.12.240:3033');
 	socket.emit('join', {'userId' : $("#chatDiv").attr("user")});
 	
