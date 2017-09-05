@@ -31,7 +31,7 @@
 	<select id="getMainPageArticle" resultType="articleContent"
 		parameterType="articleInfo">
 
-		SELECT ARTICLENUM, USERID, LAT, LNG, LOCATION,	
+		<!-- SELECT ARTICLENUM, USERID, LAT, LNG, LOCATION,	
 				REGEXP_REPLACE(content, <![CDATA['<[^>]*>|\&([^;])*;']]>,'') content, WRITEDATE, HOWMANYFILES, RM, PROFILEIMG
 			 FROM (SELECT article.*, ROWNUM RM , member.PROFILEIMG FROM(SELECT * FROM PICTURACT_ARTICLE WHERE 
 			 USERID IN 
@@ -40,7 +40,22 @@
          			<if test="lastArticleNum!=0">AND <![CDATA[ ARTICLENUM <]]> #{lastArticleNum} </if>
          			)
    	
-   			WHERE  RM BETWEEN 1 AND 10 
+   			WHERE  RM BETWEEN 1 AND 10  -->
+   			
+   			 SELECT ROWNUM RM,ARTICLENUM, USERID, LAT, LNG, LOCATION,	
+				REGEXP_REPLACE(content, <![CDATA['<[^>]*>|\&([^;])*;']]>,'') content, WRITEDATE, HOWMANYFILES,  PROFILEIMG FROM (
+			      SELECT * FROM (
+			        (SELECT #{userId} AS USERID FROM DUAL UNION SELECT FOLLOWID AS USERID FROM  Picturact_Personrelation WHERE USERID=#{userId}) relation 
+			        INNER JOIN
+			        (SELECT  ARTICLENUM, USERID, LAT, LNG, LOCATION,	 CONTENT , WRITEDATE, HOWMANYFILES FROM PICTURACT_ARTICLE  ) article
+			        ON relation.USERID= article.USERID
+			        INNER JOIN
+			        (SELECT USERID, PROFILEIMG FROM Picturact_Member) img 
+			        ON img.USERID = article.USERID
+			      
+			      ) ORDER BY ARTICLENUM DESC
+			    ) articles
+			  ORDER BY RM 
 		
 	
 	</select>
